@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/* CSS Document */
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+/* speakhi guidance style
+/**********************************************************/
+.sh-guidance {
+  position: relative;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+}
+.sh-guidance .title {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+.sh-guidance .title .wrap {
+  position: relative;
+  top: 15px;
+  width: 400px;
+  height: 30px;
+  padding: 0 5px;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  background-color: #fff;
+  text-align: center;
+  -ms-transform: skew(-30deg, 0);
+  /* IE 9 */
+  -moz-transform: skew(-30deg, 0);
+  /* Firefox */
+  -webkit-transform: skew(-30deg, 0);
+  /* Safari 和 Chrome */
+  -o-transform: skew(-30deg, 0);
+  /* Opera */
+  transform: skew(-30deg, 0);
+  z-index: 1;
+}
+.sh-guidance .title h1 {
+  position: relative;
+  top: -20px;
+  display: inline-block;
+  text-align: center;
+  left: 0;
+  margin: 5px auto;
+  font-size: 32px;
+  font-weight: 100;
+  color: #626262;
+  -ms-transform: skew(30deg, 0);
+  /* IE 9 */
+  -moz-transform: skew(30deg, 0);
+  /* Firefox */
+  -webkit-transform: skew(30deg, 0);
+  /* Safari 和 Chrome */
+  -o-transform: skew(30deg, 0);
+  /* Opera */
+  transform: skew(30deg, 0);
+}
+.sh-guidance .title h1 strong {
+  font-weight: 100;
+}
+.sh-guidance .title h1 span {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 46px;
+  color: #f6ab00;
+  vertical-align: sub;
+  *vertical-align: middle;
+}
+.sh-guidance .title hr {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  margin: 0;
+  z-index: 0;
+}
+.sh-guidance .sh-gbtnline {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  margin: 0;
+  text-align: center;
+  display: block;
+  background-color: #f6ab00;
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  -ms-opacity: 0.2;
+  -o-opacity: 0.2;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.sh-guidance .shGuiBullet {
+  display: none;
+}
+
+.sh-gbtn {
+  width: 100%;
+  height: 200px;
+  margin: 20px auto 0;
+  display: inline-block;
+}
+.sh-gbtn li {
+  position: relative;
+  float: left;
+  width: 20%;
+  display: inline-block;
+  cursor: pointer;
+  animation: rotateBtn 1s;
+}
+@keyframes rotateBtn {
+  from {
+    transform: rotateY(270deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.sh-gbtn li.curItem {
+  top: -10px;
+}
+.sh-gbtn li.curItem div {
+  width: 60%;
+  margin: 0 20%;
+}
+.sh-gbtn li.curItem div span {
+  height: 120px;
+  line-height: 120px;
+  font-size: 24px;
+}
+.sh-gbtn li.curItem div .sh-gbtnline {
+  top: 60px;
+}
+.sh-gbtn li div {
+  width: 50%;
+  margin: 0 25%;
+}
+.sh-gbtn li span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+.sh-gbtn li img {
+  width: 100%;
+}
+
+.sh-gcontent {
+  font-size: 62.5%;
+  margin: 5% auto;
+}
+.sh-gcontent li {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-align: left;
+}
+.sh-gcontent li div {
+  position: relative;
+  left: 0;
+  height: 300px;
+  display: inline-block;
+}
+.sh-gcontent li h1 {
+  font-size: 36px;
+  color: #005bac;
+}
+.sh-gcontent li label {
+  height: 60px;
+  line-height: 30px;
+  margin: 30px auto;
+  display: inline-block;
+  font-size: 24px;
+  color: #626262;
+}
+.sh-gcontent li img {
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: 300px;
+  max-height: 472px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+  .sh-guidance {
+    top: 1rem;
+  }
+  .sh-guidance .shGuiBullet {
+    display: block;
+    height: 2rem;
+    margin: 1rem auto;
+  }
+  .sh-guidance .title {
+    display: none;
+  }
+  .sh-guidance .title h1 {
+    text-align: center;
+  }
+
+  .sh-gbtn {
+    display: none;
+  }
+
+  .sh-gcontent {
+    width: 110%;
+    height: 100%;
+    margin: 0 auto 2rem;
+  }
+  .sh-gcontent li {
+    margin: 0 auto 1rem;
+  }
+  .sh-gcontent li label {
+    width: 90%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin: 1rem auto;
+    display: block;
+  }
+  .sh-gcontent li h1 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .sh-gcontent li img {
+    position: relative;
+    margin: 2rem auto;
+    width: 85%;
+    height: auto;
+    display: block;
+  }
+  .sh-gcontent li div {
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=sh-guidance.css.map */

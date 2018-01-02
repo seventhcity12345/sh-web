@@ -1,0 +1,22 @@
+##小写
+#set($entityname=$EntityName.toLowerCase())
+#set($length=$EntityName.length())
+##首字母小写
+#set($entityName=$EntityName.substring(0,1).toLowerCase()+$EntityName.substring(1,$length)) 
+package com.${companyName}.${projectName}.${entityname}.entity;
+
+import java.io.Serializable;
+import com.mingyisoft.javabase.annotation.TableName;
+import com.mingyisoft.javabase.util.ReflectUtil;
+${importsStr}
+
+/**
+ * @category ${entityName} Entity
+ * @author mingyisoft代码生成工具
+ */
+@TableName("${tableName}")
+public class ${EntityName} implements Serializable{
+${fieldsStr}
+${toStringStr}
+${setterGettersStr}
+}

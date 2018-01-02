@@ -1,0 +1,230 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* speakhi guidance style
+/**********************************************************/
+
+.sh-guidance {
+	position: relative;
+	top: 30px;
+	width: 100%;
+	text-align: center;
+	z-index: 0;
+
+	.title {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 60px;
+		.wrap {
+			position: relative;
+			top: 15px;
+			width: 400px;
+			height: 30px;
+			padding: 0 5px;
+			border-left: 1px solid $speakhi_graye0;
+			border-right: 1px solid $speakhi_graye0;
+			background-color: $speakhi_white;
+			text-align: center;
+			@include skewSet(-30deg, 0);
+			z-index: 1;
+		}
+
+		h1 {
+			position: relative;
+			top: -20px;
+			display: inline-block;
+			text-align: center;
+			left: 0;
+			margin: 5px auto;
+			font-size: 32px;
+			font-weight: 100;
+			color: $speakhi_gray62;
+			@include skewSet(30deg, 0);
+			strong {
+				font-weight: 100;
+			}
+			span {
+				display: inline-block;
+				margin: 0 10px;
+				font-size: 46px;
+				color: $speakhi_yellow;
+				vertical-align: sub;
+				*vertical-align: middle;
+			}
+		}
+		hr {
+			position: absolute;
+			left: 0;
+			top: 30px;
+			margin: 0;
+			z-index: 0;
+		}
+	}
+	.sh-gbtnline {
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		margin: 0;
+		text-align: center;
+		display: block;
+		background-color: $speakhi_yellow;
+		@include opacitySet(.2);
+	}
+	.shGuiBullet {
+		display: none;
+	}
+}
+
+.sh-gbtn {
+	width: 100%;
+	height: 200px;
+	margin: 20px auto 0;
+	display: inline-block;
+	li {
+		position: relative;
+		float: left;
+		width: 20%;
+		display: inline-block;
+		cursor: pointer;
+		animation: rotateBtn 1s;
+
+		@keyframes rotateBtn
+		{
+			from {
+				transform: rotateY(270deg);
+			}
+			to {
+				transform: rotateY(360deg);
+			}
+		}
+		&.curItem {
+			top: -10px;
+		}
+		&.curItem div {
+			width: 60%;
+			margin: 0 20%;
+			span {
+				height: 120px;
+				line-height: 120px;
+				font-size: 24px;
+			}
+			.sh-gbtnline {
+				top: 60px;
+			}
+		}
+		div {
+			width: 50%;
+			margin: 0 25%;
+		}
+
+		span {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100px;
+			line-height: 100px;
+			color: $speakhi_white;
+			font-size: 20px;
+			text-align: center;
+		}
+		img {
+			width: 100%;
+		}
+	}
+}
+.sh-gcontent {
+	font-size: 62.5%;
+	margin: 5% auto;
+	li {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		text-align: left;
+
+		div {
+			position: relative;
+			left: 0;
+			height: 300px;
+			display: inline-block;
+		}
+
+		h1 {
+			font-size: 36px;
+			color: $speakhi_blue;
+		}
+		label {
+			height: 60px;
+			line-height: 30px;
+			margin: 30px auto;
+			display: inline-block;
+			font-size: 24px;
+			color: $speakhi_gray62;
+		}
+		img {
+			position: absolute;
+			right: 0;
+			width: auto;
+			height: 300px;
+			max-height: 472px;
+			display: inline-block;
+		}
+	}
+}
+@media screen and (max-width: 480px) {
+	.sh-guidance {
+		top: 1rem;
+		.shGuiBullet {
+			display: block;
+			height: 2rem;
+			margin: 1rem auto;
+		}
+		.title {
+			display: none;
+			h1 {
+				text-align: center;
+			}
+		}
+	}
+	.sh-gbtn {
+		display: none;
+	}
+	.sh-gcontent {
+		width: 110%;
+		height: 100%;
+		margin: 0 auto 2rem;
+		li {
+			margin: 0 auto 1rem;
+
+			label {
+				width: 90%;
+				height: 2rem;
+				line-height: 2rem;
+				font-size: 1rem;
+				margin: 1rem auto;
+				display: block;
+			}
+			h1 {
+				text-align: center;
+				font-size: 1.2rem;
+			}
+			img {
+				position: relative;
+				margin: 2rem auto;
+				width: 85%;
+				height: auto;
+				display: block;
+			}
+			div {
+				height: auto;
+			}
+		}
+	}
+}

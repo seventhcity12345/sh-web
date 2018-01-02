@@ -1,0 +1,49 @@
+##小写
+#set($entityname=$EntityName.toLowerCase())
+#set($length=$EntityName.length())
+##首字母小写
+#set($entityName=$EntityName.substring(0,1).toLowerCase()+$EntityName.substring(1,$length))
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/common/taglib.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragrma","no-cache");
+response.setDateHeader("Expires",0);
+%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>综合查询</title> 
+</head> 
+	<body >  
+		<table border="1">
+			<tr>
+				<td>名称</td>
+				<td>内容</td>
+			</tr>
+			
+			#foreach( $field in $fields.keySet() )
+				#set($fieldComment=$fields.get($field).fieldComment)
+			
+				#if($field=='key_id'||$field=='is_used'||$field=='update_date'||$field=='create_user_id'||$field=='update_user_id')
+				
+				#elseif($field=='create_date')
+				 	<tr>
+						 <td>$fieldComment</td>
+						 <td>${obj.${field}}</td>
+					 </tr>
+					formatDate(result.${field}) 
+					
+				#else 
+					 <tr>
+						 <td>$fieldComment</td>
+						 <td>${obj.${field}}</td>
+					 </tr>
+				#end
+			#end
+			 
+			
+		</table>
+	</body>
+</html>

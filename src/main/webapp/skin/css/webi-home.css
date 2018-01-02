@@ -1,0 +1,597 @@
+@charset "UTF-8";
+/* CSS Document */
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+html, body {
+  font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu", serif;
+}
+
+html, body {
+  font-family: "Calibri","simsun","宋体","Arial";
+}
+
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+s {
+  text-decoration: none;
+}
+
+html, body {
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  text-align: center;
+}
+
+.clear:before, .clear:after {
+  content: "";
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.clear {
+  *zoom: 1;
+}
+
+#wbi-content {
+  max-width: 1200px;
+}
+
+.wbi-theam h3 {
+  font-size: 30px;
+  color: #626262;
+  font-weight: normal;
+}
+
+.wbi-theam p {
+  font-size: 14px;
+}
+
+.wbi-theam p, .part2-fl {
+  color: #959595;
+}
+
+.hr-line {
+  height: 10px;
+  background: url("../images/dian.jpg") no-repeat center;
+  margin-top: 30px;
+}
+
+.hr-line p {
+  height: 1px;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 3px;
+}
+
+.part1 {
+  margin-top: 60px;
+}
+
+.part1-video, .part2-super {
+  margin-top: 33px;
+}
+
+.part1-video div, .part2-super div, .part2-super img {
+  float: left;
+}
+
+.part1-video {
+  color: #626262;
+  padding: 0px 20px;
+}
+
+.part1-video div {
+  width: 31.3%;
+  *width: 29%;
+  margin-left: 3%;
+  position: relative;
+}
+
+.part1-video div:first-child {
+  margin-left: 0;
+}
+
+.part1-video span {
+  display: block;
+  height: 69px;
+  width: 69px;
+  position: absolute;
+  top: 29%;
+  left: 39%;
+}
+
+.part1-video p {
+  margin-top: 12px;
+}
+
+.part1-video p, .part2-super {
+  text-align: left;
+}
+
+.part1-video img {
+  transition: all 0.5s ease 0s;
+  overflow: hidden;
+  width: 100%;
+}
+
+.part1-video img:hover {
+  transform: scale(1.1);
+}
+
+/* part2 */
+.part2 {
+  margin-top: 95px;
+}
+
+.part2-super {
+  padding: 0px 20px;
+}
+
+.part2-super div {
+  width: 40%;
+  margin-bottom: 55px;
+}
+
+.part2-super div:nth-child(2n) {
+  float: right;
+}
+
+.part2-super img {
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+
+.part2-fl {
+  float: right;
+}
+
+.part2-fl {
+  padding: 6px 0;
+  width: 78.5%;
+  font-size: 14px;
+}
+
+.part2-fl li {
+  line-height: 30px;
+  margin-left: 14px;
+}
+
+.part2-fl li:first-child {
+  color: #626262;
+  font-size: 20px;
+}
+
+.part2-super img:hover {
+  cursor: pointer;
+}
+
+/* part3 */
+.part3 {
+  margin-top: 15px;
+  *margin-top: 95px;
+}
+
+.part3-student {
+  position: relative;
+  width: 1000px;
+  top: 55px;
+  left: 35px;
+  height: 400px;
+}
+
+.stu .img {
+  height: 130px;
+  width: 130px;
+  z-index: 0;
+  display: absolute;
+}
+
+.stu {
+  position: absolute;
+}
+
+.stu div {
+  width: 195px;
+  height: 196px;
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  background: url("../images/hovers.png") no-repeat;
+  top: -31px;
+  left: -30px;
+  display: none;
+}
+
+.stu div span {
+  display: block;
+  width: 90px;
+  padding: 37px 0px 0px 0px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.stu s {
+  font-size: 16px;
+}
+
+.stu01 {
+  left: 0px;
+  top: 0px;
+}
+
+.stu02 {
+  left: 190px;
+  top: 0px;
+}
+
+.stu03 {
+  left: 380px;
+  top: 0px;
+}
+
+.stu04 {
+  left: 570px;
+  top: 0px;
+}
+
+.stu05 {
+  left: 760px;
+  top: 0px;
+}
+
+.stu06 {
+  left: 94px;
+  top: 98px;
+}
+
+.stu07 {
+  left: 285px;
+  top: 98px;
+}
+
+.stu08 {
+  left: 476px;
+  top: 98px;
+}
+
+.stu09 {
+  left: 667px;
+  top: 98px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .part1-video {
+    padding: 0 20px;
+    *padding: 0;
+  }
+
+  .part2-super {
+    padding: 0 20px;
+  }
+
+  .part3-student {
+    position: relative;
+    height: 536px;
+    top: 55px;
+    width: 900px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #wbi-content {
+    width: 90%;
+  }
+
+  .part1-video span {
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 27%;
+    left: 35%;
+  }
+
+  .part2-super {
+    padding: 0px 40px 0px 40px;
+  }
+
+  .part2-super div {
+    width: 50%;
+    margin-bottom: 55px;
+  }
+
+  .part3-tec {
+    position: relative;
+    margin-left: -2%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #wbi-content {
+    width: 90%;
+  }
+
+  .part1-video span {
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+  }
+
+  .part1-video {
+    padding: 0 20px;
+  }
+
+  .part2-fl {
+    width: 72.5%;
+  }
+
+  /*part3*/
+  .part3-student {
+    position: relative;
+    width: 527px;
+    height: 536px;
+    top: 55px;
+    left: 0px;
+  }
+
+  .stu .img {
+    height: 130px;
+    width: 130px;
+    z-index: 0;
+    display: absolute;
+  }
+
+  .stu {
+    position: absolute;
+  }
+
+  .stu div {
+    width: 195px;
+    height: 196px;
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    background: url("../images/hovers.png") no-repeat;
+    top: -31px;
+    left: -30px;
+    display: none;
+  }
+
+  .stu div span {
+    display: block;
+    width: 90px;
+    padding: 35px 0px 0px 0px;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .stu s {
+    font-size: 16px;
+  }
+
+  .stu01 {
+    left: 0px;
+    top: 0px;
+  }
+
+  .stu02 {
+    left: 190px;
+    top: 0px;
+  }
+
+  .stu03 {
+    left: 380px;
+    top: 0px;
+  }
+
+  .stu04 {
+    left: 94px;
+    top: 96px;
+  }
+
+  .stu05 {
+    left: 285px;
+    top: 96px;
+  }
+
+  .stu06 {
+    left: 285px;
+    top: 283px;
+  }
+
+  .stu07 {
+    left: 189px;
+    top: 190px;
+  }
+
+  .stu08 {
+    left: 380px;
+    top: 190px;
+  }
+
+  .stu09 {
+    left: 0px;
+    top: 190px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  #wbi-content {
+    width: 94%;
+  }
+
+  /* part1 */
+  .part1 {
+    margin-top: 35px;
+  }
+
+  .part1-video {
+    color: #626262;
+    padding: 0px 10px;
+  }
+
+  .part1-video div {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    margin-left: 0px;
+  }
+
+  .part1-video, .part2-super {
+    margin-top: 20px;
+  }
+
+  .part1-video p {
+    margin-top: 5px;
+  }
+
+  .part1-video span {
+    display: block;
+    position: absolute;
+    top: 31%;
+    left: 41%;
+  }
+
+  /* part2 */
+  .part2 {
+    margin-top: 45px;
+  }
+
+  .part2-super div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .part2-super div img {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+  }
+
+  .part2-fl {
+    width: 82.5%;
+  }
+
+  .part2-fl li {
+    line-height: 20px;
+    margin-left: 14px;
+  }
+
+  .part2-fl li:first-child {
+    margin-bottom: 10px;
+  }
+
+  .part2-super {
+    padding: 0px;
+  }
+
+  /*part3*/
+  .part3-student {
+    position: relative;
+    width: 275px;
+    height: 591px;
+    top: 40px;
+  }
+
+  .stu .img {
+    height: 110px;
+    width: 110px;
+    z-index: 0;
+    display: absolute;
+  }
+
+  .stu {
+    position: absolute;
+  }
+
+  .stu div {
+    width: 195px;
+    height: 196px;
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    background: url("../images/hovers01.png") no-repeat;
+    top: -25px;
+    left: -24px;
+    display: none;
+  }
+
+  .stu div span {
+    display: block;
+    width: 90px;
+    padding: 27px 30px 0px;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .stu s {
+    font-size: 16px;
+  }
+
+  .stu01 {
+    left: 0px;
+    top: 0px;
+  }
+
+  .stu02 {
+    left: 162px;
+    top: 0px;
+  }
+
+  .stu03 {
+    left: 81px;
+    top: 83px;
+  }
+
+  .stu04 {
+    left: 162px;
+    top: 164px;
+  }
+
+  .stu05 {
+    left: 0px;
+    top: 163px;
+  }
+
+  .stu06 {
+    left: 81px;
+    top: 245px;
+  }
+
+  .stu07 {
+    left: 0px;
+    top: 325px;
+  }
+
+  .stu08 {
+    left: 162px;
+    top: 327px;
+  }
+
+  .stu09 {
+    left: 81px;
+    top: 408px;
+  }
+}
+
+/*# sourceMappingURL=webi-home.css.map */

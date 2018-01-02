@@ -1,0 +1,14 @@
+package com.${companyName}.${projectName}.${entityname}.dao;
+
+import org.springframework.stereotype.Repository;
+import com.mingyisoft.javabase.dao.BaseMysqlDao;
+import org.apache.log4j.Logger;
+
+@Repository
+public class Admin${EntityName}Dao extends BaseMysqlDao{ 
+	private static Logger logger = Logger.getLogger(Admin${EntityName}Dao.class);
+	
+	public Admin${EntityName}Dao(){
+		super.setTableName("${tableName}");
+	}
+}

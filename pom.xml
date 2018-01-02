@@ -1,0 +1,319 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.webi</groupId>
+	<artifactId>hwj</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>hwj Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>webi_deploy</id>
+			<name>Snapshot</name>
+			<url>http://192.168.250.167:8981/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>webi_deploy</id>
+			<name>Release</name>
+			<url>http://192.168.250.167:8981/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.spring>4.3.9.RELEASE</version.spring>
+		<!-- <version.spring>3.2.14.RELEASE</version.spring> -->
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.1.Final</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${version.spring}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mucfc.fep</groupId>
+			<artifactId>fep-sdk</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mingyisoft</groupId>
+			<artifactId>java-common</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ROOT</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<attachClasses>true</attachClasses><!-- 把class打包jar作为附件 -->
+					<archiveClasses>false</archiveClasses><!-- 把class打包jar -->
+				</configuration>
+			</plugin>
+
+			<!--tomcat启动插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>8899</port>
+					<path>/</path>
+					<charset>UTF-8</charset>
+					<uriEncoding>UTF-8</uriEncoding>
+					<warSourceDirectory>target/ROOT</warSourceDirectory>
+					<warFile>target/ROOT.war</warFile>
+					<finalName></finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<!-- maven多环境过滤配置,过滤resources目录 -->
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+	</build>
+
+	<profiles>
+		<!-- maven多环境profile配置 -->
+		<profile>
+			<id>local</id>
+
+			<properties>
+				<jdbc.url>jdbc:mysql://localhost:3306/hwj</jdbc.url>
+				<jdbc.username>root</jdbc.username>
+				<jdbc.password>yang65353733</jdbc.password>
+				<jdbc.initialSize>0</jdbc.initialSize>
+				<jdbc.maxTotal>15</jdbc.maxTotal>
+				<jdbc.maxIdle>10</jdbc.maxIdle>
+				<jdbc.minIdle>5</jdbc.minIdle>
+				<jdbc2.url>jdbc:mysql://localhost:3306/hwj</jdbc2.url>
+				<jdbc2.username>root</jdbc2.username>
+				<jdbc2.password>yang65353733</jdbc2.password>
+				<jdbc2.initialSize>0</jdbc2.initialSize>
+				<jdbc2.maxTotal>15</jdbc2.maxTotal>
+				<jdbc2.maxIdle>10</jdbc2.maxIdle>
+				<jdbc2.minIdle>5</jdbc2.minIdle>
+				<memcachedHost>127.0.0.1</memcachedHost>
+				<memcachedPort>11211</memcachedPort>
+				<memcachedUserName></memcachedUserName>
+				<memcachedPortPassword></memcachedPortPassword>
+				<env>dev</env>
+				<log4j.logger.org.springframework.jdbc.core>DEBUG</log4j.logger.org.springframework.jdbc.core>
+				<log4j.appender.DailyRollingFile.Threshold>DEBUG</log4j.appender.DailyRollingFile.Threshold>
+				<log4j.appender.Console.Threshold>DEBUG</log4j.appender.Console.Threshold>
+				<log4j.logger.com.webi.hwj>DEBUG</log4j.logger.com.webi.hwj>
+				<log4j.logger.com.mingyisoft.javabase>DEBUG</log4j.logger.com.mingyisoft.javabase>
+				<platformPublicKeyPath>classpath:keys/platform_public_key_test.pem</platformPublicKeyPath>
+				<zhaolianPlatformAddress>http://120.25.132.20:9001/fep-platform/do/api/call</zhaolianPlatformAddress>
+			</properties>
+		</profile>
+
+
+		<profile>
+			<id>dev</id>
+			<!-- 当没有指定条件时,默认激活开发环境 -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<properties>
+				<jdbc.url>jdbc:mysql://192.168.250.167:3306/hwj</jdbc.url>
+				<jdbc.username>hwj_test</jdbc.username>
+				<jdbc.password>hwj_test</jdbc.password>
+				<jdbc.initialSize>0</jdbc.initialSize>
+				<jdbc.maxTotal>10</jdbc.maxTotal>
+				<jdbc.maxIdle>5</jdbc.maxIdle>
+				<jdbc.minIdle>3</jdbc.minIdle>
+				<jdbc2.url>jdbc:mysql://192.168.250.167:3306/hwj</jdbc2.url>
+				<jdbc2.username>hwj_test</jdbc2.username>
+				<jdbc2.password>hwj_test</jdbc2.password>
+				<jdbc2.initialSize>0</jdbc2.initialSize>
+				<jdbc2.maxTotal>10</jdbc2.maxTotal>
+				<jdbc2.maxIdle>5</jdbc2.maxIdle>
+				<jdbc2.minIdle>3</jdbc2.minIdle>
+				<memcachedHost>192.168.250.167</memcachedHost>
+				<memcachedPort>11211</memcachedPort>
+				<memcachedUserName></memcachedUserName>
+				<memcachedPortPassword></memcachedPortPassword>
+				<env>dev</env>
+				<log4j.logger.org.springframework.jdbc.core>DEBUG</log4j.logger.org.springframework.jdbc.core>
+				<log4j.appender.DailyRollingFile.Threshold>DEBUG</log4j.appender.DailyRollingFile.Threshold>
+				<log4j.appender.Console.Threshold>DEBUG</log4j.appender.Console.Threshold>
+				<log4j.logger.com.webi.hwj>DEBUG</log4j.logger.com.webi.hwj>
+				<log4j.logger.com.mingyisoft.javabase>DEBUG</log4j.logger.com.mingyisoft.javabase>
+				<platformPublicKeyPath>classpath:keys/platform_public_key_test.pem</platformPublicKeyPath>
+				<zhaolianPlatformAddress>http://120.25.132.20:9001/fep-platform/do/api/call</zhaolianPlatformAddress>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+
+			<properties>
+				<jdbc.url>jdbc:mysql://rdsojvzv2v2725l4rc91.mysql.rds.aliyuncs.com:3306/speakhi_test</jdbc.url>
+				<jdbc.username>speakhi_test</jdbc.username>
+				<jdbc.password>yangMh653533</jdbc.password>
+				<jdbc.initialSize>0</jdbc.initialSize>
+				<jdbc.maxTotal>30</jdbc.maxTotal>
+				<jdbc.maxIdle>20</jdbc.maxIdle>
+				<jdbc.minIdle>10</jdbc.minIdle>
+				<jdbc2.url>jdbc:mysql://rds421h8kh983hv61uuso.mysql.rds.aliyuncs.com:3306/hwj_aliyun</jdbc2.url>
+				<jdbc2.username>hwj_aliyun</jdbc2.username>
+				<jdbc2.password>yang-Mh_653537</jdbc2.password>
+				<jdbc2.initialSize>0</jdbc2.initialSize>
+				<jdbc2.maxTotal>30</jdbc2.maxTotal>
+				<jdbc2.maxIdle>20</jdbc2.maxIdle>
+				<jdbc2.minIdle>10</jdbc2.minIdle>
+				<memcachedHost>489750bf2d654369.m.cnhzaliqshpub001.ocs.aliyuncs.com</memcachedHost>
+				<memcachedPort>11211</memcachedPort>
+				<memcachedUserName>489750bf2d654369</memcachedUserName>
+				<memcachedPortPassword>sophiaZs653533</memcachedPortPassword>
+				<env>test</env>
+				<log4j.logger.org.springframework.jdbc.core>DEBUG</log4j.logger.org.springframework.jdbc.core>
+				<log4j.appender.DailyRollingFile.Threshold>DEBUG</log4j.appender.DailyRollingFile.Threshold>
+				<log4j.appender.Console.Threshold>DEBUG</log4j.appender.Console.Threshold>
+				<log4j.logger.com.webi.hwj>DEBUG</log4j.logger.com.webi.hwj>
+				<log4j.logger.com.mingyisoft.javabase>DEBUG</log4j.logger.com.mingyisoft.javabase>
+				<platformPublicKeyPath>classpath:keys/platform_public_key_test.pem</platformPublicKeyPath>
+				<zhaolianPlatformAddress>http://120.25.132.20:9001/fep-platform/do/api/call</zhaolianPlatformAddress>
+			</properties>
+		</profile>
+
+
+		<profile>
+			<id>pro</id>
+			<properties>
+				<jdbc.url>jdbc:mysql://rds3s297236q4451sm6srw.mysql.rds.aliyuncs.com:3306/hwj_aliyun</jdbc.url>
+				<jdbc.username>hwj_aliyun</jdbc.username>
+				<jdbc.password>yang-Mh_653537</jdbc.password>
+				<jdbc.initialSize>30</jdbc.initialSize>
+				<jdbc.maxTotal>170</jdbc.maxTotal>
+				<jdbc.maxIdle>150</jdbc.maxIdle>
+				<jdbc.minIdle>50</jdbc.minIdle>
+				<jdbc2.url>jdbc:mysql://rds3s297236q4451sm6srw.mysql.rds.aliyuncs.com:3306/hwj_aliyun</jdbc2.url>
+				<jdbc2.username>hwj_aliyun</jdbc2.username>
+				<jdbc2.password>yang-Mh_653537</jdbc2.password>
+				<jdbc2.initialSize>0</jdbc2.initialSize>
+				<jdbc2.maxTotal>30</jdbc2.maxTotal>
+				<jdbc2.maxIdle>20</jdbc2.maxIdle>
+				<jdbc2.minIdle>10</jdbc2.minIdle>
+				<memcachedHost>6c279f07f41b418e.m.cnhzaliqshpub001.ocs.aliyuncs.com</memcachedHost>
+				<memcachedPort>11211</memcachedPort>
+				<memcachedUserName>6c279f07f41b418e</memcachedUserName>
+				<memcachedPortPassword>yangMh653537</memcachedPortPassword>
+				<env>pro</env>
+				<log4j.logger.org.springframework.jdbc.core>INFO</log4j.logger.org.springframework.jdbc.core>
+				<log4j.appender.DailyRollingFile.Threshold>INFO</log4j.appender.DailyRollingFile.Threshold>
+				<log4j.appender.Console.Threshold>INFO</log4j.appender.Console.Threshold>
+				<log4j.logger.com.webi.hwj>INFO</log4j.logger.com.webi.hwj>
+				<log4j.logger.com.mingyisoft.javabase>INFO</log4j.logger.com.mingyisoft.javabase>
+				<platformPublicKeyPath>classpath:keys/platform_public_key.pem</platformPublicKeyPath>
+				<zhaolianPlatformAddress>https://platform.mucfc.com/do/api/call</zhaolianPlatformAddress>
+			</properties>
+		</profile>
+
+	</profiles>
+
+</project>

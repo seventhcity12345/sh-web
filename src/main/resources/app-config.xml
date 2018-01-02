@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.1.xsd
+		">
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 主要是通过Spring管理AnnotationBeanConfigurerAspect切面， 具体的工作由该切面完成。 (Spring 
+		可以为IOC容器里的bean进行依赖注入，但如果某些类，没有配置在IOC里，比如一些Domain Object，是否也可以依赖注入) -->
+	<context:spring-configured />
+
+	<!-- 开启使用注解 -->
+	<context:annotation-config />
+
+	<!-- 扫描该包下的所有类，将除了Controller注解以外的bean注册在spring-ioc容器中，因为Controller注解会在springmvc容器中注册 -->
+	<context:component-scan base-package="com.*">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+
+	<!-- 使用DBCP的连接池方式来创建数据源 -->
+	<!-- 写库，主库 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="maxTotal" value="${jdbc.maxTotal}" />
+		<property name="maxIdle" value="${jdbc.maxIdle}" />
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name="maxWaitMillis" value="5000" />
+		<property name="validationQuery" value="SELECT 1" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testOnCreate" value="false" />
+		<property name="timeBetweenEvictionRunsMillis" value="30000" />
+		<property name="minEvictableIdleTimeMillis" value="1800000" />
+		<property name="testWhileIdle" value="true" />
+		<property name="numTestsPerEvictionRun" value="${jdbc.maxTotal}" />
+	</bean>
+
+	<!-- 配置事务管理器 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 激活注解方式调用事务管理,扫描@Transactional注解 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<!-- spring jdbc <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
+
+	<!-- 配置spring-jdbcTemplate模板 -->
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<bean id="springContextUtils" class="com.mingyisoft.javabase.spring.SpringContextUtils" />
+
+
+	<!-- 容器初始化bean,注入缓存属性,用于动态的不同环境切换配置 -->
+	<bean id="systemInit" class="com.webi.hwj.init.SystemInit">
+		<property name="memcachedHost" value="${memcachedHost}" />
+		<property name="memcachedPort" value="${memcachedPort}" />
+		<property name="memcachedUserName" value="${memcachedUserName}" />
+		<property name="memcachedPortPassword" value="${memcachedPortPassword}" />
+		<property name="env" value="${env}" />
+	</bean>
+</beans>

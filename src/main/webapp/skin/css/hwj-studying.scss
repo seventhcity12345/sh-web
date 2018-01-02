@@ -1,0 +1,303 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* header style
+/**************************************************************************/
+.header-wrap {
+	box-shadow: 0px 1px 2px $speakhi_graye0;
+}
+
+/* studying style
+/**************************************************************************/
+
+.studying {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+	overflow: hidden;
+	z-index: 1;
+	background-color: $speakhi_backf2;
+}
+.studying-wrap {
+	position: relative;
+	width: 64.206%;
+	_width: 1200px;
+	min-width: 1200px;
+	margin: 0 auto;
+}
+.studying-wrap .minfo {
+	display: none;
+}
+.studying-wrap .minfo h2 {
+	width: 88%;
+	padding: 0 6%;
+	margin: 0 auto;
+	text-align: center;
+	color: $speakhi_gray62;
+}
+.studying-wrap .minfo hr {
+	width: 88%;
+	margin: 10px auto;
+	border: 1px solid $speakhi_graye0;
+}
+.studying-wrap .minfo ul {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto 80px auto;
+	text-align: center;
+
+	& li {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: 450px;
+		margin: 0 auto;
+	}
+
+	& div {
+		margin-left: 20px;
+
+		& h1 {
+			text-align: left;
+		}
+	}
+
+	& div p {
+		max-width: 208px;
+		height: auto;
+		text-align: left;
+	}
+}
+.s-left,
+.s-right {
+	float: left;
+	margin-top: 60px;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	-o-opacity: 0;
+	filter: alpha(opacity=0);
+	opacity: 0;
+
+	visibility: hidden;
+}
+.s-left {
+	width: 315px;
+	height: 858px;
+	background: url(../images/studying_left.jpg) center center no-repeat;
+	margin-left: -30px;
+
+	animation: leftGirl 2s;
+	-webkit-animation: leftGirl 2s;
+}
+.info {
+	position: absolute;
+	top: 240px;
+	left: 50%;
+	margin-left: -215px;
+	z-index: 1;
+
+	width: auto;
+	max-width: 430px;
+	font-size: 1em;
+	line-height: 1.5;
+	color: $speakhi_gray62;
+	letter-spacing: 3px;
+    @extend %speakhi_ffyahei;
+}
+.info span {
+	letter-spacing: 0;
+}
+.s-right {
+	float: right;
+	width: 346px;
+	height: 859px;
+	background: url(../images/studying_right.jpg) center center no-repeat;
+	margin-right: -30px;
+
+	animation: rightBoy 2s;
+	-webkit-animation: rightBoy 2s;
+}
+
+.info img {
+	width: 180px;
+	height: 186px;
+	cursor: pointer;
+}
+
+.info > div {
+	height: 186px;
+	margin: 20px 0;
+}
+
+img.s-plus {
+	width: 42px;
+	height: 45px;
+	margin: 0 5px;
+	margin: 0\9;
+	-moz-margin-end: 0;
+	cursor: default;
+}
+#slide-left,
+#slide-right {
+	position: relative;
+}
+
+/* slide style
+/**************************************************************************/
+.slide-left,
+.slide-right {
+	position: absolute;
+	top: 0;
+	z-index: 3;
+	width: 1200px;
+	height: 100%;
+	background-color: $speakhi_white;
+	display: none;
+}
+.slide-left {
+	left: -100%;
+	box-shadow: 2px 0px 4px $speakhi_graye0;
+}
+.slide-right {
+	right: -100%;
+	box-shadow: -2px 0px 4px $speakhi_graye0;
+}
+.slide-left .item {
+	float: right;
+}
+.slide-right .item {
+	float: left;
+}
+.item {
+	display: inline-block;
+	width: 600px;
+	margin: 30px 60px 0;
+}
+.item li {
+	display: inline-block;
+	width: 600px;
+	min-height: 247px;
+	margin: 20px;
+}
+.item li > img {
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+	width: 222px;
+	height: 247px;
+}
+.item li > div {
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+	width: auto;
+	margin-left: 50px;
+	font-size: 1em;
+	line-height: 2;
+	color: $speakhi_gray62;
+    @extend %speakhi_ffyahei;
+}
+.item li > div h1 {
+	color: $speakhi_yellow;
+    @extend %speakhi_ffyahei;
+}
+.back {
+	position: relative;
+	top: 50%;
+	*top: 0;
+	line-height: 2;
+	font-size: 1em;
+	color: $speakhi_gray62;
+	letter-spacing: 3px;
+    @extend %speakhi_ffyahei;
+}
+.arrow-l,
+.arrow-r {
+	position: absolute;
+	top: 45%;
+	width: 106px;
+	height: 63px;
+	line-height: 63px;
+	margin-top: -32px;
+	color: $speakhi_graye0;
+	font-size: 1em;
+    @extend %speakhi_ffyahei;
+
+	transition: color .3s, background .3s;
+	-moz-transition: color .3s, background .3s; /* Firefox 4 */
+	-webkit-transition: color .3s, background .3s; /* Safari 和 Chrome */
+	-o-transition: color .3s, background .3s; /* Opera */
+}
+.arrow-l {
+	left: 350px;
+	text-align: right;
+	background: url(../images/arrow_l.png) 0 center no-repeat;
+}
+.arrow-l:hover {
+	color: $speakhi_gray95;
+	background: url(../images/arrow_l_active.png) 0 center no-repeat;
+}
+.arrow-r {
+	right: 350px;
+	background: url(../images/arrow_r.png) 50px center no-repeat;
+}
+.arrow-r:hover {
+	color: $speakhi_gray95;
+	background: url(../images/arrow_r_active.png) 50px center no-repeat;
+}
+
+/* keyframes style
+/**************************************************************************/
+@keyframes leftGirl {
+	from {opacity: 0; margin-left: -30px;}
+	to {opacity: 1; margin-left: 0}
+}
+@-webkit-keyframes leftGirl {
+	from {opacity: 0; margin-left: -30px;}
+	to {opacity: 1; margin-left: 0}
+}
+
+@keyframes rightBoy {
+	from {opacity: 0; margin-right: -30px;}
+	to {opacity: 1; margin-right: 0}
+}
+@-webkit-keyframes rightBoy {
+	from {opacity: 0; margin-right: -30px;}
+	to {opacity: 1; margin-right: 0}
+}
+/* media query
+/**************************************************************************/
+@media screen and (max-width: 1200px) {
+	.top,.top-mobile-wrap,.top-wrap,.header-wrap,.header,.footer,.footer-link { max-width: 1200px; _width: 1200px; }
+	.s-left, .s-right {display: none;}
+	.studying-wrap {
+		width: 100%;
+		min-width: 0;
+	}
+	.back {
+		width: 100%;
+	}
+	.arrow-l,
+	.arrow-r,
+	.info div:first-child {
+		display: none;
+	}
+	.info {
+		position: static;
+		width: 88%;
+		padding: 0 6%;
+		max-width: none;
+		margin: 80px auto;
+	}
+	.info > div {
+		height: auto;
+	}
+	.studying-wrap .minfo {
+		display: block;
+	}
+}

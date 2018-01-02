@@ -1,0 +1,794 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* speakhi index style
+/**********************************************************/
+body {
+	overflow-x: hidden;
+}
+.banner-ani {
+	top: 20%;
+	left: 0;
+	img {
+		position: relative;
+		left: 80%;
+		bottom: 180px;
+		width: 50%;
+		margin: 10px auto;
+		font-size: 300%;
+		color: $speakhi_blue;
+		animation: slideImg 1s;
+		-webkit-animation: slideImg 1s;
+		z-index: 1;
+
+		@keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 80%;
+			}
+		}
+		@-webkit-keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 80%;
+			}
+		}
+	}
+	p {
+		position: relative;
+		left: 30%;
+		margin: 20px auto;
+		font-size: 360%;
+		color: $speakhi_blue;
+		@extend %transition;
+		z-index: 2;
+
+		animation: slideText 1s;
+		-webkit-animation: slideText 1s;
+		@keyframes slideText
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 30%;
+			}
+		}
+		&.p2 {
+			margin-left: 100px;
+		}
+		@-webkit-keyframes slideText
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 30%;
+			}
+		}
+		&.p2 {
+			margin-left: 100px;
+		}
+	}
+}
+.banner-ani-r {
+	top: 20%;
+	left: 0;
+	p {
+		position: relative;
+		margin: 20px auto;
+		font-size: 360%;
+		color: $speakhi_blue;
+		left: 85%;
+		animation: slideTextr 1s;
+		-webkit-animation: slideTextr 1s;
+		z-index: 2;
+
+		@keyframes slideTextr
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+		&.p1 {
+			margin-left: 100px;
+		}
+		@-webkit-keyframes slideTextr
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+		&.p1 {
+			margin-left: 100px;
+		}
+	}
+	img {
+		position: relative;
+		bottom: 180px;
+		width: 50%;
+		margin: 10px auto;
+		font-size: 300%;
+		color: $speakhi_blue;
+		animation: slideImg 1s;
+		left: 30%;
+		animation: slideImgl 1s;
+		-webkit-animation: slideImgl 1s;
+		z-index: 1;
+
+		@keyframes slideImgl
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 30%;
+			}
+		}
+		@-webkit-keyframes slideImgl
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 30%;
+			}
+		}
+	}
+}
+
+.mBanner-info {
+	position: absolute;
+	top: 25%;
+	left: 5%;
+	color: $speakhi_blue;
+	font-size: 20px;
+
+	.p2 {
+		margin-top: 5px;
+		margin-left: 20px;
+	}
+	p {
+		position: relative;
+		animation: slidemBannerInfo .5s;
+		@keyframes slidemBannerInfo
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 0;
+			}
+		}
+		@-webkit-keyframes slidemBannerInfo
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 0;
+			}
+		}
+	}
+}
+
+.mBanner-info-r {
+	position: absolute;
+	top: 25%;
+	right: 5%;
+	color: $speakhi_blue;
+	font-size: 20px;
+	text-align: right;
+
+	.p2 {
+		margin-top: 5px;
+		margin-right: 20px;
+	}
+	p {
+		position: relative;
+		animation: slidemBannerInfor .5s;
+		@keyframes slidemBannerInfor
+		{
+			from {
+				right: -100%;
+			}
+			to {
+				right: 0;
+			}
+		}
+		@-webkit-keyframes slidemBannerInfor
+		{
+			from {
+				right: -100%;
+			}
+			to {
+				right: 0;
+			}
+		}
+	}
+}
+
+.sh-section {
+	margin: 80px auto;
+
+	.title {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 60px;
+		.wrap {
+			position: relative;
+			top: 10px;
+			width: 168px;
+			height: 40px;
+			padding: 0 5px;
+			border-left: 1px solid $speakhi_graye0;
+			border-right: 1px solid $speakhi_graye0;
+			background-color: $speakhi_white;
+			text-align: center;
+			@include skewSet(-30deg, 0);
+			z-index: 1;
+		}
+
+		h1,
+		label {
+			position: relative;
+			top: -15px;
+			display: inline-block;
+			text-align: center;
+		}
+		h1 {
+			left: -10px;
+			*left: 0;
+			left: 0\0;
+			margin: 5px auto;
+			font-size: 24px;
+			font-weight: 100;
+			color: $speakhi_gray62;
+			@include skewSet(30deg, 0);
+		}
+		label {
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			color: #fff;
+			font-size: 12px;
+			background-color: $speakhi_blue;
+			@extend %speakhi_ffnum;
+			span {
+				display: inline-block;
+				@include skewSet(30deg, 0);
+			}
+		}
+		hr {
+			position: absolute;
+			top: 30px;
+			margin: 0;
+			z-index: 0;
+		}
+	}
+	h3 {
+		display: block;
+		margin: 10px auto;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 100;
+		color: $speakhi_gray95;
+	}
+	strong {
+		font-weight: 100;
+	}
+}
+.open-list {
+	position: relative;
+	height: 360px;
+	margin-top: 60px;
+
+	li  {
+		position: relative;
+		float: right;
+		top: 55px;
+		z-index: 1;
+		width: 500px;
+		height: 360px;
+		display: inline-block;
+		cursor: pointer;
+		@include opacitySet(.5);
+
+		img.test {
+			display: inline-block;
+			box-shadow: 0 0 10px $speakhi_graybf;
+
+			-webkit-box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 75%,rgba(250,250,250,0.1),rgba(250,250,250,0.3));
+			box-reflect: below 0 -linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 75%,rgba(250,250,250,0.1),rgba(250,250,250,0.3));
+		}
+		&:first-child {
+			float: left;
+		}
+		img.icon-player {
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: 3;
+			margin-left: -40px;
+			margin-top: -40px;
+			width: 80px;
+			height: 80px;
+			box-shadow: none;
+		}
+	}
+}
+.adv-list {
+	margin-top: 60px;
+	li {
+		float: left;
+		display: inline-block;
+		width: 33.33%;
+		*width: 32.3%;
+		margin-top: 20px;
+		text-align: center;
+
+		img {
+			width: 90px;
+			height: 100px;
+		}
+		h2 {
+			font-size: 16px;
+			color: $speakhi_gray62;
+			font-weight:  100;
+			margin-top: 10px;
+		}
+		h3 {
+			margin: 10px auto;
+			font-size: 14px;
+			color: $speakhi_graybf;
+		}
+		label {
+			font-size: 12px;
+			color: $speakhi_graybf;
+			@extend %speakhi_ffnum;
+		}
+	}
+	.adv01:hover {
+		animation: advAni01 .3s;
+	}
+	@keyframes advAni01 {
+		50% {
+			transform: skewX(-20deg);
+		}
+		100% {
+			transform: skewX(0deg);
+		}
+	}
+	.adv02:hover {
+		animation: advAni02 .3s;
+	}
+	@keyframes advAni02 {
+		30% {
+			transform: rotateX(40deg);
+		}
+		100% {
+			transform: rotateX(0deg);
+		}
+	}
+	.adv03:hover {
+		animation: advAni03 .3s;
+	}
+	@keyframes advAni03 {
+		50% {
+			transform: scale(1.1);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+	.adv04:hover {
+		animation: advAni04 .3s;
+	}
+	@keyframes advAni04 {
+		33% {
+			transform: rotate(-20deg);
+		}
+		67% {
+			transform: rotate(20deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+	.adv05:hover {
+		animation: advAni05 .3s;
+	}
+	@keyframes advAni05 {
+		50% {
+			transform: rotateY(180deg);
+		}
+		100% {
+			transform: rotateY(0deg);
+		}
+	}
+	.adv06:hover {
+		animation: advAni06 .3s;
+	}
+	@keyframes advAni06 {
+		50% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+}
+.star-info {
+	margin: 50px 0 15px 300px;
+	p {
+		height: 40px;
+		line-height: 20px;
+		text-align: left;
+		font-size: 14px;
+		color: $speakhi_gray62;
+		b {
+			font-size: 18px;
+			font-weight: 100;
+			vertical-align: middle;
+		}
+		span {
+			margin-right: 15px;
+			vertical-align: middle;
+			font-size: 20px;
+			color: $speakhi_yellow;
+		}
+	}
+}
+.cur-star {
+	position: relative;
+	float: left;
+	top: 30px;
+	width: 272px;
+	height: 362px;
+	padding-bottom: 30px;
+	display: inline-block;
+	border-bottom: 1px solid $speakhi_graye0;
+	img {
+		width: 260px;
+		height:350px;
+		border: 6px solid $speakhi_blue;
+	}
+	div {
+		visibility: hidden;
+	}
+}
+.star-list-wrap {
+	position: relative;
+	margin-left: 290px;
+	overflow: hidden;
+	height: 290px;
+}
+.star-list {
+	position: relative;
+	width: 1000%;
+	height: 280px;
+	margin: 5px auto;
+
+	li {
+		float: left;
+		display: inline-block;
+		width: 18%;
+		width: 200px;
+		width: 180px;
+		margin: 0 40px 0 10px;
+		text-align: center;
+		cursor: pointer;
+		@include opacitySet(.6);
+
+		&:hover {
+			box-shadow: 0 0 10px $speakhi_graybf;
+			@extend %transition;
+			@include opacitySet(1);
+		}
+
+		img {
+			width: 200px;
+			height: 222px;
+			width: 180px;
+			height: 250px;
+		}
+		div {
+			height: 30px;
+			line-height: 30px;
+			font-size: 14px;
+			text-align: center;
+			color: $speakhi_gray62;
+		}
+
+		&.active {
+			position: relative;
+			top: -130px;
+			width: 272px;
+			margin-left: 0;
+			border-bottom: 1px solid $speakhi_graye0;
+			cursor: default;
+
+			&:hover {
+				box-shadow: none;
+			}
+
+			img {
+				width: 260px;
+				height: 340px;
+				border: 6px solid $speakhi_blue;
+			}
+			div {
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.banner-ani img {
+		left: 85%;
+		@keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+		@-webkit-keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+	}
+	.banner-ani p {
+		left: 20%;
+		font-size: 300%;
+		@keyframes slideText
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 20%;
+			}
+		}
+		@-webkit-keyframes slideText
+		{
+			from {
+				left: -100%;
+			}
+			to {
+				left: 20%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1024px) {
+	.banner-ani-r p,
+	.banner-ani p {
+		font-size: 200%;
+	}
+	.banner-ani img,
+	.banner-ani-r img {
+		bottom: 120px;
+	}
+	.banner-ani img {
+		left: 85%;
+		@keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+		@-webkit-keyframes slideImg
+		{
+			from {
+				left: 200%;
+			}
+			to {
+				left: 85%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 820px) {
+	.adv-list li {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.banner-ani-r p,
+	.banner-ani p {
+		font-size: 160%;
+	}
+	.banner-ani img,
+	.banner-ani-r img {
+		bottom: 120px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.banner {display: none;}
+	.mBanner {display: block;}
+	.banner-ani-r p,
+	.banner-ani p {
+		font-size: 120%;
+	}
+	.banner-ani p {
+		left: 10%;
+		animation-name: none;
+	}
+	.banner-ani-r p {
+		left: 75%;
+	}
+	.banner-ani-r p.p1,
+	.banner-ani p.p2 {margin-left: 30px;}
+}
+@media screen and (max-width: 480px) {
+	.open-list {
+		height:160px;
+		li {
+			width: 200px;
+			height: 160px;
+			img.icon-player {
+				width: 40px;
+				height: 40px;
+				margin-left: -20px;
+				margin-top: -20px;
+			}
+		}
+	}
+	.adv-list li {
+		width: 100%;
+		margin: 20px 0;
+	}
+	.star-stu {
+		display: none;
+	}
+}
+.open-list {
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* speakhi index style
+/* student voice style img:大：255*532 小：220*460
+/**********************************************************/
+.sVoice-list {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px auto;
+    
+    .prevArrowImg,
+    .nextArrowImg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5%;
+        height: 460px;
+        padding: 50px 0;
+        background-color: $speakhi_white;
+        z-index: 1;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            max-width: 30px;
+            vertical-align: middle;
+            margin: 200px auto;
+            display: block;
+        }
+    }
+    .nextArrowImg {
+        right: 0 !important;
+        left: initial;
+    }
+    ul {
+        position: relative;
+        left: 5%;
+        top: 0;
+        width: 100%;
+        height: 460px;
+        margin: 0 auto;
+        padding: 50px 0;
+        z-index: 0;
+
+        li {
+            float: left;
+            display: inline-block;
+            width: 220px;
+            height: 460px;
+            margin: 0 30px;
+            -webkit-animation: scaleVoiceBack .6s forwards;
+            animation: scaleVoiceBack .6s forwards;
+            &:hover {
+                -webkit-animation: scaleVoice .3s forwards;
+                animation: scaleVoice .3s forwards;
+            }
+        }
+        @keyframes scaleVoiceBack
+        {
+            from {
+                transform:scale(1.2);
+                -ms-transform:scale(1.2); /* IE 9 */
+                -webkit-transform:scale(1.2); /* Safari and Chrome */
+            }
+            to {
+                transform:scale(1);
+                -ms-transform:scale(1); /* IE 9 */
+                -webkit-transform:scale(1); /* Safari and Chrome */
+            }
+        }
+        @-webkit-keyframes scaleVoiceBack
+        {
+            from {
+                transform:scale(1.2);
+                -ms-transform:scale(1.2); /* IE 9 */
+                -webkit-transform:scale(1.2); /* Safari and Chrome */
+            }
+            to {
+                transform:scale(1);
+                -ms-transform:scale(1); /* IE 9 */
+                -webkit-transform:scale(1); /* Safari and Chrome */
+            }
+        }
+        @keyframes scaleVoice
+        {
+            from {
+                transform:scale(1);
+                -ms-transform:scale(1); /* IE 9 */
+                -webkit-transform:scale(1); /* Safari and Chrome */
+            }
+            to {
+                transform:scale(1.2);
+                -ms-transform:scale(1.2); /* IE 9 */
+                -webkit-transform:scale(1.2); /* Safari and Chrome */
+            }
+        }
+        @-webkit-keyframes scaleVoice
+        {
+            from {
+                transform:scale(1);
+                -ms-transform:scale(1); /* IE 9 */
+                -webkit-transform:scale(1); /* Safari and Chrome */
+            }
+            to {
+                transform:scale(1.2);
+                -ms-transform:scale(1.2); /* IE 9 */
+                -webkit-transform:scale(1.2); /* Safari and Chrome */
+            }
+        }
+        
+        img {
+            width: 220px;
+            height: 460px;
+        }
+    }
+}

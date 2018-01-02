@@ -1,0 +1,3009 @@
+/* SCSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* hwj base style
+/* base style
+/******************************************************/
+/* reset part */
+* {
+    margin:0 auto;
+    padding: 0;
+    box-shadow: 0px 0px 2px $speakhi_red;
+    box-shadow: none;
+    @extend %speakhi_ffyahei;
+}
+
+body {
+    background-color: $speakhi_back;
+    _background-attachment: fixed;
+    _background-image: url(about:blank);
+    font-size: 16px;
+    @extend %speakhi_ffyahei;
+}
+
+img {
+    width: 100%;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+a:-webkit-any-link {
+    color: none;
+    display: inline-block;
+}
+
+a:focus,
+a:hover {
+    outline: none;
+	text-decoration: none;
+}
+
+object {
+    width: 100%;
+    max-width: 100%;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+.clear-l {
+	clear: left;
+}
+.clear-r {
+	clear: right;
+}
+.clearfix:after {
+    height: 0;
+    line-height: 0;
+    content: "";
+    font-size: 0;
+    visibility: hidden;
+    clear: both;
+    display: block;
+}
+
+ul,
+ol,
+input,
+button,
+select {
+    outline: none;
+    list-style: none;
+}
+ul,
+ol {
+	margin: 0;
+}
+
+input,
+textarea {
+    @include radiusSet($commonRadius);
+    border: 1px solid $speakhi_graye0;
+    color: $speakhi_gray62;
+    box-sizing: content-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="reset"],
+textarea {
+    -webkit-appearance: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $speakhi_white inset;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: $speakhi_gray95;
+}
+
+button {
+    @include radiusSet($commonRadius);
+    border: 0px transparent;
+    color: $speakhi_white;
+    text-align: center;
+    cursor: pointer;
+    @extend %speakhi_ffsimsun;
+    font-size: 14px;
+    font-weight: 900;
+    background-color: $speakhi_blue;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+a.inactive,
+button.inactive {
+    cursor: default;
+    background-color: $speakhi_graybf !important;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+}
+
+label {
+    font-weight: normal;
+}
+
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    visibility: hidden !important;
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* self adaption */
+.self-adaption {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+.sa-mid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display:block;
+}
+.sa-pct30 {
+    width: 30%;
+    padding-bottom: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+.sa-pct80 {
+    width: 80%;
+    padding-bottom: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.sa-pct60 {
+    width: 60%;
+    padding-bottom: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.sa-pct40 {
+    width: 40%;
+    padding-bottom: 40%;
+    margin: 0 30px;
+}
+.sa-pct56 {
+    width: 100%;
+    padding-bottom: 56%;
+}
+.sa-pct100 {
+    width: 100%;
+    padding-bottom: 100%;
+}
+.self-adaption img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* -- about btn -- */
+
+.gt-btn {
+    width: 240px;
+    height: 75px;
+    line-height: 75px;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.sm-btn {
+    width: 160px;
+    height: 44px;
+    line-height: 44px;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.link-btn {
+    text-align: center;
+    cursor: pointer;
+    @extend %speakhi_ffsimsun;
+    font-size: 14px;
+    font-weight: 900;
+    @include radiusSet($commonRadius);
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.link-md-btn {
+    width: 85px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.link-lg-btn {
+    width: 120px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.link-sm-btn {
+    width: 85px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.link-xs-btn {
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+}
+
+a.blue-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_blue, $isLightenHover);
+    text-decoration: none;
+}
+
+a.blue-text:hover {
+    color: $speakhi_blue;
+    text-decoration: none;
+}
+
+a.green-blue-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_green, $isLightenHover);
+    text-decoration: none;
+}
+button.green-bg:hover,
+a.green-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_green, $isLightenHover);
+    text-decoration: none;
+}
+
+a.dark-green-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_green, $isLightenHover);
+    text-decoration: none;
+}
+
+a.light-green-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_green, $isLightenHover);
+    text-decoration: none;
+}
+
+a.yellow-bg:hover {
+    color: $speakhi_white;
+    background-color: isLightenHover($speakhi_yellow, $isLightenHover);
+    text-decoration: none;
+}
+
+a.dark-gray-bg:hover {
+    color: $speakhi_white;
+    text-decoration: none;
+}
+
+a.light-gray-text:hover {
+    border: 1px solid isLightenHover($speakhi_gray95, $isLightenHover);
+    text-decoration: none;
+}
+
+a.dark-gray-br:hover {
+    border: 1px solid isLightenHover($speakhi_gray95, $isLightenHover);
+    text-decoration: none;
+}
+
+a.link-lg-btn,
+a.link-md-btn,
+a.link-sm-btn,
+a.link-xs-btn {
+    display: inline-block;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.pull-l {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.pull-m {
+    float: left;
+    *margin-left: 5%;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.pull-r {
+    float: right;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.v-align {
+    vertical-align: middle;
+}
+
+/* -- about clear -- */
+
+.cursor-clear {
+    cursor: default;
+}
+
+.box-clear {
+    margin: 0;
+    padding: 0;
+}
+
+.border-clear {
+    border: none;
+}
+
+.margin-clear {
+    margin: 0;
+}
+
+.padding-clear {
+    padding: 0;
+}
+
+.padding-r-clear {
+    padding-right: 0;
+}
+
+.radius-clear {
+    @include radiusSet(0);
+}
+
+/* -- about bg -- */
+
+.white-bg {
+    background-color: $speakhi_white;
+}
+
+.white-bg-2 {
+    background-color: $speakhi_back;
+}
+
+.blue-bg {
+    background-color: $speakhi_blue;
+}
+
+.light-blue-bg-1 {
+    background-color: $speakhi_blue;
+}
+.light-blue-bg-2,
+.green-blue-bg {
+    background-color: lighten($speakhi_blue, $objLighten);
+}
+
+.dark-blue-bg {
+    background-color: darken($speakhi_blue, $objDarken);
+}
+
+.green-bg,
+.green-bg2 {
+    background-color: $speakhi_green;
+}
+
+.dark-green-bg {
+    background-color: darken($speakhi_green, $objDarken);
+}
+
+.light-green-bg {
+    background-color: lighten($speakhi_green, $objLighten);
+}
+
+.yellow-bg {
+    background-color: $speakhi_yellow;
+}
+
+.gray-bg {
+    background-color: $speakhi_graybf;
+}
+.dark-gray-bg {
+    background-color: darken($speakhi_graybf, $objDarken);
+}
+.light-gray-bg {
+    background-color: lighten($speakhi_graybf, $objLighten);
+}
+
+.gray-bg2 {
+    background-color: $speakhi_back;
+}
+
+.dark-bg {
+    background-color: $speakhi_graye0;
+}
+
+.black-bg {
+    background-color: $speakhi_black;
+}
+
+.black-s-bg {
+    background-color: $speakhi_gray31;
+}
+
+/* -- about br -- */
+
+.blue-br {
+    border: 1px solid $speakhi_blue;
+}
+
+.dark-blue-br {
+    border: 1px solid darken($speakhi_blue, $objDarken);
+}
+
+.list-item-gray-br li {
+    border: 1px solid $speakhi_graye0;
+}
+
+.gray-br {
+    border: 1px solid $speakhi_graye0;
+}
+
+.dark-gray-br {
+    border: 1px solid darken($speakhi_graye0, $objDarken);
+}
+
+/* -- about line -- */
+
+.gray-line-h {
+    width: auto;
+    height: 1px;
+    border: none;
+    background-color: $speakhi_graye0;
+}
+
+.gray-dashed-line-h {
+    width: 100%;
+    height: 1px;
+    border: 1px dashed $speakhi_graye0;
+}
+
+.green-line-h {
+    width: auto;
+    height: 1px;
+    border: none;
+    background-color: $speakhi_green;
+}
+
+.dark-blue-line-h {
+    width: auto;
+    height: 2px;
+    border: none;
+    background-color: $speakhi_blue;
+}
+
+/* -- about text -- */
+
+.text-l {
+    text-align: left;
+}
+
+.text-m {
+    text-align: center;
+}
+
+.text-r {
+    text-align: right;
+}
+
+.white-text {
+    color: $speakhi_white;
+}
+
+.gray-text,
+.light-gray-text {
+    color: $speakhi_gray95;
+}
+
+.lightgray-text {
+    color: $speakhi_graybf;
+}
+
+.dark-text {
+    color: $speakhi_gray62;
+}
+
+.red,
+.red-text {
+    color: $speakhi_red;
+}
+
+.blue-text {
+    color: $speakhi_blue;
+}
+
+.green,
+.green-text {
+    color: $speakhi_green;
+}
+
+.dark-green-text {
+    color: darken($speakhi_green, $objDarken);
+}
+
+.dark-blue-text {
+    color: darken($speakhi_blue, $objDarken);
+}
+
+.yellow-text {
+    color: $speakhi_yellow;
+}
+
+.title-text {
+    color: $speakhi_gray62;
+}
+
+.content-text {
+    color: $speakhi_gray62;
+}
+
+.light-dark-text {
+    color: $speakhi_gray95;
+}
+
+.black-text {
+    color: $speakhi_black;
+}
+
+.black-text-s {
+    color: $speakhi_gray31;
+}
+
+.fs9 {
+    font-size: 9px;
+}
+
+.fs12 {
+    font-size: 12px;
+}
+
+.fs14 {
+    font-size: 14px;
+}
+
+.fs16 {
+    font-size: 16px;
+}
+
+.fs20 {
+    font-size: 20px;
+}
+.fs24 {
+    font-size: 24px;
+}
+.fs25 {
+    font-size: 25px;
+}
+
+.ff-s {
+    @extend %speakhi_ffyahei;
+}
+
+.ff-p {
+    @extend %speakhi_ffsimsun;
+}
+
+.fw-clear {
+	font-weight: 300;
+}
+
+/* -- about width & height -- */
+
+.wa {
+    width: auto;
+}
+
+.ha {
+    height: auto;
+}
+
+.ww {
+    width: 100%;
+    max-width: 100%;
+}
+
+.hw {
+    height: 100%;
+}
+
+.class-imgs {
+    max-height: 180px;
+    height: auto !important;
+    height: 180px;
+}
+
+.lhw {
+    line-height: 100%;
+}
+
+.w-half {
+    width: 50%;
+}
+
+.h-half {
+    height: 50%;
+}
+
+.pct-w40 {
+    width: 40%;
+}
+.pct-w80 {
+    width: 80%;
+}
+.pct-w15 {
+    width: 15%;
+}
+.pct-w20 {
+    width: 20% !important;
+}
+.pct-w25 {
+    width: 25%;
+}
+.pct-w60 {
+    width: 60%;
+}
+.pct-w70 {
+    width: 70%;
+}
+.max-width {
+    width: 1200px;
+    width: 64.206%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row-clear {
+    margin: 0 auto;
+}
+
+/* -- about radius -- */
+
+.rad3 {
+    @include radiusSet($commonRadius);
+}
+
+.radl3 {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.radr3 {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.radt3 {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.radb3 {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* -- about position -- */
+
+.p-relative {
+    position: relative;
+    top: 0;
+    left: 0;
+    zoom: 1;
+}
+
+.p-relative-2 {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+.p-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.p-absolute-2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+
+/* -- about display -- */
+
+.show-table {
+    display: table;
+    ;display: block;
+    ;margin-top: 30px;
+}
+
+.show-table-cell {
+    display: table-cell;
+    *display: inline-block;
+}
+
+.show-ib {
+    display: inline-block !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+/* -- overflow -- */
+
+.ovh {
+    overflow: hidden !important;
+}
+
+.ovv {
+    overflow: visible !important;
+}
+
+.visih {
+    visibility: hidden;
+}
+
+.visiv {
+    visibility: visible;
+}
+
+/* -- table -- */
+.hwj-table,
+.hwj-dark-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    word-spacing: 0;
+}
+
+.hwj-table {
+    border: 1px solid $speakhi_graye0;
+}
+
+.hwj-dark-table {
+    border: 1px solid $speakhi_gray31;
+}
+
+.hwj-table tr {
+    border: 1px solid $speakhi_graye0;
+}
+
+.hwj-table td {
+    padding: 10px;
+    border: 1px solid $speakhi_graye0;
+}
+
+.hwj-dark-table tr {
+    border: 1px solid $speakhi_gray31;
+}
+
+.hwj-dark-table td {
+    padding: 10px;
+    border: 1px solid $speakhi_gray31;
+}
+
+/* -- gray image filter -- */
+
+.gray-filter {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray !important;
+}
+
+.gray-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:2 ;
+    width: 100%;
+    height: 100%;
+    background-color: $speakhi_black;
+    -webkit-opacity: .6;
+    -moz-opacity: .6;
+    -ms-opacity: .6;
+    -o-opacity: .6;
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+
+/* -- other -- */
+.z1 {
+    zoom: 1;
+}
+.bl-br {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 49.5%;
+    background-color: $speakhi_graye0;
+}
+.br-br {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 49.5%;
+    background-color: $speakhi_graye0;
+}
+
+.maxmp {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+img.photo-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.cursor-p {
+    cursor: pointer;
+}
+
+.resize-v {
+    resize: vertical;
+}
+
+.hint-icon {
+    background: url(../images/hint.png) no-repeat 98% 13px;
+}
+
+.margin-lr-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12, {
+    *padding: 0 5px;
+}
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12, {
+    *padding: 0;
+}
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12, {
+    *padding: 0;
+}
+
+/* -- verify part -- */
+.btn-disabled {
+    background-color: $speakhi_graybf;
+    cursor: default;
+    color: $speakhi_white;
+}
+
+/*-----------banner-----------*/
+.banner-mobile,
+.banner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 33.33%;
+    padding-bottom: 27%;
+    overflow: hidden;
+    z-index: 1;
+}
+.banner-mobile ul,
+.banner ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $speakhi_gray31;
+}
+.banner-mobile ul li,
+.banner ul li {
+    display: none;
+    position: absolute;
+    *position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 1;
+}
+
+.banner-mobile {
+    padding-bottom: 0;
+}
+.banner-mobile ul li {
+    position: absolute;
+    width: 100%;
+}
+.banner-mobile ul li img {
+    width: 100%;
+}
+.banner-mobile ul {
+    position: relative;
+    width:100%;
+}
+
+.prev,
+.next {
+    position: absolute;
+    width: 64px;
+    width: 3%;
+    padding-bottom: 4%;
+    z-index: 5;
+    display: none;
+    overflow: visible;
+}
+.prev img,
+.next img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-style: none;
+}
+.prev a:hover,
+.next a:hover {
+    cursor: pointer;
+}
+.prev {
+    left: 10.897%;
+}
+.next {
+    left: 84.58%;
+}
+.banner-info {
+    position: absolute;
+    top: 12%;
+    left: 28%;
+    width: 60%;
+    height: auto;
+    text-align: left;
+    z-index: 5;
+}
+.banner-info img,
+.banner-description,
+.banner-info button {
+    margin-bottom: 4%;
+}
+.banner-info img {
+    width: 26%;
+    height: auto;
+}
+.banner-description {
+    width: 80%;
+    max-width: 520px;
+    height: 90px;
+    height: auto;
+    line-height: 30px;
+    @include radiusSet($commonRadius);
+    color: $speakhi_graye0;
+    margin: 0 0 30px;
+    padding: 5px 8px;
+    font-size: 1em;
+    @extend %speakhi_ffyahei;
+    background: url(../images/black_30_bg.png) repeat;
+}
+/* -- banner for mobile */
+.mBanner {
+    @include autoHeight(150px);
+    .swiper-lazy-preloader {
+        vertical-align: middle;
+        @include autoHeight(150px);
+    }
+}
+.mBanner,
+.banner-mobile {
+    display: none;
+    background-color: $speakhi_gray31;
+}
+.gt-mobile-btn {
+    width: 94%;
+    height: 60px;
+    line-height: 60px;
+    margin: 3%;
+    font-size: 1.6em;
+    @extend %speakhi_ffsimsun;
+}
+a.gt-btn {
+    @include radiusSet($commonRadius);
+    border: 0px transparent;
+    color: $speakhi_white;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 900;
+    @extend %speakhi_ffyahei;
+    display: inline-block;
+}
+a.sm-btn {
+    @include radiusSet($commonRadius);
+    border: 0px transparent;
+    color: $speakhi_white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    @extend %speakhi_ffyahei;
+    display: inline-block;
+}
+.mobile-btn {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: $speakhi_gray31;
+}
+/* banner for mobile -- */
+
+/* -- full mask and pop up style -- */
+.loading-mask,
+.full-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: $speakhi_black;
+    filter: alpha(opacity=60);
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    background: rgba($speakhi_black,.6);
+    display: none;
+}
+.loading-mask {
+    z-index: 10000;
+}
+.full-tmask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+}
+.login-pop {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    height: auto;
+    margin-left: -225px;
+    margin-top: -250px;
+    background-color: $speakhi_white;
+    @include radiusSet($commonRadius);
+    box-shadow: 0px 0px 12px $speakhi_gray31;
+    z-index: 1000;
+    display: none;
+}
+.login-pop .lp-main {
+    width: 80%;
+    margin: 40px auto;
+}
+.regis-pop .hwj-subtitle-wrap,
+.login-pop .hwj-subtitle-wrap {
+    position: relative;
+    height: 120px;
+}
+.regis-pop .subtitle-name,
+.login-pop .subtitle-name {
+    *float: left;
+    *margin: 0 auto 0 30px;
+    text-align: center;
+    height: 120px;
+    line-height: 120px;
+}
+.regis-pop .subtitle-img-l,
+.login-pop .subtitle-img-l {
+    float: left;
+    margin: 52px 0 0 10px;
+    visibility: hidden;
+}
+.regis-pop .subtitle-img-r,
+.login-pop .subtitle-img-r {
+    float: right;
+    margin: 36px 10px 0 0;
+    visibility: hidden;
+}
+.login-to-regis {
+    width: 100%;
+    text-align: center;
+    color: $speakhi_gray95;
+    font-size: 12px;
+}
+.login-to-regis a {
+    color: $speakhi_blue;
+}
+.regis-pop .close-icon,
+.login-pop .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    background: url(../images/close-icon.png) no-repeat;
+}
+.regis-pop  {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    height: auto;
+    margin-left: -225px;
+    margin-top: -257px;
+    background-color: $speakhi_white;
+    @include radiusSet($commonRadius);
+    box-shadow: 0px 0px 12px $speakhi_gray31;
+    z-index: 1000;
+    display: none;
+}
+.regis-pop .hwj-interaction {
+    margin: 0 auto 25px;
+}
+.regis-pop .hwj-item-wrap {
+    width: 80%;
+    margin: 40px auto 20px;
+    padding: 0;
+}
+.regis-protocol {
+    text-align: center;
+    color: $speakhi_gray95;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+.regis-to-login a,
+.regis-pop #hwj-protocol {
+    color: $speakhi_blue;
+    font-size: 12px;
+}
+.regis-to-login {
+    color: $speakhi_gray95;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* common pop style */
+.common-pop {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    height: auto;
+    margin-left: -225px;
+    margin-top: -257px;
+    background-color: $speakhi_white;
+    @include radiusSet($commonRadius);
+    box-shadow: 0px 0px 12px $speakhi_gray31;
+    z-index: 1000;
+    display: none;
+}
+.common-pop .hwj-subtitle-wrap {
+    position: relative;
+    height: 120px;
+    width: 100%;
+    text-align: center;
+    background-color: $speakhi_blue;
+}
+.common-pop .subtitle-name {
+    *float: left;
+    *margin: 0 auto 0 30px;
+    text-align: center;
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    margin: auto;
+    *margin-left: -8%;
+    font-size: 1.6em;
+    @extend %speakhi_ffyahei;
+    color: $speakhi_white;
+}
+.common-pop .subtitle-img-l,
+.common-pop .subtitle-img-r {
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+.common-pop .subtitle-img-l {
+    float: left;
+    margin: 52px 0 0 10px;
+}
+.common-pop .subtitle-img-r {
+    float: right;
+    margin: 36px 10px 0 0;
+}
+#tpsw-pop .subtitle-img-l,
+#tpsw-pop .subtitle-img-r {
+    display: none;
+}
+.common-pop .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    background: url(../images/close-icon.png) no-repeat;
+}
+.common-pop .lp-main {
+    width: 80%;
+    margin: 40px auto;
+}
+.common-pop .hwj-interaction {
+    width: 100%;
+    height: 44px;
+    margin: 0 auto 30px;
+}
+#tpsw-pop .hwj-interaction span,
+#psw-pop .hwj-interaction span {
+    margin-left: 35px;
+}
+.common-pop .hwj-interaction-text-p {
+  width: 355px;
+  height: 42px;
+  margin-bottom: 30px;
+  padding: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  color: #626262;
+}
+.common-pop .hwj-interaction-innertext {
+  width: 230px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+  border: 0px transparent;
+  padding: 12px 8px;
+}
+.common-pop .hwj-interaction-s {
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    color: $speakhi_gray62;
+    margin: 25px auto;
+}
+.common-pop .hwj-interaction-text,
+.common-pop .hwj-interaction-password {
+  width: 340px;
+  width: 94%;
+  height: 18px;
+  line-height: 18px;
+  padding: 12px 8px;
+  font-size: 14px;
+}
+.common-pop .hwj-interaction-text-s,
+.common-pop .hwj-interaction-password-s {
+    width: 86.5%;
+    height: 18px;
+    line-height: 18px;
+    padding: 12px 8px;
+    font-size: 14px;
+    box-sizing: content-box;
+}
+.common-pop .psd-icon {
+    padding-left: 10%;
+    background: url(../images/password.png) no-repeat 10px 12px;
+}
+.common-pop .name-icon {
+  padding-left: 10%;
+  background: url(../images/user.png) no-repeat 10px 12px;
+}
+.common-pop .hwj-interaction-sm-button {
+  width: 28%;
+  width: 100px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 2px;
+}
+.common-pop .hwj-interaction-lg-button {
+    width: 99%;
+    height: 44px;
+    line-height: 44px;
+    margin-bottom: 10px;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#tpsw-pop .hwj-interaction-lg-button {
+    @extend %speakhi_ffyahei;
+    font-size: 18px;
+}
+
+// mobile nav
+.mnav-panel {
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	right: 0;
+	background-color: $speakhi_white;
+	background-color: lighten($speakhi_graye0,$objLighten);
+	text-align: center;
+
+	ul {
+		width: 100%;
+		@include radiusSet(3px);
+		background-color: $speakhi_white;
+
+		li {
+			height: 45px;
+			line-height: 45px;
+			@include radiusSet(3px);
+			border-bottom: 1px solid lighten($speakhi_graye0,$objLighten);
+
+			a {
+				width: 100%;
+				cursor: pointer;
+				color: $speakhi_gray62;
+
+				&:hover {
+					color: $speakhi_white;
+					background-color: $speakhi_blue;
+				}
+			}
+		}
+	}
+	.mnav-panel-btn {
+		@include radiusSet(3px);
+		margin: 10px auto;
+		a {
+			width: 100px;
+			margin: 10px 5px;
+			max-width: 100px;
+			font-size: 14px;
+			@include radiusSet(3px);
+		}
+	}
+}
+
+/* pop up box style */
+.popup-wrap {
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    text-align: center;
+    background-color: $speakhi_white;
+    @include radiusSet($commonRadius);
+    box-shadow: 0px 0px 12px $speakhi_gray31;
+    z-index: 1000;
+    display: none;
+}
+.popup-header {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    @extend %speakhi_ffyahei;
+    font-size: 14px;
+    color: $speakhi_white;
+    background-color: $speakhi_blue;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.popup-tips {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 44px;
+    margin-left: 10px;
+}
+.popup-closer {
+    float: right;
+    overflow: hidden;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("../images/close-icon.png") no-repeat center center;
+    margin: 9px 10px 9px 0;
+    cursor: pointer;
+}
+.popup-body {
+    width: 98%;
+    height: auto;
+    margin: 20px 1%;
+}
+.popup-content {
+    width: auto;
+    line-height: 24px;
+    text-align: center;
+    @extend %speakhi_ffyahei;
+    font-size: 14px;
+    color: $speakhi_gray31;
+}
+.popup-sub-content {
+    width: auto;
+    line-height: 24px;
+    text-align: center;
+    @extend %speakhi_ffyahei;
+    font-size: 12px;
+    color: $speakhi_gray62;
+}
+.popup-icon {
+    width: 32px;
+    height: 32px;
+    margin: auto 10px auto 0;
+}
+.popup-btngroup {
+    text-align: center;
+    margin: 15px auto;
+}
+.popup-btngroup button {
+    margin: 0 10px;
+}
+#comments .popup-btngroup button {
+    @extend %speakhi_ffyahei;
+    font-size: 14px;
+}
+.popup-confirm {
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    background-color: darnken($speakhi_blue,$objDarken);
+}
+.popup-cancel {
+    width: 63px;
+    height: 28px;
+    line-height: 28px;
+    color: $speakhi_gray62;
+    border: solid 1px $speakhi_graybf;
+    background-color: $speakhi_back;
+}
+
+/* -- common style */
+
+/*-------------- online part -----------------*/
+
+.item-tag-1,
+.item-tag-2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    color: $speakhi_white;
+    text-align: center;
+    font-size: 0.7em;
+    @extend %speakhi_ffyahei;
+}
+
+.item-tag-1:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border: 14px solid $speakhi_yellow;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.item-tag-2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border: 14px solid $speakhi_blue;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+/*-------------- top ---------------*/
+.bb-shadow {
+	box-shadow: 0 1px 2px $speakhi_graye0;
+	*border-bottom: 1px solid $speakhi_graye0;
+	border-bottom: 1px\9;
+	border-bottom-style: solid\9;
+	border-bottom-color: #e0e0e0\9;
+}
+.top {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 100px;
+    background-color: $speakhi_gray51;
+}
+.top-fixed {
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    z-index: 300;
+}
+.separation-line {
+    margin: 0 5px;
+}
+.top-wrap {
+    width: 64.206%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+
+    transition: width .3s;
+    -webkit-transition: width .3s;
+}
+
+.top-hotline {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+.top-hotline img {
+    width: 22px;
+    height: 22px;
+    margin: 9px 5px 9px 20px;
+}
+
+.company-group,
+.top-hotline span,
+.top-contact span {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    color: $speakhi_white;
+    font-size: 0.75em;
+    a {
+        color: $speakhi_white;
+    }
+}
+.top-hotline .top-hotline-info {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    padding: 4px 0;
+
+    span {
+        height: 16px;
+        line-height: 16px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 12px;
+        display: block;
+    }
+}
+.top-hotline span.text-lg-number {
+    font-size: 1em;
+    vertical-align: middle;
+    @extend %speakhi_ffnum;
+}
+
+.top-contact {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+
+    display: none;
+}
+
+.v-icon {
+    width: 22px;
+    height: 22px;
+    margin: 9px auto;
+}
+
+.v-tag {
+    width: 9px;
+    height: 5px;
+    margin: 16.5px 10px;
+}
+
+.top-contact-item:hover {
+    cursor: pointer;
+}
+
+
+/* -- top mobile */
+
+.top-mobile-wrap {
+    width: 94%;
+    height: 64px;
+    line-height: 64px;
+    margin: 0 auto;
+    display: none;
+}
+
+.top-mobile-ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    z-index: 5;
+    display: none;
+    background-color: $speakhi_gray31;
+}
+
+.top-mobile-ul li {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: $speakhi_graye0;
+    font-size: 14px;
+}
+
+.top-mobile-ul li.dark-line-h {
+    height: 1px;
+    margin: 5px auto;
+    color: $speakhi_gray62;
+}
+
+.top-mobile-ul span {
+    line-height: 38px;
+    margin-left: 5px;
+}
+
+.top-mobile {
+    position: relative;
+    width: 37px;
+    height: 31px;
+    margin: 16.5px auto;
+    background: url(../images/top_more_mobile.png);
+    display: none;
+}
+
+
+/* top mobile -- */
+
+
+/*-------------- header ---------------*/
+
+
+/* -- header style */
+.header-wrap {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 300;
+	width: 100%;
+	height: 100px;
+	background-color: $speakhi_white;
+}
+.header-fixed {
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    z-index: 300;
+}
+
+.header {
+    width: 64.206%;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    width: 14%;
+    width: 160px;
+    height: 100px;
+    margin-right: 4%;
+    line-height: 100px;
+}
+
+.logo img {
+    width: 160px;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.logo-mobile img {
+    width: 70%;
+    height: 36px;
+    margin: 18px auto;
+}
+
+.logo-mobile {
+    width: 160px;
+    height: 78px;
+    line-height: 78px;
+    text-align: left;
+}
+
+.active-nav-item {
+    color: $speakhi_blue;
+}
+
+.header-ul {
+    height: 100px;
+    line-height: 100px;
+
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -o-box-sizing: content-box;
+}
+
+.header-ul li {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    height: 59px;
+    margin: auto 15px;
+    text-align: center;
+    line-height: 59px;
+    font-size: 0.875em;
+    cursor: pointer;
+    color: $speakhi_gray62;
+    @extend %speakhi_ffyahei;
+
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -o-box-sizing: content-box;
+}
+
+.header-ul li a {
+    color: $speakhi_gray62;
+}
+
+/* header */
+
+// nav
+.header-wrap {
+	height: 100px;
+	line-height: 100px;
+}
+.header {
+	height: 100px;
+	.header-ul,
+	.logo {
+		height: 100px;
+		line-height: 100px;
+	}
+}
+.header-ul {
+	li {
+		height: 100px;
+		line-height: 100px;
+		font-size: 1em;
+		&.active-nav-item {
+			border: none;
+			a {
+				color: $speakhi_blue;
+			}
+		}
+		a:hover {
+			color: $speakhi_blue;
+			@extend %transition;
+		}
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+.login-logout {
+    position: relative;
+    right: 28px;
+    height: 100px;
+    line-height: 100px;
+    overflow: visible;
+}
+
+.login-logout-m {
+    width: 169px;
+    width: 40%;
+    max-width: auto;
+    height: 78px;
+    line-height: 78px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.login-logout-m a.regis-btn,
+.login-logout-m a.login-btn {
+    width: 45%;
+}
+
+a.regis-btn,
+a.login-btn {
+    font-weight: 900;
+    @include radiusSet($commonRadius);
+}
+
+.login-btn,
+.regis-btn {
+    width: 55px;
+    max-width: 55px;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 31px;
+    font-size: 12px;
+    @extend %speakhi_ffletter;
+
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+a.regis-btn {
+    color: $speakhi_white;
+    background-color: $speakhi_blue;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+a.login-btn {
+    color: $speakhi_blue;
+    *background-color: #e5eef7\0;
+    background-color: #e5eef7\0;
+    background-color: rgba($speakhi_blue,.2);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.after-login {
+	position: absolute;
+	top: 70px;
+	right: 0;
+	width:auto !important;
+	height: auto;
+	line-height: 40px;
+	padding: 10px 0;
+	z-index: 4;
+	background-color: $speakhi_white;
+}
+.after-m-login {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    height: 120px;
+    line-height: 40px;
+    padding: 5px 0;
+    z-index: 4;
+    text-align: center;
+    background-color: $speakhi_white;
+}
+.after-m-login li a,
+.after-login li a {
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+    @extend %speakhi_ffyahei;
+	font-size: 14px;
+	margin: 5px 0;
+	color: $speakhi_gray62;
+	display: inline-block;
+}
+.after-m-login li a:hover,
+.after-login li a:hover {
+	color: $speakhi_blue;
+}
+.after-m-login,
+.after-login {
+    .icon-pcenter:before {
+        @include iconSet("\e971");
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+    .icon-profile:before {
+        @include iconSet("\e905");
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+    .icon-logout:before {
+        @include iconSet("\ea14");
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+}
+.vip-xs-photo {
+	width: 48px;
+	height: 48px;
+    line-height: 48px;
+    z-index: 2;
+    @include radiusSet(50%);
+}
+.vip-xs-photo-wrap {
+    position: relative;
+    width: auto;
+    height: 48px;
+    padding: 26px 0;
+    line-height: 48px;
+}
+.vip-xs-photo-m-wrap {
+    position: relative;
+    float: right;
+    width: auto;
+    height: 48px;
+    margin-top: 8px;
+    line-height: 48px;
+}
+.login-user-m-info {
+    width: auto;
+    *width: 30%;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    color: $speakhi_white;
+    margin: 11px 6px;
+    display: inline-block;
+}
+.vip-xs-photo-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    z-index: 3;
+}
+.vip-xs-photo-vip {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 48px;
+    height: 20px;
+    z-index: 3;
+}
+.login-user-info {
+    width: auto;
+    *width: 30%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    color: $speakhi_blue;
+    margin: 16px 6px;
+    display: inline-block;
+}
+.login-user-photo {
+    width: 48px;
+    height: 48px;
+    @include radiusSet(50%);
+    display: inline-block;
+}
+.login-nonmobile {
+    display: block;
+}
+.mobile-menu {
+    display: none;
+}
+.dropdown_icon {
+    width: 9px;
+    height: 6px;
+    margin: 4px;
+}
+/* header style -- */
+
+
+/* -- header for mobile */
+
+.header-mobile-ul {
+    position: absolute;
+    top: 128px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    display: none;
+    background-color: $speakhi_gray31;
+}
+
+.header-mobile-ul:before {
+    position: absolute;
+    content: "";
+    top: -20px;
+    right: 3.6%;
+    width: 0;
+    height: 0;
+    border: 10px solid $speakhi_gray31;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+.header-mobile-ul li {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: $speakhi_graye0;
+    font-size: 14px;
+    border-bottom: 1px solid $speakhi_gray62;
+}
+
+.header-mobile-ul li a {
+    color: $speakhi_graye0;
+}
+
+.header-mobile-ul li a:hover {
+    text-decoration: none;
+}
+
+.header-mobile {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    margin: 26px auto;
+    background: url(../images/nav_more_mobile.png);
+    display: none;
+}
+
+/* header for phone -- */
+
+/* speakhi minientry for vip center begin
+/**********************************************************/
+.sh-minientry {
+	position: fixed;
+	_position: absolute;
+	right: 30px;
+	bottom: 30px;
+	z-index: 320;
+
+	ul {
+		width: 40px;
+
+		li {
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 40px;
+			height: 40px;
+			margin-bottom: 1px;
+			background-color: $speakhi_graye0;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $speakhi_yellow;
+			}
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 28px;
+				height: 28px;
+				margin: 6px;
+				text-align: center;
+			}
+			&.sh-feedback,
+			&.sh-services {
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 28px;
+					height: 28px;
+					margin: 7px;
+					z-index: 0;
+					line-height: 16px;
+					font-size: 12px;
+					letter-spacing: 2px;
+					color: $speakhi_white;
+
+					a {
+						color: $speakhi_white;
+					}
+				}
+			}
+			&.goto-top {
+				visibility: hidden;
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+                    width: 28px;
+                    height: 28px;
+                    margin: 7px;
+					z-index: 0;
+					line-height: 14px;
+					font-size: 12px;
+					letter-spacing: 2px;
+					color: $speakhi_white;
+				}
+			}
+			&.sh-qrcode {
+				img.qrcode-white {
+					display: none;
+				}
+				span {
+					display: none;
+					position: absolute;
+					top: -50px;
+					left: -155px;
+					width: 150px;
+					height: 150px;
+					z-index: 0;
+					line-height: 16px;
+					border: 1px solid $speakhi_graye0;
+					background-color: $speakhi_white;
+
+					img {
+						width: 130px;
+						height: 130px;
+						margin: 10px;
+					}
+				}
+			}
+			&.sh-services span,
+			&.goto-top span,
+			&.sh-feedback {
+				display: none;
+			}
+		}
+	}
+}
+
+.sh-minientry .wb_icon,.sh-minientry .center-wb-icon {
+    width: 124px;
+    height: 192px;
+    background-color: #005bac;
+    @include radiusSet(8px);
+    position: relative;
+    left: -130px;
+    top: 40px;
+}
+.sh-minientry .wb_icon:hover{background-color: #005bac;}
+.sh-minientry .wb_icon-close {
+    position: absolute;
+    right: 6px;
+    top: -1px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+.sh-minientry .wb_icon p {
+    text-align: center;
+    color: #fff;
+    font: normal 12px/30px '微软雅黑';
+    padding-top: 12px;
+}
+.sh-minientry .wb_icon img {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    left: 1px;
+    top: 32px;
+}
+.sh-minientry .center-wb-icon,.sh-minientry .center-wb-icon:hover{background-color:#f6ab00}
+.sh-minientry .center-wb-icon img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 6px;
+    top: 28px;
+}
+.sh-minientry .center-wb-icon-p1{
+    text-align: center;
+    color: #fff;
+    font: normal 12px/30px '微软雅黑';
+    padding-top: 10px;
+}
+.sh-minientry .center-wb-icon-p2{
+    text-align: center;
+    color: #fff;
+    font: normal 12px/30px '微软雅黑';
+    position: absolute;bottom: 30px;width:100%;
+    margin: 0;
+}
+.sh-minientry .center-wb-icon-p3{
+    text-align: center;
+    color: #fff;
+    font: normal 12px/30px '微软雅黑';
+    position: absolute;bottom: 14px;width:100%;
+    margin: 0;
+}
+.sh-minientry .center-wb-icon-p4{
+    text-align: center;
+    color: #fff;
+    font: normal 12px/30px '微软雅黑';
+    position: absolute;bottom: -2px;width:100%;
+    margin: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .sh-minientry {
+        display: none;
+    }
+}
+
+.sh-banner {
+	position: fixed;
+    _position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 300;
+	width: 100%;
+	height: 120px;
+	background-color: $speakhi_blue;
+    @extend %transition;
+
+	.wrap {
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		height: 120px;
+		text-align: center;
+
+		img {
+			position: absolute;
+			left: 20px;
+			bottom: 0;
+            z-index: 1;
+			width: auto;
+			height: 170px;
+		}
+        .shbanner02 {
+            position: absolute;
+            left: 280px;
+            bottom: 14px;
+            width: auto;
+            height: 92px;
+        }
+        > span {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+            z-index: 0;
+            width: 80%;
+            height:120px;
+            background-color: $speakhi_yellow;
+            @include skewSet(-30deg, 0);
+        }
+        .shbanner-btn {
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            z-index: 1;
+            width: 150px;
+            height: 80px;
+
+            span {
+                display: block;
+            }
+
+            a {
+                width: 100%;
+                height: 36px;
+                line-height: 36px;
+                margin: 7px 0;
+                @include radiusSet(3px);
+                border: 1px solid $speakhi_white;
+                background-color: transparent;
+                color: $speakhi_white;
+                text-align: center;
+                font-size: 14px;
+            }
+            .services a:before {
+                @include iconSet("\e910");
+                vertical-align: middle;
+        		padding-right: 5px;
+            }
+        }
+	}
+}
+#shBannerFixed .sh-banner-close {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    color: $speakhi_white;
+    cursor: pointer;
+    z-index: 2;
+}
+.notactive {
+    position: relative;
+    bottom: 70px;
+}
+/* speakhi minientry for vip center end
+/*-------------------------------------------*/
+
+// video part
+.opening-video {
+	position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: auto;
+    margin-left: -400px;
+    margin-top: -250px;
+    @include radiusSet($commonRadius);
+    box-shadow: 0px 0px 12px $speakhi_gray31;
+    z-index: 1000;
+    display: none;
+
+	.video-item {
+		display: none;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.8);
+	}
+
+	label {
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		font-size: 20px;
+		color: $speakhi_white;
+		@extend %speakhi_ffnum;
+		text-align: center;
+		background-color: $speakhi_black;
+		background-color: rgba(0,0,0,0.8);
+		@include radiusSet(50%);
+		cursor: pointer;
+		display: none;
+	}
+}
+
+/*-------------- paging style ---------------*/
+.paging {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    margin: 40px auto;
+    text-align: center;
+    @extend %speakhi_ffsimsun;
+}
+.paging ul {
+    height: 100%;
+    line-height: 44px;
+    margin: 0 auto;
+    display: inline-block;
+}
+.paging ul li {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    height: 100%;
+    line-height: 44px;
+    margin: 0 10px;
+    padding: 0 20px;
+    background-color: $speakhi_yellow;
+    @include radiusSet($commonRadius);
+    text-align: center;
+    font-size: 14px;
+    color: $speakhi_white;
+    cursor: pointer;
+}
+.paging ul li.active {
+    background-color: $speakhi_yellow;
+}
+.paging
+.paging ul li.page-prev,
+.paging ul li.page-next {
+    width: auto;
+}
+.paging ul li.page-info {
+    background: none;
+    color: $speakhi_gray95;
+    cursor: default;
+}
+.paging ul li.page-dot {
+    width: auto;
+    background: none;
+    @include radiusSet(50%);
+    font-size: 1em;
+    color: $speakhi_gray95;
+    cursor: default;
+}
+.paging ul li.page-go {
+    width: auto;
+    color: $speakhi_gray62;
+    font-size: 14px;
+    background: none;
+    cursor: default;
+}
+.page-go input {
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+    line-height: 30px;
+}
+.paging ul li a {
+    color: $speakhi_white;
+}
+
+/*-------------- common loading style ---------------*/
+.common-loading {
+    position: fixed;
+    _position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 82px;
+    height: 94px;
+    margin-left: -41px;
+    margin-top: -47px;
+    z-index: 10001;
+}
+.common-loading img {
+    width: 64px;
+    height: 64px;
+    display: block;
+}
+.common-loading-text {
+    display: block;
+    width: 100%;
+    width: 82px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    text-align: left;
+    color: $speakhi_gray62;
+    font-size: 1em;
+    @extend %speakhi_ffyahei;
+    z-index: 10001;
+}
+
+/*-------------- footer ---------------*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    font-size: 0.75em;
+    margin: 0 auto;
+    background-color: $speakhi_gray31;
+    text-align: center;
+    @extend %speakhi_ffsimsun;
+
+    position: relative;
+    top: 100%;
+    top: -moz-calc(100% - 70px);
+    top: -webkit-calc(100% - 70px);
+    top: calc(100% - 70px);
+
+    hr {
+        width: 1px;
+        height: 150px;
+        margin: 30px;
+        border: none;
+        background-color: $speakhi_gray95;
+    }
+}
+.footer-wrap {
+    height: 210px;
+    margin: 0 auto;
+    display: inline-block;
+    overflow: hidden;
+}
+.footer-text {
+    margin: 42px 0;
+}
+.footer-qr {
+    margin: 30px 0;
+    p {
+        height: 14px;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: $speakhi_graybf;
+        text-align: left;
+    }
+    img {
+        width: 130px;
+        height: 130px;
+    }
+}
+.footer-link,
+.copyright {
+    height: 25px;
+    height: auto;
+    line-height: 25px;
+    color: $speakhi_graybf;
+    display: block;
+}
+.footer-brands {
+    width: 100%;
+    height: 36px;
+    height: auto;
+    line-height: 36px;
+    color: $speakhi_graybf;
+    display: inline-block;
+
+    span {
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    ul {
+        width: auto;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+
+        li {
+            float: left;
+            width: auto;
+            margin: 0 10px;
+        }
+
+        img,
+        a {
+            height: 36px;
+            line-height: 36px;
+        }
+    }
+    .brands-webi {
+        width: 125px;
+        height: 23px;
+        margin: 6.5px 0;
+    }
+    .brands-happygoal {
+        width: 130px;
+        height: 28px;
+        margin: 4px 0;
+    }
+    .brands-csiaweb {
+        width: 80px;
+        height: 33px;
+        margin: 1.5px 0;
+    }
+}
+.teacher-center {
+    position: static;
+}
+.teacher-footer {
+    position: static;
+    @extend %speakhi_ffyahei;
+}
+
+.footer-white {
+    background-color: $speakhi_back;
+}
+
+.footer-link-white,
+.copyright-white {
+    color: $speakhi_graybf;
+}
+
+.footer-link {
+    text-align: center;
+    *width: 280px;
+    max-width: 64.206%;
+    margin: 10px auto 0px;
+}
+
+.footer-link ul {
+    float: center;
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-link li {
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+}
+
+.footer-link li a {
+    color: $speakhi_graybf;
+}
+
+.footer-link li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer-link li:nth-child(even) {
+    width: 3px;
+    margin: 0 8px;
+    font-family: "Arial";
+}
+
+.footer-link li:nth-child(odd) {
+    width: auto;
+}
+
+.copyright {
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 10px auto;
+    @extend %speakhi_ffletter;
+}
+
+// other
+.xs-scale {
+    @include scaleSet(1.1);
+    //transform: rotateX(360deg);
+}
+p.nullitems {
+    margin: 30px auto;
+    color: $speakhi_gray62;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* common style -- */
+
+/* -- sh-font style */
+@font-face {
+	font-family: 'sh-fonts';
+	src:url('../fonts/sh-fonts.eot?bn7vxo');
+	src:url('../fonts/sh-fonts.eot?bn7vxo#iefix') format('embedded-opentype'),
+		url('../fonts/sh-fonts.ttf?bn7vxo') format('truetype'),
+		url('../fonts/sh-fonts.woff?bn7vxo') format('woff'),
+		url('../fonts/sh-fonts.svg?bn7vxo#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'sh-fonts';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/* sh-font style -- */
+/* -- iconfont style */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot'); /* IE9*/
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* iconfont style -- */
+
+/* -- media query */
+
+@media screen and (max-width: 768px) {
+    .header-ul {
+        display: none;
+    }
+    .login-user-photo {
+        display: none;
+    }
+    .login-nonmobile {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 30px 0;
+        color: $speakhi_gray62;
+        font-size: 30px;
+        @include radiusSet($commonRadius);
+        box-shadoww: 0 0 5px $speakhi_graybf;
+        &:before {
+            @include iconSet("\e9bd");
+            vertical-align: middle;
+            position: relative;
+            top: 4px;
+        }
+        li {
+            line-height: 10px;
+            hr {
+                height: 1px;
+            }
+        }
+        .after-login {
+            top: 66px;
+            right: 0 !important;
+        }
+    }
+    .imgTag {
+        .icon-video,
+        .mask {
+            display: block;
+        }
+    }
+    .logo {
+        width: 120px;
+        img {
+            width: 120px;
+            height: 38px;
+            margin: 31px auto;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        width: 94%;
+    }
+    .top-wrap {
+        width: 94%;
+    }
+    .pct-w40 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px) and (min-width: 640px) {
+    .max-width,
+    .top-wrap,
+    .header {
+        width: 94%;
+    }
+    .pct-w40 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 960px) {
+    .max-width,
+    .top-wrap,
+    .header {
+        width: 94%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-link {
+        display: none;
+    }
+    .copyright {
+        margin-top: 10px;
+    }
+    .sh-banner span,
+    .sh-banner .shbanner02 {
+        display: none;
+    }
+    .sh-banner .wrap img {
+        left: 15%;
+    }
+    .sh-banner .wrap .shbanner-btn {
+        right: 15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top {
+        height: 0;
+    }
+    .header-wrap {
+        top: 0;
+    }
+    .sh-banner .wrap img {
+        height: 120px;
+        left: 0;
+    }
+    .sh-banner .wrap .shbanner-btn {
+        right: 5%;
+    }
+    .sh-banner .wrap .shbanner-btn a {
+        width: 80%;
+    }
+    .login-logout {
+        right: 0;
+    }
+
+    //手机登录注册框
+    .common-pop {
+        width: 280px;
+        margin-left: -140px;
+        top: 62%;
+
+        .psd-icon,
+        .name-icon {
+            padding-left: 14%;
+        }
+
+        .subtitle-img-l,
+        .subtitle-img-r {
+            display: none;
+        }
+
+        .hwj-interaction-innertext {
+            width: 95px;
+        }
+        .hwj-interaction-text,
+        .hwj-interaction-password {
+            width: 90%;
+        }
+        .hwj-interaction-text-s,
+        .hwj-interaction-text-p {
+            width: 80.5%;
+        }
+        .hwj-subtitle-wrap,
+        .subtitle-name {
+            height: 60px;
+            line-height: 60px;
+            font-size: 1.2em;
+        }
+        .hwj-subtitle-wrap {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        .hwj-interaction {
+            margin: 0 auto 15px;
+        }
+        .hwj-interaction-text-p {
+            width: 216px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .lp-main,
+        .hwj-item-wrap {
+            margin-top: 20px;
+        }
+        .login-to-regis span {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .max-width,
+    .top-wrap,
+    .header {
+        width: 92%;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+    .max-width,
+    .top-wrap,
+    .header {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+@media screen and (max-width: 1600px) and (min-width: 1400px) {
+    .max-width,
+    .top-wrap,
+    .header {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+
+/* media query -- */

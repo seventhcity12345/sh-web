@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* CSS Document */
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+.teenage ul li {
+  -moz-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body, .banner-info {
+  font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu", serif;
+}
+
+body, .banner-info {
+  font-family: "Calibri","simsun","宋体","Arial";
+}
+
+.teenage .tee-section .title label {
+  font-family: "Arial", "Tahoma", "Verdana";
+}
+
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+/* header style
+/**************************************************************************/
+body {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+}
+
+.banner {
+  padding-bottom: 26.042% !important;
+}
+
+.banner-info {
+  left: 20%;
+  top: 25%;
+}
+.banner-info p {
+  margin: 10px auto;
+}
+
+.banner-right {
+  right: -35%;
+}
+
+.banner-info .tag1 {
+  color: #005bac;
+  font-size: 32px;
+}
+
+.banner-info .tag2 {
+  color: #005bac;
+  font-size: 56px;
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -o-animation-delay: .2s;
+  -ms-animation-delay: .2s;
+  animation-delay: .2s;
+}
+
+.banner-info .tag3 {
+  color: #626262;
+  font-size: 32px;
+  -webkit-animation-delay: .4s;
+  -moz-animation-delay: .4s;
+  -o-animation-delay: .4s;
+  -ms-animation-delay: .4s;
+  animation-delay: .4s;
+}
+
+/* teenage style
+/**************************************************************************/
+.teenage .tee-section {
+  margin: 40px auto;
+}
+.teenage .tee-section .title {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+.teenage .tee-section .title .wrap {
+  position: relative;
+  top: 10px;
+  width: 268px;
+  height: 40px;
+  padding: 0 5px;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  background-color: #fff;
+  text-align: center;
+  -ms-transform: skew(-30deg, 0);
+  /* IE 9 */
+  -moz-transform: skew(-30deg, 0);
+  /* Firefox */
+  -webkit-transform: skew(-30deg, 0);
+  /* Safari 和 Chrome */
+  -o-transform: skew(-30deg, 0);
+  /* Opera */
+  transform: skew(-30deg, 0);
+  z-index: 1;
+}
+.teenage .tee-section .title h1,
+.teenage .tee-section .title label {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  text-align: center;
+}
+.teenage .tee-section .title h1 {
+  left: 0;
+  *left: 0;
+  left: 0\0;
+  margin: 0 auto;
+  font-size: 24px;
+  font-size: 30px;
+  font-weight: 100;
+  color: #626262;
+  -ms-transform: skew(30deg, 0);
+  /* IE 9 */
+  -moz-transform: skew(30deg, 0);
+  /* Firefox */
+  -webkit-transform: skew(30deg, 0);
+  /* Safari 和 Chrome */
+  -o-transform: skew(30deg, 0);
+  /* Opera */
+  transform: skew(30deg, 0);
+}
+.teenage .tee-section .title label {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  color: #bfbfbf;
+  font-size: 14px;
+}
+.teenage .tee-section .title label span {
+  display: inline-block;
+  -ms-transform: skew(30deg, 0);
+  /* IE 9 */
+  -moz-transform: skew(30deg, 0);
+  /* Firefox */
+  -webkit-transform: skew(30deg, 0);
+  /* Safari 和 Chrome */
+  -o-transform: skew(30deg, 0);
+  /* Opera */
+  transform: skew(30deg, 0);
+}
+.teenage .tee-section .title hr {
+  position: absolute;
+  top: 30px;
+  margin: 0;
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: #e0e0e0;
+  z-index: 0;
+}
+.teenage .tee-section h3 {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 100;
+  color: #959595;
+}
+.teenage .tee-section strong {
+  font-weight: 100;
+}
+.teenage ul li {
+  float: left;
+  overflow: hidden;
+  margin: 10px 1.65%;
+  width: 30%;
+}
+.teenage .learning-path {
+  width: 100%;
+  background-color: #f0f5fa;
+  margin: 120px auto 0;
+}
+
+/* media query
+/**************************************************************************/
+@media screen and (max-width: 1400px) {
+  .banner-info {
+    top: 15%;
+  }
+
+  .banner-right {
+    right: -40%;
+  }
+
+  .banner-info .tag1,
+  .banner-info .tag3 {
+    font-size: 24px;
+  }
+
+  .banner-info .tag2 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .teenage ul li {
+    margin: 10px 1.96%;
+    width: 46%;
+  }
+
+  .banner-info {
+    left: 15%;
+  }
+
+  .banner-info {
+    top: 15%;
+  }
+
+  .banner-right {
+    right: -40%;
+  }
+
+  .banner-info .tag1,
+  .banner-info .tag3 {
+    font-size: 16px;
+  }
+
+  .banner-info .tag2 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .teenage ul li {
+    margin: 10px auto;
+    width: 100%;
+  }
+
+  .teenage .tinyimg {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=sh-teenage.css.map */

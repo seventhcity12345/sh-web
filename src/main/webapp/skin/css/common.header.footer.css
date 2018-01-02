@@ -1,0 +1,94 @@
+/* CSS Document */
+@charset "utf-8";
+
+/* speakhi index style
+/**********************************************************/
+.top {
+    background-color: #515151;
+	margin: 0;
+}
+.company-group a,
+.top-hotline span a,
+.top-contact span a,
+.company-group,
+.top-hotline span,
+.top-contact span {
+    color: #fff;
+}
+.header-wrap {
+	position: relative;
+	top: 0;
+}
+.common-logo {
+    height: 40px;
+    width: 128px;
+    margin-right: 20px;
+}
+.ml10 {
+	margin-left: 10px;
+}
+.subtitle-img-l,
+.subtitle-img-r {
+	visibility: visible !important;
+}
+.mobile-menu:before,
+.mobile-menu:-webkit-any-link {
+	display: block;
+}
+.loading-mask,
+.full-mask {
+	filter: alpha(opacity=78);
+	-webkit-opacity: 0.78;
+	-moz-opacity: 0.78;
+	opacity: 0.78;
+	background: rgba(0,0,0,0.78);
+}
+
+@media screen and (max-width: 640px) {
+    .footer hr,
+    .top-hotline span,
+	.company-brands {
+	    display: none;
+	}
+	.top-hotline-info {
+	    display: block !important;
+	}
+	
+	.footer-brands span {
+	    display: block;
+	}
+	.footer-brands ul {
+	    height: auto;
+	}
+	.footer-brands ul li {
+	    width: 100%;
+	}
+	.copyright a {
+	    display: block;
+	}
+	.footer-wrap {
+	    height: auto;
+	}
+	.footer-text {
+	    width: 100%;
+	}
+	.footer-qr {
+	    display: block;
+	    width: 100%;
+	    margin-top: 0;
+	}
+	.footer-qr p {
+	    text-align: center;
+	}
+}
+@media screen and (max-width: 480px) {
+    .top {
+        height: 40px;
+    }
+    .top-hotline .top-hotline-info {
+        margin-left: 5px;
+    }
+    .common-logo {
+        margin-right: 5px;
+    }
+}

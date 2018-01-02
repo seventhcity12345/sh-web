@@ -1,0 +1,200 @@
+/* SCSS Document */
+@charset "utf-8";
+
+/* common params
+/* 公共变量定义
+/******************************************************/
+
+// define color params
+// all colors based on this
+$speakhi_blue: #005bac;
+$speakhi_blue2: #4b8ecc;
+$speakhi_yellow: #f6ab00;
+$speakhi_yellow2: #f7bc30;
+$speakhi_red: #d9322c;
+$speakhi_green: #00894f;
+$speakhi_green2: #22d3b6;
+$speakhi_gray31: #313131;
+$speakhi_gray51: #515151;
+$speakhi_gray62: #626262;
+$speakhi_gray95: #959595;
+$speakhi_graybf: #bfbfbf;
+$speakhi_graye0: #e0e0e0;
+$speakhi_white: #fff;
+$speakhi_black: #000;
+
+$speakhi_back: #fff;
+$speakhi_backf2: #f2f2f2;//for studying.html
+/*other color
+/*-----------------------------*/
+//order-info-list 用于订单详情页
+$order_ulback: #fdf2d6;
+
+// define num params
+// all num based on this
+$commonRadius: 3px;
+$isLightenHover: true;
+$btnHover: 8%;
+$objDarken: 8%;
+$objLighten: 8%;
+
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+%transition {
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+%sh-title {
+    font-size: 18px;
+    color: $speakhi_gray62;
+    @extend %speakhi_ffyahei;
+}
+
+// define font params
+%speakhi_ffyahei {
+    font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu", serif;
+    @extend %speakhi_ffsimsun;
+}
+%speakhi_ffsimsun {
+    font-family: "Calibri","simsun","宋体","Arial";
+}
+%speakhi_ffnum {
+    font-family: "Arial", "Tahoma", "Verdana";
+}
+%speakhi_ffletter {
+    font-family: "Calibri";
+}
+
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+@function isLightenHover($color, $isLightenHover) {
+    @if $isLightenHover {
+        @return lighten($color, $btnHover);
+    } @else {
+        @return darken($color, $btnHover);
+    }
+}
+
+
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+// opacity
+@mixin opacitySet($val) {
+    -webkit-opacity: $val;
+    -moz-opacity: $val;
+    -ms-opacity: $val;
+    -o-opacity: $val;
+    opacity: $val;
+    filter: alpha(opacity=$val*100);
+}
+// border-radius
+@mixin radiusSet($val) {
+    -moz-border-radius: $val;
+    -webkit-border-radius: $val;
+    -o-border-radius: $val;
+    -ms-border-radius: $val;
+    -khtml-border-radius: $val;
+    border-radius: $val;
+}
+// border-box
+@mixin borderBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+// content-box
+@mixin contentBox {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+// auto height
+@mixin autoHeight($val) {
+    min-height: $val;
+    height: auto !important;
+    _height: $val;
+}
+// font-icon
+@mixin iconSet($val) {
+    content: $val;
+    font-family: 'sh-fonts' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+	line-height: 1;
+    text-align: center;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+// clearfix
+@mixin clearfix {
+    *zoom: 1;
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+// ellipsis
+@mixin singleline-ellipsis($substract:0){//`$substract`单位为%
+    overflow: hidden;
+    -o-text-overflow: ellipsis;/*兼容opera*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100% - $substract;
+    list-style:disc inside none;
+}
+// disabled (input[disabled]{})
+@mixin disabled($bgColor: $speakhi_graybf,$textColor: $speakhi_white){
+    background-color: $bgColor !important;
+    color: $textColor !important;
+    cursor: not-allowed !important;
+}
+// linear-gradient(从上到下，三个色线性渐变)
+@mixin linear-gradient($topVal,$midVal,$bottomVal) {
+    background: -webkit-linear-gradient($topVal, $midVal, $bottomVal); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient($topVal, $midVal, $bottomVal); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient($topVal, $midVal, $bottomVal); /* Firefox 3.6 - 15 */
+    background: linear-gradient($topVal, $midVal, $bottomVal); /* 标准的语法 */
+}
+// linear-gradient(从左到右，三个色线性渐变)
+@mixin linear-gradient-lr($topVal,$midVal,$bottomVal) {
+    background: -webkit-linear-gradient(left, $topVal, $midVal, $bottomVal); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, $topVal, $midVal, $bottomVal); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, $topVal, $midVal, $bottomVal); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, $topVal, $midVal, $bottomVal); /* 标准的语法 */
+}
+// scale set
+@mixin scaleSet($val) {
+    -ms-transform: scale($val); 	/* IE 9 */
+    -moz-transform: scale($val); 	/* Firefox */
+    -webkit-transform: scale($val); /* Safari 和 Chrome */
+    -o-transform: scale($val); 	/* Opera */
+    transform: scale($val);
+}
+// skew set
+@mixin skewSet($xval, $yval) {
+    -ms-transform: skew($xval, $yval); 	/* IE 9 */
+    -moz-transform: skew($xval, $yval); 	/* Firefox */
+    -webkit-transform: skew($xval, $yval); /* Safari 和 Chrome */
+    -o-transform: skew($xval, $yval); 	/* Opera */
+    transform: skew($xval, $yval);
+}

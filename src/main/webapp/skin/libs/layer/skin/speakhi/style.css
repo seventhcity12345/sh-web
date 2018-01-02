@@ -1,0 +1,6 @@
+/* 选择器格式为：html #layui_layer_skin文件夹名stylecss，这一点非常重要 */
+html #layui_layer_skinspeakhistylecss{display:none; position: absolute; width:1989px;}
+
+body .layer-ext-speakhi .layui-layer-title,body .layui-ext-speakhi .layui-layer-btn .layui-layer-btn0 {background-color: #005bac; color: #fff;}	
+body .layui-ext-speakhi .layui-layer-btn a{}
+/*  你可以通过调试工具重置更多样式 */

@@ -1,0 +1,152 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* teacher center cover item
+/**********************************************************/
+body {
+	overflow-x: hidden;
+}
+.layui-layer-dialog .layui-layer-content,
+.layui-layer-btn {
+    text-align: center !important;
+}
+
+/* teacher center style
+/**********************************************************/
+.teacher-scheduling {
+	@include autoHeight(500px);
+	min-width: 860px;
+	margin: 60px auto;
+	color: $speakhi_gray62;
+	font-size: 16px;
+	border: 1px solid $speakhi_graye0;
+
+	.ts-wrap {
+		width: 96%;
+		display: block;
+		padding: 2%;
+	}
+	select {
+		width: 150px;
+		height: 28px;
+		line-height: 28px;
+		padding: 0;
+		text-align: center;
+		@include radiusSet(3px);
+	}
+	.select2 {
+		margin-right: 20px;
+	}
+	.sel-date {
+		width: 200px;
+		height: 26px;
+		line-height: 26px;
+		padding: 0 10px;
+		border-color: #aaa;
+
+		&:hover {
+		    cursor: pointer;
+		}
+	}
+	.picker__holder {
+	    overflow: hidden;
+	}
+	.selDateContainer {
+		width: 200px;
+		height: auto;
+		overflow-y: hidden;
+	}
+	.ts-date,
+	.ts-title,
+	.ts-time {
+		width: 90%;
+		min-width: 700px;
+	}
+	.ts-title {
+		height: 50px;
+		line-height: 50px;
+		margin: 0 auto 20px;
+	}
+	.sel-time-zone {
+		width: 460px;
+	}
+	.ts-date {
+		height: 60px;
+		line-height: 60px;
+	}
+	.ts-date label {
+		width: 100px;
+		display: inline-block;
+	}
+	.ts-time {
+	    position: relative;
+	    top: 0;
+	    left: 0;
+
+		label {
+			width: 100px;
+			display: inline-block;
+		}
+		p {
+			height: 60px;
+			line-height: 60px;
+		}
+		button {
+		    position: absolute;
+		    right: 0;
+		    bottom: 15px;
+		    width: 100px;
+		    height: 30px;
+		    line-height: 30px;
+		    background-color: $speakhi_yellow;
+		    color: $speakhi_white;
+		    @include radiusSet(3px);
+		}
+		#addItem {
+		    right: 120px;
+		}
+	}
+	hr {
+		width: 100%;
+		height: 1px;
+		margin: 30px auto;
+		border: none;
+		color: $speakhi_graye0;
+		background-color: $speakhi_graye0;
+	}
+	.ts-data table {
+		width: 80%;
+		min-width: 600px;
+		margin: 30px auto;
+		text-align: center;
+		border-spacing: 0;
+		border-collapse: collapse;
+		word-spacing: 0;
+		border: 1px solid $speakhi_graye0;
+		@include radiusSet(3px);
+		th,td {
+			height: 46px;
+			line-height: 46px;
+			text-align: center;
+			border: 1px solid $speakhi_graye0;
+		}
+		thead {
+			background-color: #f0f5fa;
+		}
+	}
+	.ts-page {
+	    width: 100%;
+	    height: 40px;
+	    line-height: 40px;
+		margin-top: 60px;
+	    text-align: center;
+	}
+}
+
+@media screen and (max-width: 640px) {
+
+}
+@media screen and (max-width: 480px) {
+
+}

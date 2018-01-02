@@ -1,0 +1,94 @@
+##小写
+#set($entityname=$EntityName.toLowerCase())
+#set($length=$EntityName.length())
+##首字母小写
+#set($entityName=$EntityName.substring(0,1).toLowerCase()+$EntityName.substring(1,$length))
+gridName = 'dataGrid1';
+		
+$(function(){
+	//设置表单提交回调函数
+    $('#myForm').form({
+        success:function(data){
+        	data = eval("("+data+")");
+            if(data.success){
+            	$.messager.alert('提示',data.msg);	
+            	$('#dataGrid1').datagrid('reload');
+            	$('#myForm').form('clear');
+            	$('#saveDiv').dialog('close');
+            }else{
+            	$.messager.alert('提示',data.msg);
+            } 
+        }
+    }); 
+}); 
+
+//批量删除
+function batchDelete(key_id){
+	if(key_id==null){
+		var row = $('#dataGrid1').datagrid('getSelections');
+		if(row.length==0){
+			$.messager.alert('提示','请选中数据');
+			return;
+		} 
+	}
+	
+	$.messager.confirm('确认','确认执行此操作？',function(r){
+		if (r){
+			var ids = "";
+			if(key_id!=null){
+				ids = key_id;
+			} else {
+				for(var i = 0 ; i <row.length ; i++){
+					if(i==row.length-1){
+						ids += row[i].key_id;
+					}else{
+						ids += row[i].key_id+",";
+					}
+				}
+			} 
+		
+			$.ajax({          
+		       type:"POST",   //post提交方式默认是get
+		       dataType:'json', 
+		       url:basePath+'/admin/${entityName}/delete', 
+		       data : {
+		    	   ids :ids
+		       },
+		       error:function(data) {      // 设置表单提交出错 
+		    	   $('#loading-mask').hide();
+		    	   $.messager.alert('提示','系统出现异常,请联系管理员','error');
+		       },
+		       success:function(result) {
+		    	   $('#loading-mask').hide(); 
+		    	   
+		    	   if(result.success){
+		    		   $('#dataGrid1').datagrid('reload');
+		    		   $.messager.alert('提示',result.msg);
+		    	   }else{
+		    		   $.messager.alert('提示',result.msg);
+		    	   }
+		       }            
+		 	}); 	  
+	    }
+	 }
+	); 
+}  
+
+function myFormSubmit(){
+	$('#myForm').submit();
+} 
+		
+//新增or编辑
+function edit(operateType){
+	$('#myForm').form('clear');
+	if(operateType==1){//更新
+		var row = $('#dataGrid1').datagrid('getSelections');
+			if(row.length!=1){
+				$.messager.alert('提示','请先选中一条数据！');
+				return;
+			}
+		var key_id = row[0].key_id;
+		$('#myForm').form('load', basePath+'/admin/${entityName}/get?key_id='+key_id+"&wtf="+Math.random());
+	} 
+	$('#saveDiv').dialog('open');
+}

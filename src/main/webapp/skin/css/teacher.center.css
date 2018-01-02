@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* CSS Document */
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+/* teacher center cover item
+/**********************************************************/
+body {
+  overflow-x: hidden;
+}
+
+.layui-layer-dialog .layui-layer-content,
+.layui-layer-btn {
+  text-align: center !important;
+}
+
+/* teacher center style
+/**********************************************************/
+.teacher-scheduling {
+  min-height: 500px;
+  height: auto !important;
+  _height: 500px;
+  min-width: 860px;
+  margin: 60px auto;
+  color: #626262;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+}
+.teacher-scheduling .ts-wrap {
+  width: 96%;
+  display: block;
+  padding: 2%;
+}
+.teacher-scheduling select {
+  width: 150px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+.teacher-scheduling .select2 {
+  margin-right: 20px;
+}
+.teacher-scheduling .sel-date {
+  width: 200px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px;
+  border-color: #aaa;
+}
+.teacher-scheduling .sel-date:hover {
+  cursor: pointer;
+}
+.teacher-scheduling .picker__holder {
+  overflow: hidden;
+}
+.teacher-scheduling .selDateContainer {
+  width: 200px;
+  height: auto;
+  overflow-y: hidden;
+}
+.teacher-scheduling .ts-date,
+.teacher-scheduling .ts-title,
+.teacher-scheduling .ts-time {
+  width: 90%;
+  min-width: 700px;
+}
+.teacher-scheduling .ts-title {
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto 20px;
+}
+.teacher-scheduling .sel-time-zone {
+  width: 460px;
+}
+.teacher-scheduling .ts-date {
+  height: 60px;
+  line-height: 60px;
+}
+.teacher-scheduling .ts-date label {
+  width: 100px;
+  display: inline-block;
+}
+.teacher-scheduling .ts-time {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.teacher-scheduling .ts-time label {
+  width: 100px;
+  display: inline-block;
+}
+.teacher-scheduling .ts-time p {
+  height: 60px;
+  line-height: 60px;
+}
+.teacher-scheduling .ts-time button {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #f6ab00;
+  color: #fff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+.teacher-scheduling .ts-time #addItem {
+  right: 120px;
+}
+.teacher-scheduling hr {
+  width: 100%;
+  height: 1px;
+  margin: 30px auto;
+  border: none;
+  color: #e0e0e0;
+  background-color: #e0e0e0;
+}
+.teacher-scheduling .ts-data table {
+  width: 80%;
+  min-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+  word-spacing: 0;
+  border: 1px solid #e0e0e0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+.teacher-scheduling .ts-data table th, .teacher-scheduling .ts-data table td {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+.teacher-scheduling .ts-data table thead {
+  background-color: #f0f5fa;
+}
+.teacher-scheduling .ts-page {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=teacher.center.css.map */

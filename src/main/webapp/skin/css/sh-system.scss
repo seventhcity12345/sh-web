@@ -1,0 +1,565 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* header style
+/**************************************************************************/
+body {
+	margin: 0 auto;
+	text-align: center;
+	background-color: $speakhi_white;
+    @extend %speakhi_ffyahei;
+}
+@media screen and (orientation: landscape) {
+	.ui-mobile .ui-page-active {
+		overflow-x: visible !important;
+	}
+}
+.header-wrap {
+	box-shadow: 0px 1px 2px $speakhi_graye0;
+}
+
+/* system style
+/**************************************************************************/
+.system {
+	position: relative;
+	top: 78px;
+	width: 100%;
+}
+.system-wrap {
+	width: 64.206%;
+	margin: 60px auto;
+}
+.system-nav {
+	height: 75px;
+	font-size: 1em;
+	line-height: 1.5;
+	color: $speakhi_graybf;
+	margin: 0 auto;
+	display: inline-block;
+}
+.system-nav li {
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+	width: auto;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.system-nav li.active {
+	color: $speakhi_gray62;
+	border-bottom: 4px solid $speakhi_gray62;
+}
+.system-nav li.line {
+	width: 1px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 20px;
+	padding: 0;
+	border: none;
+	background-color: $speakhi_graye0;
+}
+.system-nav li h1 {
+	line-height: 30px;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.system-nav li label {
+	margin: 10px 0;
+	display: inline-block;
+	color: $speakhi_graybf;
+	font-size: 0.875em;
+	cursor: pointer;
+}
+.system-wrap hr {
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: $speakhi_graye0;
+	margin: -4px auto 30px;
+}
+.sys-body {
+	margin: 60px auto;
+}
+.sys-body .item {
+	padding: 0 60px;
+}
+.sys-body p {
+	font-size: 1em;
+	line-height: 1.5;
+	color: $speakhi_gray62;
+	text-align: center;
+	margin: 0 auto 60px;
+}
+.sys-body > img {
+	width: 100%;
+}
+.sys-body h1 {
+	line-height: 30px;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: $speakhi_gray62;
+	margin: 60px auto 10px;
+}
+.sys-body label {
+	color: $speakhi_graybf;
+}
+.sys-body hr {
+	margin: 20px auto 60px;
+}
+.sys-body .sys-topic {
+	width: auto;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+.sys-topic li {
+	display: inline-block;
+	width: 141px;
+	margin: auto 20px;
+	margin: 20px 2%;
+}
+.sys-topic li div {
+	color: $speakhi_gray62;
+	height: 40px;
+	line-height: 40px;
+}
+.sys-topic li img {
+	width: 141px;
+	height: 171px;
+}
+.system-wrap .sys-btn {
+	display: inline-block;
+	width: 120px;
+	max-width: 120px;
+	margin: 60px 0 30px;
+	@include radiusSet($commonRadius);
+	text-align: center;
+	color: $speakhi_white;
+	background-color: $speakhi_blue;
+	font-size: 0.875em;
+    @extend %speakhi_ffsimsun;
+}
+.system-wrap .sys-btn:hover {
+	color: $speakhi_white;
+  	background-color: lighten($speakhi_blue, $objLighten);
+  	text-decoration: none;
+}
+.sys-body-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.business,
+.general {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.general {
+	position: relative;
+}
+.business {
+	left: 100%;
+
+	.item {
+		img {
+			width: 100%;
+		}
+	}
+}
+.sys-body.active {
+}
+
+// sh-system style
+.system {
+	.sys-hr {
+		margin: 0 auto;
+	}
+	.sys-level {
+		margin: 20px auto;
+		color: $speakhi_gray62;
+
+		.sys-level-intro {
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			margin: 50px auto;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		.sys-level-item {
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+
+			div {
+				width: 20%;
+				height: inherit;
+				line-height: inherit;
+				font-size: 14px;
+				text-align: right;
+
+				.sli-mr5 {
+					margin-right: 5px;
+				}
+			}
+			ul {
+				width: 78%;
+				height: inherit;
+				line-height: inherit;
+				@include radiusSet(3px);
+				&.lightgray-bg {
+					background-color: $speakhi_graye0;
+				}
+
+				li {
+					float: left;
+					overflow: hidden;
+					display: inline-block;
+					width: 16.66%;
+					height: inherit;
+					line-height: inherit;
+					font-size: 16px;
+				}
+			}
+		}
+		.sli-title {
+			height: 50px;
+			line-height: 50px;
+			li {
+				font-size: 18px;
+			}
+		}
+	}
+	.business {
+		.sys-level-item ul li {
+			width: 24.8%;
+		}
+	}
+	.sys-section {
+		margin: 40px auto;
+
+		.title {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			.wrap {
+				position: relative;
+				top: 10px;
+				width: 268px;
+				height: 40px;
+				padding: 0 5px;
+				border-left: 1px solid $speakhi_graye0;
+				border-right: 1px solid $speakhi_graye0;
+				background-color: $speakhi_white;
+				text-align: center;
+				@include skewSet(-30deg, 0);
+				z-index: 1;
+			}
+
+			h1,
+			label {
+				position: relative;
+				top: 0;
+				display: inline-block;
+				text-align: center;
+			}
+			h1 {
+				left: 0;
+				*left: 0;
+				left: 0\0;
+				margin: 5px auto;
+				font-size: 24px;
+				font-weight: 100;
+				color: $speakhi_gray62;
+				@include skewSet(30deg, 0);
+			}
+			label {
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				color: $speakhi_graybf;
+				font-size: 14px;
+				@extend %speakhi_ffnum;
+				span {
+					display: inline-block;
+					@include skewSet(30deg, 0);
+				}
+			}
+			hr {
+				position: absolute;
+				top: 30px;
+				margin: 0;
+				z-index: 0;
+			}
+		}
+		h3 {
+			display: block;
+			margin: 10px auto;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 100;
+			color: $speakhi_gray95;
+		}
+		strong {
+			font-weight: 100;
+		}
+	}
+	.sys-structure {
+		width: 100%;
+
+		.structure-items {
+			display: inline-block;
+			width: 100%;
+			height: 76px;
+			line-height: 76px;
+			margin: 60px auto;
+
+			span {
+				display: inline-block;
+				width: 22%;
+				height: inherit;
+				line-height: inherit;
+				margin: 2px 1.2%;
+				border: 1px solid $speakhi_graye0;
+				color: $speakhi_gray62;
+
+				&.active {
+					margin: 0 1%;
+					border: 3px solid $speakhi_yellow;
+					color: $speakhi_yellow;
+					&:after {
+						content: "";
+						position: relative;
+						left: 50%;
+						margin-left: -10px;
+						width: 0;
+						height: 0;
+						border-top: 10px solid $speakhi_yellow;
+						border-left: 10px solid transparent;
+						border-right: 10px solid transparent;
+						border-bottom: 10px solid transparent;
+						display: block;
+					}
+				}
+			}
+		}
+		.structure-intro {
+			display: none;
+			width: 100%;
+			margin-bottom: 200px;
+			color: $speakhi_gray62;
+			font-size: 16px;
+
+			&.active {
+				display: block;
+			}
+
+			.structure-intro-2,
+			.structure-intro-3 {
+
+				li {
+					display: inline-block;
+					width: 32%;
+					margin: 0;
+					border-right: 1px solid $speakhi_graye0;
+
+					&.vertical-line {
+						width: 1px;
+						height: 100%;
+						border: 1px solid $speakhi_graye0;
+					}
+					&.last-item {
+						border: none;
+					}
+					.title {
+						width: 100%;
+						height: 40px;
+						overflow: visible;
+						line-height: 40px;
+						text-align: center;
+						color: $speakhi_yellow;
+					}
+					p {
+						height: 70px;
+						padding: 0 20%;
+						margin: 20px auto;
+						text-align: left;
+						font-size: 14px;
+
+						&:before {
+							color: $speakhi_gray95;
+							@include iconSet("\e922");
+							padding-right: 10px;
+						}
+					}
+					img {
+						width: 100px;
+						height: 100px;
+						margin: 0 auto;
+					}
+				}
+			}
+			.structure-intro-2 {
+				li {
+					width: 48%;
+					p {
+						padding: 0 30%;
+					}
+				}
+			}
+			.structure-intro-3 {
+				.learning-more {
+					width: 100%;
+					height: 40px;
+					line-height: 40px;
+					span {
+						color: $speakhi_yellow;
+
+						&.icon-plus {
+							margin: 0 8px;
+							color: $speakhi_gray62;
+							&:before {
+								position: relative;
+								top: -1px;
+								cursor: pointer;
+								padding: 2px;
+								@include iconSet("\ea0a");
+								font-size: 12px;
+								@include radiusSet(3px);
+								border: 1px solid $speakhi_graye0;
+							}
+						}
+						&.icon-minus {
+							margin: 0 8px;
+							color: $speakhi_gray62;
+							&:before {
+								position: relative;
+								top: -1px;
+								cursor: pointer;
+								padding: 2px;
+								@include iconSet("\ea0b");
+								font-size: 12px;
+								@include radiusSet(3px);
+								border: 1px solid $speakhi_graye0;
+							}
+						}
+					}
+				}
+			}
+			.structure-themes {
+				display: none;
+				width: 100%;
+				border-top: 1px solid $speakhi_graye0;
+				background-color: lighten($speakhi_graye0, $objLighten);
+
+				.structure-level {
+					margin: 10px auto;
+					text-align: left;
+					label {
+						display: inline-block;
+						width: 100px;
+						height: 40px;
+						line-height: 40px;
+						margin: 10px 30px;
+						background-color: $speakhi_white;
+						border: 1px solid $speakhi_graye0;
+						text-align: center;
+						color: $speakhi_gray62;
+						@include radiusSet(5px);
+
+						&.active {
+							border: none;
+							background-color: $speakhi_yellow;
+							color: $speakhi_white;
+						}
+					}
+				}
+				.structure-level-theme {
+					padding-bottom: 60px;
+					display: none;
+
+					&.active {
+						display: block;
+					}
+					div {
+						display: inline-block;
+						width: 25%;
+						height: 40px;
+						line-height: 40px;
+						margin: 10px auto 10px 7%;
+						text-align: left;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+
+						span {
+							display: inline;
+							height: 20px;
+							margin: 10px auto;
+						}
+
+						label {
+							display: inline-block;
+							width: 16px;
+							height: 16px;
+							margin: 12px 8px 12px 0;
+							vertical-align: bottom;
+							background-color: $speakhi_yellow;
+							@include radiusSet(3px);
+
+							&:after {
+								position: relative;
+								top: 15px;
+								display: block;
+								content:"";
+								width: 0;
+								height: 0;
+								border-top: 0 solid transparent;
+								border-bottom: 4px solid transparent;
+								border-left: 6px solid transparent;
+								border-right: 10px solid $speakhi_yellow;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* media query
+/**************************************************************************/
+@media screen and (max-width: 1800px) {
+	.system-wrap { width: 70%; }
+	.sys-body .item { padding: 0;}
+}
+@media screen and (max-width: 1600px) {
+	.system-wrap { width: 80%; }
+	.sys-body .item { padding: 0 10px;}
+}
+@media screen and (max-width: 1200px) {
+	.system .sys-structure .structure-items span {
+		width: 20%;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.system-wrap { width: 92%; }
+	.sys-body .item { padding: 0 10px;}
+}
+@media screen and (max-width: 480px) {
+	.system-wrap { width: 92%; }
+	.system-nav li.line { margin: 0 5px; }
+	.sys-body .item { padding: 0 10px;}
+}
+@media screen and (max-width: 414px) {
+	.system-wrap { width: 92%; }
+	.system-nav li.line { margin: 0 5px; }
+	.sys-body .item { padding: 0 10px;}
+	.max-width { width: 95%; }
+}

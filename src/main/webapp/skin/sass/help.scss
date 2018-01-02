@@ -1,0 +1,170 @@
+@import "compass";
+
+//字体
+@font-face {
+  font-family: 'iconfont2';
+  src: url('//at.alicdn.com/t/font_1462943556_4205854.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1462943556_4205854.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1462943556_4205854.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1462943556_4205854.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1462943556_4205854.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+.hide-content{display:none;}
+
+.top{position:relative;z-index:999999999999;}
+
+.help-nav,.contact-list{}
+
+.footer{}
+
+.ui-page{
+  min-height:0!important;
+  //height:100%!important;
+}
+
+//主体
+html,body{height:100%;}
+.main{
+  width:1200px;
+  //height:100%;
+  min-height:800px;
+  margin:0 auto;
+  @include pie-clearfix;
+  position:relative;
+}
+
+//侧边栏
+.help-side-bar{
+  width:200px;
+  height:92.5%;
+  min-height:800px;
+  padding:30px 0px;
+  float:left;
+  background:#e7eff7;
+  //position:fixed;
+  top:0px;
+  //padding-top:180px;
+  .help-nav{
+    margin-bottom:40px;
+    li{margin-bottom:20px;height:24px;line-height:25px;}
+    li a{display:block;width:100%;height:100%;position:relative;text-align:center;font-weight:bold;font-size:14px;color:#626262;}
+    li.on,li:hover{
+      a{
+        color:#005bac;
+        background:url(../../subject/help/images/right-arrow.png) no-repeat 95% 50%;
+        i{position:absolute;top:0;left:0;display:block;height:24px;width:5px;background-color:#73a5d1;}
+      }
+    }
+  }
+  .contact-list{
+    padding:0 20px;
+    font-size:12px;
+    li{margin-bottom:20px;}
+    li a{color:#005bac;}
+    .icon{width:25px;height:25px;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;margin-top:-3px;margin-right:10px;}
+    .qq{background:url(../../subject/help/images/qq.png) no-repeat 50% 50%;}
+    .tel{background:url(../../subject/help/images/tel.png) no-repeat 50% 50%;}
+  }
+}
+
+//右边内容
+.help-right-content{
+  width:900px;
+  float:left;
+  padding:40px 40px;
+  //margin-left:200px;
+  .return-btn{
+    float:right;
+    color:#005bac;
+    .right-arrow{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;margin-top:-5px;margin-right:3px;font-size:24px;color:#005bac;}
+  }
+
+  .answer-content{
+    position:relative;
+    padding:20px 30px;
+    .answer-text,.answer-img{margin-bottom:15px;}
+    .answer-text{font-size:14px;color:#626262;line-height:22px;}
+    .answer-img{width:auto;}
+    .hide-btn{position:absolute;bottom:0px;right:20px;}
+  }
+
+  .QA-content{
+    dt{color:#005bac;font-size:14px;margin-bottom:20px;}
+    dd{
+      margin-bottom:30px;
+      .text{margin-bottom:10px;color:#626262;font-size:14px;line-height:22px;}
+      img{width:auto;margin-bottom:10px;}
+    }
+  }
+
+  //新手指南
+  .question-list{
+    li{
+      margin-bottom:15px;
+      a{font-size:14px;color:#005bac;}
+    }
+  }
+
+  //反馈意见
+  #feedbacks-form{
+    .form-row{
+      margin-bottom:25px;
+      @include clearfix;
+      label,input,.tip{float:left;}
+      .tip{margin-top:11px;margin-left:8px;font-size:12px;color:#626262;}
+      input{width:150px;height:33px;line-height:33px;padding:0 6px;border:1px solid #e0e0e0;}
+      #submit{cursor:pointer;margin-left:447px;background:#f6ab00;color:#fff;border-radius:5spx;}
+      #submit:hover,#submit:visited,#submit:active{background:#eac368;}
+      textarea{width:495px;padding:6px;}
+      label{width:80px;margin-right:20px;margin-top:8px;text-align:right;font-size:14px;color:#626262;}
+      label i{margin-right:3px;}
+      label.error{width:100%;display:block;clear:both;padding-left:90px;padding-top:8px;font-size:12px;color:red;float:none;margin-top:11px;margin-left:10px;margin-right:0;text-align:left;}
+    }
+  }
+
+  //工具下载
+  .download-section{
+    margin-bottom:30px;
+    dt{
+      margin-bottom:20px;
+      font-size:14px;
+      color:#005bac;
+    }
+    dd{
+      padding:10px;
+      border:1px solid #e0e0e0;
+      display:inline-block;
+      *display:inline;
+      *zoom:1;
+      margin-right:50px;
+      @include clearfix;
+      .download-img{width:50px;height:50px;float:left;}
+      .download-content{
+        float:left;
+        margin-left:30px;
+        .download-btn{padding:5px 10px;background:#5299d8;color:#fff;font-size:14px;border-radius:3px;}
+        .download-btn:hover{background:#1e80d8;}
+        p{margin-top:10px;font-size:12px;color:#626262;text-align:right;}
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+package com.mingyisoft.bean.dao.${entityname};
+
+import org.springframework.stereotype.Repository;
+import com.mingyisoft.bean.base.BaseOracleDao;
+import org.apache.log4j.Logger;
+
+@Repository
+public class Admin${EntityName}Dao extends BaseOracleDao{ 
+	private static Logger logger = Logger.getLogger(Admin${EntityName}Dao.class);
+}

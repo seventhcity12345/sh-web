@@ -1,0 +1,960 @@
+@charset "UTF-8";
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+.banner-ani p, .concept-note-menu li .title, .concept-bottom .text {
+  -moz-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+/* CSS Document */
+.info, .item li > div, .item li > div h1, .back, .arrow-l,
+.arrow-r {
+  font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑", "STHeiti", "MingLiu", serif;
+}
+
+/* hwj-concept style
+/**************************************************************************/
+.banner-ani {
+  top: 20%;
+  left: 0;
+}
+.banner-ani img {
+  position: relative;
+  left: 100%;
+  bottom: 180px;
+  width: 40%;
+  margin: -30px auto 10px;
+  font-size: 300%;
+  color: #005bac;
+  animation: slideImg 1s;
+  -webkit-animation: slideImg 1s;
+  z-index: 1;
+}
+@keyframes slideImg {
+  from {
+    left: 200%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@-webkit-keyframes slideImg {
+  from {
+    left: 200%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.banner-ani p {
+  position: relative;
+  left: 30%;
+  margin: 20px auto;
+  font-size: 360%;
+  color: #005bac;
+  z-index: 2;
+  animation: slideText 1s;
+  -webkit-animation: slideText 1s;
+}
+@keyframes slideText {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 30%;
+  }
+}
+.banner-ani p.p2 {
+  margin-left: 100px;
+}
+@-webkit-keyframes slideText {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 30%;
+  }
+}
+.banner-ani p.p2 {
+  margin-left: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .banner-ani img {
+    left: 100%;
+  }
+  @keyframes slideImg {
+    from {
+      left: 200%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  @-webkit-keyframes slideImg {
+    from {
+      left: 200%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  .banner-ani p {
+    left: 20%;
+    font-size: 300%;
+  }
+  @keyframes slideText {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 20%;
+    }
+  }
+  @-webkit-keyframes slideText {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 20%;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .banner-ani-r p,
+  .banner-ani p {
+    font-size: 200%;
+  }
+
+  .banner-ani img,
+  .banner-ani-r img {
+    bottom: 120px;
+  }
+
+  .banner-ani img {
+    left: 90%;
+  }
+  @keyframes slideImg {
+    from {
+      left: 200%;
+    }
+    to {
+      left: 90%;
+    }
+  }
+  @-webkit-keyframes slideImg {
+    from {
+      left: 200%;
+    }
+    to {
+      left: 90%;
+    }
+  }
+}
+.concept-section .concept2-girl {
+  width: 36%;
+  margin-top: 60px;
+}
+.concept-section .concept2-trouble {
+  width: 50%;
+}
+
+.concept-scenario {
+  right: 20%;
+  left: initial;
+  top: 30%;
+  width: 40%;
+  max-width: 520px;
+  color: #005bac;
+  animation: scenarioSlide .6s;
+}
+@keyframes scenarioSlide {
+  from {
+    right: 10%;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  to {
+    right: 20%;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+@-webkit-keyframes scenarioSlide {
+  from {
+    right: 10%;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  to {
+    right: 20%;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+.concept-scenario .scenario-line {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.concept-scenario .scenario-line hr {
+  margin-left: -20%;
+  width: 120%;
+  text-align: right;
+  background-color: #005bac;
+  animation: hrSlide 1.5s ease-out;
+}
+@keyframes hrSlide {
+  from {
+    margin-left: 0;
+    width: 0;
+  }
+  to {
+    margin-left: -20%;
+    width: 120%;
+  }
+}
+@-webkit-keyframes hrSlide {
+  from {
+    margin-left: 0;
+    width: 0;
+  }
+  to {
+    margin-left: -20%;
+    width: 120%;
+  }
+}
+.concept-scenario .scenario-line span {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: #005bac;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border-radius: 50%;
+  animation: pointSlide 1.5s ease-out;
+}
+@keyframes pointSlide {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@-webkit-keyframes pointSlide {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+.concept-scenario p {
+  margin: 10px 0;
+}
+.concept-scenario .scenario-time {
+  font-size: 24px;
+  font-weight: 900;
+}
+.concept-scenario .scenario-title {
+  font-size: 48px;
+  font-weight: 900;
+}
+.concept-scenario .scenario-content {
+  font-size: 16px;
+}
+
+.concept-main {
+  margin-top: 90px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.concept-person {
+  width: 100%;
+  background-color: #005bac;
+}
+
+.concept-person dt {
+  float: left;
+  width: 71.67%;
+}
+
+.concept-person dt.pic2 {
+  float: right;
+}
+
+.concept-person dd {
+  font-size: 1em;
+  float: left;
+  width: 24.72%;
+  margin: 6% 1.8% 0;
+  color: #fff;
+  line-height: 1.5em;
+  text-indent: 2em;
+  padding: 0;
+}
+
+.concept-person dd .name {
+  margin-top: 1em;
+  text-align: right;
+  letter-spacing: 0;
+}
+
+.concept-person dd p {
+  letter-spacing: 0.05em;
+}
+
+.concept-person dd.text2 .name {
+  margin-top: 2em;
+}
+
+.concept-title {
+  margin: 120px auto 120px;
+}
+
+.concept-title .title .wrap {
+  width: 580px;
+  border-left-color: #e0e0e0;
+  border-right-color: #e0e0e0;
+}
+
+.concept-title .title h1 {
+  font-size: 24px;
+  top: 0;
+  left: 0;
+}
+
+.concept-title .title2 h2 {
+  font-size: 44px;
+  font-style: normal;
+  color: #959595;
+  font-weight: normal;
+  text-align: center;
+}
+
+.concept-note-menu {
+  width: 100%;
+}
+
+.concept-note-menu li {
+  float: left;
+  width: 33%;
+  cursor: pointer;
+}
+
+.concept-note-menu li .title {
+  width: 330px;
+  height: 108px;
+  background: url(../images/concept_menu_s.png) center center no-repeat;
+  display: table;
+  text-align: center;
+  color: #959595;
+}
+
+.concept-note-menu li .title span {
+  font-size: 1.2em;
+  display: table-cell;
+  vertical-align: middle;
+  *display: inline-block;
+  line-height: 1.2em;
+}
+
+.concept-note-menu li.cur .title {
+  background: url(../images/concept_menu_cur_s.png) center center no-repeat;
+  color: #005bac;
+}
+
+.concept-note-menu li .title:hover {
+  background: url(../images/concept_menu_cur_s.png) center center no-repeat;
+}
+
+.concept-note-menu li.one .title {
+  margin-left: 0;
+  float: left;
+}
+
+.concept-note-menu li.two .title {
+  margin: 0 auto;
+}
+
+.concept-note {
+  width: 990px;
+  margin: 100px auto 100px;
+  height: 344px;
+}
+
+.concept-note dl {
+  float: left;
+  width: 940px;
+  padding: 0 20px 0 30px;
+  height: 344px;
+  display: none;
+  background-image: url(../images/concept_notebg.png);
+}
+
+.concept-note dl dt {
+  display: none;
+}
+
+.concept-note dl.current {
+  display: inline;
+}
+
+.concept-note dl .text-point {
+  color: #005bac;
+  font-size: 1.1em;
+  height: 45px;
+  margin-bottom: 42px;
+}
+
+.concept-note dl dd {
+  color: #626262;
+  font-size: 0.88em;
+  margin-bottom: 92px;
+}
+
+.concept-note dl dd.word3 {
+  margin-bottom: 0;
+}
+
+.concept-note dl.text1 dd.word2 {
+  margin-bottom: 70px;
+}
+
+.concept-note dl.text3 {
+  height: 229px;
+  margin-bottom: 115px;
+}
+
+.concept-bottom {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.concept-bottom p {
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.concept-bottom img {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.concept-bottom .bottom-main {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  min-height: 330px;
+  height: auto !important;
+  _height: 330px;
+  overflow: hidden;
+}
+
+.concept-bottom .pic {
+  display: none;
+  float: left;
+  position: relative;
+  width: 327px;
+  height: 100%;
+  background-image: url(../images/concept_bottom_person.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+.concept-bottom .text {
+  float: right;
+  width: 65%;
+  color: #fff;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.concept-bottom .text .word {
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.concept-bottom .text .name {
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: right;
+  margin-bottom: 1.5em;
+}
+
+.concept-bottom .name img {
+  position: static;
+  width: 48px;
+  height: 48px;
+  margin-left: 25px;
+}
+
+.concept-bottom .text .word + .name {
+  margin-bottom: 3.6em;
+}
+
+@media screen and (min-width: 320px) {
+  .concept-person dd {
+    font-size: 1em;
+  }
+
+  .concept-main {
+    margin-top: 0px;
+  }
+
+  .concept-main {
+    width: 100%;
+  }
+
+  .concept-person dt {
+    width: 100%;
+  }
+
+  .concept-person dd {
+    width: 90%;
+    margin: 0 5% 0;
+    padding: 5% 0;
+  }
+
+  .concept-title {
+    margin: 30px auto;
+  }
+
+  .concept-title .title .wrap {
+    width: 280px;
+    border-left-style: none;
+    border-right-style: none;
+    top: 20px;
+  }
+
+  .concept-title .title h1 {
+    font-size: 16px;
+    top: 0;
+    left: 0;
+  }
+
+  .concept-title .title2 h2 {
+    font-size: 14px;
+  }
+
+  .concept-note {
+    width: 90%;
+    margin: 20px auto;
+    height: auto;
+  }
+
+  .concept-note-menu {
+    display: none;
+  }
+
+  .concept-note dl {
+    display: inline;
+    background-image: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 0.8em;
+    height: auto;
+    margin-bottom: 2em;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.7em;
+    margin-bottom: 1.6em;
+  }
+
+  .concept-note dl.text1 dd.word2 {
+    margin-bottom: 1.6em;
+  }
+
+  .concept-note dl.text3 {
+    height: auto;
+    margin-bottom: 1.6em;
+  }
+
+  .concept-note dl dt {
+    display: inline;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 0.9em;
+    color: #626262;
+    line-height: 1em;
+    margin-bottom: 1.6em;
+  }
+
+  .concept-note dl dd.word3 {
+    margin-bottom: 1.6em;
+  }
+}
+@media screen and (min-width: 480px) {
+  .concept-person dd {
+    font-size: 1em;
+  }
+
+  .concept-title {
+    margin: 40px auto;
+  }
+
+  .concept-title .title .wrap {
+    width: 360px;
+  }
+
+  .concept-title .title h1 {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+  }
+
+  .concept-title .title2 h2 {
+    font-size: 14px;
+  }
+
+  .concept-note {
+    margin: 20px auto;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 0.9em;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.76em;
+  }
+
+  .concept-note dl dt {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 640px) {
+  .concept-person dd {
+    font-size: 1em;
+  }
+
+  .concept-title {
+    margin: 50px auto;
+  }
+
+  .concept-title .title .wrap {
+    width: 420px;
+    border-left-style: solid;
+    border-right-style: solid;
+    top: 10px;
+  }
+
+  .concept-title .title h1 {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+  }
+
+  .concept-title .title2 h2 {
+    font-size: 14px;
+  }
+
+  .concept-note {
+    margin: 30px auto;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 0.95em;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.8em;
+  }
+
+  .concept-note dl dt {
+    font-size: 1.05em;
+  }
+}
+@media screen and (min-width: 720px) {
+  .concept-person dd {
+    font-size: 1em;
+  }
+
+  .concept-title {
+    margin: 60px auto;
+  }
+
+  .concept-title .title .wrap {
+    width: 480px;
+  }
+
+  .concept-title .title h1 {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+  }
+
+  .concept-title .title2 h2 {
+    font-size: 14px;
+  }
+
+  .concept-note {
+    margin: 40px auto;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 1em;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.82em;
+  }
+
+  .concept-note dl dt {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .concept-bottom .pic {
+    display: none;
+  }
+
+  .concept-bottom .text {
+    width: 100%;
+  }
+
+  .concept-section .concept2-girl {
+    width: 70%;
+    margin: 0 auto;
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .concept-section .concept2-trouble {
+    width: 80%;
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .concept-person dd {
+    font-size: 0.9em;
+  }
+
+  .concept-main {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .concept-person dt {
+    width: 71.67%;
+  }
+
+  .concept-person dd {
+    width: 24.72%;
+    margin: 6% 1.8% 0;
+    padding: 0;
+  }
+
+  .concept-title {
+    margin: 80px auto;
+  }
+
+  .concept-title .title .wrap {
+    width: 380px;
+  }
+
+  .concept-title .title h1 {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+  }
+
+  .concept-title .title2 h2 {
+    font-size: 14px;
+  }
+
+  .concept-note {
+    margin: 50px auto;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 1.05em;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.86em;
+  }
+
+  .concept-note dl dt {
+    font-size: 1.15em;
+  }
+
+  .concept-bottom .text {
+    width: 50%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .concept-note dl dd.word3 {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .concept-person dd {
+    font-size: 1em;
+  }
+
+  .concept-main {
+    margin-top: 50px;
+    width: 85%;
+  }
+
+  .concept-title {
+    margin: 100px auto;
+  }
+
+  .concept-note-menu {
+    display: inline;
+  }
+
+  .concept-note dl {
+    display: none;
+    background-image: url(../images/concept_notebg.png);
+    padding: 0 20px 0 30px;
+    width: 940px;
+    margin: 0;
+    float: left;
+  }
+
+  .concept-note {
+    width: 990px;
+    margin: 100px auto 100px;
+    height: 344px;
+  }
+
+  .concept-note dl dt {
+    display: none;
+  }
+
+  .concept-note dl .text-point {
+    font-size: 1.1em;
+    height: 45px;
+    margin-bottom: 42px;
+  }
+
+  .concept-note dl dd {
+    font-size: 0.88em;
+    margin-bottom: 92px;
+  }
+
+  .concept-note dl.text1 dd.word2 {
+    margin-bottom: 70px;
+  }
+
+  .concept-note dl.text3 {
+    height: 229px;
+    margin-bottom: 115px;
+  }
+
+  .concept-bottom .text {
+    width: 65%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .concept-main {
+    margin-top: 90px;
+  }
+
+  .concept-person dd {
+    font-size: 1.1em;
+  }
+
+  .concept-main {
+    width: 85%;
+  }
+
+  .concept-title {
+    margin: 110px auto;
+  }
+
+  .concept-bottom .text {
+    width: 65%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .concept-main {
+    width: 85%;
+    width: 1200px;
+  }
+
+  .concept-person dd {
+    font-size: 1.3em;
+  }
+
+  .concept-title {
+    margin: 120px auto;
+  }
+
+  .concept-bottom .text {
+    width: 65%;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=hwj-concept.css.map */

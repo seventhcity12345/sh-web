@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.1.xsd
+		">
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<context:spring-configured />
+
+	<!-- 开启使用注解 -->
+	<context:annotation-config />
+
+	<!-- 扫描该包下的所有类，将除了Controller注解以外的bean注册在spring-ioc容器中，因为Controller注解会在springmvc容器中注册 -->
+	<context:component-scan base-package="com.*">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 使用DBCP的连接池方式来创建数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+
+		<!-- 初始化连接(当这个池被启动时初始化的创建的连接个数) -->
+		<property name="initialSize" value="${jdbc.initialSize}" />
+
+		<!-- (可以在这个池中同时被分配的有效连接数的最大值，如设置为负数，则不限制) -->
+		<property name="maxTotal" value="${jdbc.maxTotal}" />
+
+		<!-- 最大空限制(可以在池中保持空闲的最大连接数，超出设置值之外的空闲连接将被回收，如设置为负数，则不限制 ) -->
+		<property name="maxIdle" value="${jdbc.maxIdle}" />
+
+		<!-- 最小空闲时(可以在池中保持空闲的最小连接数，超出设置值之外的空闲连接将被创建，如设置为0，则不创建) -->
+		<property name="minIdle" value="${jdbc.minIdle}" />
+
+		<!-- （如果没有可用连接）池在抛出异常前等待的一个连接被归还的最大毫秒数，设置为-1则等待时间不确定 -->
+		<property name="maxWaitMillis" value="${jdbc.maxWaitMillis}" />
+
+		<!-- # 检查连接有效性的SQL语句 -->
+		<property name="validationQuery" value="SELECT 1" />
+
+		<!-- # 借出连接时不要测试，否则很影响性能 -->
+		<property name="testOnBorrow" value="false" />
+
+		<!-- # 失效检查线程运行时间间隔，要小于MySQL的'wait_timeout'时间（空闲对象驱逐线程运行时的休眠毫秒数，如果设置为非正数，则不运行空闲对象驱逐线程。） -->
+		<property name="timeBetweenEvictionRunsMillis" value="18800" />
+
+		<!-- # 检查连接是否有效,指明连接是否被空闲连接回收器(如果有)进行检验.如果检测失败,则连接将被从池中去除. -->
+		<property name="testWhileIdle" value="true" />
+		<!-- # 在每个空闲对象驱逐线程运行过程中中进行检查的对象个数。（如果有的话） -->
+		<property name="numTestsPerEvictionRun" value="${jdbc.maxTotal}" />
+		<!-- # 连接池中连接，在时间段内一直空闲，被逐出连接池的时间(1000*60*60)，以毫秒为单位 -->
+		<property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
+	</bean>
+
+	<!-- spring声明式事务管理器(JDBC) -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 容器初始化bean,注入缓存属性,用于动态的不同环境切换配置 -->
+	<bean id="systemInit" class="com.webi.hwj.init.SystemInit">
+		<property name="memcachedHost" value="192.168.250.167" />
+		<property name="memcachedPort" value="11211" />
+		<property name="memcachedUserName" value="" />
+		<property name="memcachedPortPassword" value="" />
+		<property name="env" value="dev" />
+	</bean>
+
+	<!-- 激活注解方式调用事务管理 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<!-- spring jdbc <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
+
+	<!-- 初始化JDBC模板 -->
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+</beans>

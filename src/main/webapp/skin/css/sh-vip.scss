@@ -1,0 +1,2147 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+// vipinfo
+.vipinfo {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	> .wrap {
+		position: relative;
+		position: static\9;
+		overflow: hidden;
+		> div {
+			float: left;
+			overflow: hidden;
+			width: 50%;
+			*width: 49.9%;
+			width: 49.9%\0;
+
+			@extend %transition;
+		}
+		.profile {
+			.photo,
+			.text {
+				float: left;
+				position: relative;
+				height: 100px;
+				display: inline-block;
+				margin: 45px auto;
+			}
+			.photo {
+				width: 35%;
+
+				.wrap {
+					position: absolute;
+					right: 0;
+					width: 100px;
+					height: 100px;
+					@include radiusSet(50%);
+					box-shadow: 0 0 0 5px rgba($speakhi_white, .3);
+				}
+				img {
+					display: none\9;
+					width: 100px;
+					height: 100px;
+					@include radiusSet(50%);
+				}
+				img:first-child {
+					display: block;
+				}
+				.vip-photo-cover {
+					display: none;
+				}
+			}
+			.text {
+				width: 60%;
+				margin-left: 5%;
+				line-height: 30px;
+				font-size: 14px;
+				color: $speakhi_white;
+
+				.wrap {
+					height: 60px;
+					padding: 20px 0;
+				}
+			}
+		}
+		.profile {
+			position: relative;
+			height: 190px;
+			margin: 20px auto;
+			*padding-bottom: 20px;
+			z-index: 3;
+		}
+		.cprogress {
+			position: relative;
+			height: 190px;
+			margin: 20px auto;
+			*padding-bottom: 20px;
+			z-index: 3;
+
+			.list {
+				position: relative;
+				z-index: 3;
+				height: 190px;
+				> li {
+					position: absolute;
+					top: 0;
+					left: 100%;
+					overflow: hidden;
+					width: 100%;
+					height: 190px;
+				}
+			}
+			.cp-prev,
+			.cp-next {
+				position: absolute;
+				top: 0;
+				width: 75px;
+				height: 190px;
+				color: $speakhi_white;
+				text-align: center;
+				cursor: pointer;
+				z-index: 4;
+
+				@include opacitySet(0.2);
+			}
+			.cp-prev {
+				left: 0;
+				*background: url(../images/arrow-left.png) center center no-repeat;
+				&:hover {
+					@extend %transition;
+					@include opacitySet(1);
+				}
+			}
+			.cp-next {
+				right: 0;
+				*background: url(../images/arrow-right.png) center center no-repeat;
+				&:hover {
+					@extend %transition;
+					@include opacitySet(1);
+				}
+			}
+			.cp-prev:before {
+				@include iconSet("\ea38");
+				vertical-align: top;
+				font-size: 22px;
+				line-height: 190px;
+			}
+			.cp-next:before {
+				@include iconSet("\ea34");
+				vertical-align: top;
+				font-size: 22px;
+				line-height: 190px;
+			}
+			.cprogress-name {
+				position: absolute;
+				right: 20px;
+				top: 15px;
+				font-size: 12px;
+				color: $speakhi_white;
+			}
+			.allprogress {
+				margin: 40px auto 5px;
+				*top: 40px;
+				li div {
+					color: $speakhi_white;
+					b {
+						color: $speakhi_white;
+						@extend %speakhi_ffnum;
+					}
+				}
+			}
+			.allprogress-chart {
+				width: 70%;
+				padding: 0 15%;
+				*margin-top: 50px;
+				@include contentBox;
+
+				span {
+					width: 50px;
+					margin-top: 30px;
+					color: $speakhi_white;
+				}
+				.wrap {
+					position: relative;
+					overflow: hidden;
+					margin-left: 30px;
+					padding: 0 18px 0 18px;
+					.allprogress-panel {
+						width: 100%;
+					}
+				}
+				.allprogress-num {
+					color: $speakhi_gray62;
+					background-color: $speakhi_white;
+					@include contentBox;
+					&:after {
+						*top: 38px;
+						top: 38px\9\0;
+						border-top: 6px solid $speakhi_white;
+						-webkit-border-top: 5px solid $speakhi_white;
+						*border-top: 4px solid $speakhi_white;
+					}
+				}
+			}
+
+			.mask {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				@include radiusSet(5px);
+				background-color: $speakhi_white;
+				@include opacitySet(.1);
+			}
+		}
+	}
+
+	> img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		width: 100%\9;
+		min-width: 1800px;
+		height: 460px;
+		z-index: 0;
+		overflow: hidden;
+	}
+	.mask {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-color: $speakhi_black;
+	    -webkit-opacity: .3;
+	    -moz-opacity: .3;
+	    -ms-opacity: .3;
+	    -o-opacity: .3;
+	    opacity: .3;
+	    filter: alpha(opacity=30);
+	}
+}
+.vipinfo .profile .text .edit {
+	margin-left: 10px;
+	color: $speakhi_white;
+	cursor: pointer;
+	&:before {
+		@include iconSet("\e905");
+		padding-right: 5px;
+	}
+	&:hover {
+		color: lighten($speakhi_blue, $objLighten);
+		color: $speakhi_graye0;
+	}
+}
+@media screen and (max-width: 960px) {
+	.vipinfo > .wrap > div {
+		width: 100%;
+	}
+	.vipinfo > .wrap .cprogress {
+		width: 70%;
+		margin: 0 15% 40px;
+	}
+	.vipinfo > .wrap .profile .photo {
+		width: 50%;
+	}
+	.vipinfo > .wrap .profile .text {
+		width: 45%;
+	}
+}
+@media screen and (max-width: 640px) {
+	.vipinfo > .wrap .cprogress {
+		width: 90%;
+		margin: 0 5% 40px;
+	}
+}
+@media screen and (max-width: 414px) {
+	.vipinfo > .wrap .cprogress {
+		width: 98%;
+		margin: 0 1% 40px;
+	}
+}
+
+// subnav
+.subnav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	line-height: 50px;
+	color: $speakhi_blue;
+	background-color: $speakhi_white;
+	box-shadow: 0 1px 2px $speakhi_graye0;
+	*border-bottom: 1px solid $speakhi_graye0;
+	border-bottom: 1px\9;
+	border-bottom-style: solid\9;
+	border-bottom-color: #e0e0e0\9;
+
+	ul {
+		height: 50px;
+		line-height: 50px;
+
+		li {
+			float: left;
+			overflow: hidden;
+			height: 50px;
+			line-height: 50px;
+			margin-right: 30px;
+			@extend %speakhi_ffyahei;
+			font-size: 14px;
+
+			&.active a {
+				color: $speakhi_blue;
+			}
+			a {
+				color: $speakhi_gray62;
+
+				&:hover {
+					color: $speakhi_blue;
+					@extend %transition;
+				}
+			}
+		}
+	}
+}
+
+// sh-vipbody
+.sh-vipbody {
+	width: 100%;
+	margin: 24px auto;
+	padding-bottom: 50px;
+	background-color: $speakhi_back;
+	> .wrap {
+		position: relative;
+		left: 0;
+		top: 0;
+
+		> .content {
+			margin-right: 250px;
+			@include autoHeight(300px);
+		}
+	}
+	.profile-form pre {
+		margin-left: 115px;
+	}
+	.content {
+		background-color: $speakhi_white;
+		color: $speakhi_gray62;
+
+		.container {
+			width: 100%;
+			@include autoHeight(300px);
+			padding: 0;
+			background-color: $speakhi_white;
+		}
+		.sh-viptab {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			border-bottom: 1px solid $speakhi_graye0;
+
+			ul {
+				height: 50px;
+				line-height: 50px;
+			}
+
+			li {
+				float: left;
+				display: inline-block;
+				height: 50px;
+				padding: 0 20px;
+				text-align: center;
+				cursor: pointer;
+				@extend %transition;
+				@include contentBox;
+
+				&.active {
+					overflow: hidden;
+					height: 49px;
+					font-weight: 900;
+					border-top: 2px solid darken($speakhi_blue, $objDarken);
+					border-left: 1px solid $speakhi_graye0;
+					border-right: 1px solid $speakhi_graye0;
+					background-color: $speakhi_white;
+				}
+				a {
+					font-size: 14px;
+					color: $speakhi_gray62;
+
+					&:hover {
+						font-weight: 900;
+						@extend %transition;
+					}
+				}
+			}
+		}
+	}
+	.aside {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 200px;
+
+		.sh-sign .title {
+			@extend %sh-title;
+			&:before {
+				@include iconSet("\e9b8");
+				vertical-align: top;
+				font-size: 22px;
+				padding-right:5px;
+			}
+		}
+		.sh-task .title {
+			@extend %sh-title;
+			&:before {
+				@include iconSet("\e926");
+				vertical-align: top;
+				font-size: 22px;
+				padding-right:5px;
+			}
+		}
+	}
+}
+.sh-task {
+	p {
+		margin: 20px auto;
+		color: $speakhi_gray62;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+.sh-notice {
+    position: relative;
+    top: 27px;
+    left: 0;
+    margin-bottom: 20px;
+    z-index: 1;
+
+    img {
+        position: absolute;
+        top: -26px;
+        right: 20px;
+        max-width: 390px;
+        max-height: 485px;
+        width: 40px;
+        z-index: -1;
+    }
+    .sh-notice-board {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        border: none;
+        
+        .sh-notice-dots {
+            width: 50%;
+            height: 30px;
+            line-height: 20px;
+            margin: 10px auto 0;
+            display: table;
+            
+            li {
+                width: 30px;
+                margin: 0 5%;
+                text-align: center;
+                display: table-cell;
+                button {
+                    width: 10px;
+                    height: 10px;
+                    background-color: $speakhi_graybf;
+                    color: transparent;
+                    @include radiusSet(50%);
+                    text-align: center;
+                    font-size: 0;
+                }
+                
+                &.slick-active button {
+                    background-color: $speakhi_yellow;
+                    color: transparent;
+                }
+            }
+        }
+        .title {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            @include radiusSet(1px);
+            background-color: $speakhi_yellow;
+            color: $speakhi_white;
+        }
+        .content {
+            position: relative;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            line-height: 25px;
+            font-size: 14px;
+            background-color: rgba($speakhi_yellow, .2);
+            color: $speakhi_gray62;
+            @include radiusSet(10px);
+            border-bottom-right-radius: 0;
+            
+            &:after {
+                position: absolute;
+                bottom: -18px;
+                right: 0;
+                content: "";
+                width: 0;
+                height: 0;
+                border-right: 30px solid rgba($speakhi_yellow, .2);
+                border-top: 0 solid transparent;
+                border-left: 30px solid transparent;
+                border-bottom: 18px solid transparent;
+                border-bottom-right-radius: 5px;
+            }
+
+            .sub-notice {
+                width: 100%;
+                height: auto;
+                display: inline-block;
+                line-height: 25px;
+                padding: 40px 10px 10px;
+                font-size: 12px;
+                
+                p {
+                    text-align: center;
+                }
+            }
+            a {
+                color: $speakhi_blue;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.sh-sign {
+	margin-bottom: 40px;
+
+	.body .wrap {
+		width: 99%;
+		height: 66px;
+		margin: 20px auto;
+		border: 1px solid $speakhi_yellow;
+		text-align: center;
+		@include contentBox;
+
+		.calendar {
+			float: left;
+			overflow: hidden;
+			height: 66px;
+			width: 35%;
+			display: inline-block;
+			background-color: $speakhi_yellow;
+			@include contentBox;
+
+			.wrap {
+				height: 50px;
+				margin: 8px auto;
+				div {
+					font-size: 16px;
+					color: $speakhi_white;
+					@extend %speakhi_ffyahei;
+					height: 25px;
+					line-height: 25px;
+				}
+			}
+
+		}
+		.signed-btn,
+		.sign-btn {
+			float: left;
+			overflow: hidden;
+			height: 66px;
+			line-height: 66px;
+			width: 65%;
+			*width: 64.5%;
+			display: inline-block;
+			font-size: 18px;
+			color: $speakhi_yellow;
+			@extend %speakhi_ffyahei;
+			cursor: pointer;
+		}
+		.signed-btn {
+			cursor: default;
+			color: $speakhi_graybf;
+		}
+	}
+	.body .text {
+		color: $speakhi_gray62;
+		font-size: 12px;
+		text-align: center;
+		line-height: 30px;
+
+		span {
+			color: $speakhi_yellow;
+			font-size: 18px;
+		}
+	}
+}
+.sh-task ul {
+	width: 100%;
+	li {
+		position: relative;
+		margin: 15px auto;
+		height: 24px;
+		line-height: 24px;
+		width: 100%;
+	}
+	li span {
+		display: inline-block;
+	}
+	.text {
+		position: absolute;
+		left: 0;
+		@extend %speakhi_ffyahei;
+		font-size: 12px;
+		color: $speakhi_gray62;
+		span {
+			display: none;
+			color: $speakhi_yellow;
+		}
+	}
+	.task-btn {
+		position: absolute;
+		right: 0;
+		width: 32px;
+		height: 22px;
+		line-height: 22px;
+		border: 1px solid $speakhi_yellow;
+		@include radiusSet($commonRadius);
+		@extend %speakhi_ffyahei;
+		text-align: center;
+		font-size: 12px;
+		color: $speakhi_yellow;
+		cursor: pointer;
+		&:hover {
+			color: $speakhi_white;
+			background-color: $speakhi_yellow;
+			@extend %transition;
+		}
+		a {
+			color: $speakhi_yellow;
+
+			&:hover {
+				color: $speakhi_white;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.sh-vipbody .aside {
+		position: static;
+		width: 100%;
+		margin: 24px auto;
+	}
+	.sh-vipbody .content {
+		width: 100%;
+		margin: 0;
+	}
+	.profile-form .content {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 640px) {
+	.profile-form .content {
+		width: 60%;
+	}
+}
+
+/* speakhi vip center list
+/**********************************************************/
+.sh-center {
+	width: 100%;
+	@include autoHeight(300px);
+	.sh-schedule .title {
+		@extend %sh-title;
+		&:before {
+			@include iconSet("\e920");
+			vertical-align: top;
+			font-size: 22px;
+			padding-right:5px;
+		}
+	}
+	.sh-video .title {
+		@extend %sh-title;
+		&:before {
+			@include iconSet("\e913");
+			vertical-align: top;
+			font-size: 22px;
+			padding-right:5px;
+		}
+	}
+	.sh-estudio .title {
+		@extend %sh-title;
+		&:before {
+			@include iconSet("\e914");
+			vertical-align: top;
+			font-size: 22px;
+			padding-right:5px;
+		}
+	}
+
+	.sh-schedule {
+		.schedule-more {
+			margin: 0;
+		}
+		li.schedule-order {
+			.wrap {
+				overflow: visible;
+				width: 98%;
+				height: 98%;
+				border: 2px dashed $speakhi_graye0;
+			}
+
+			&:hover {
+				box-shadow: none;
+			}
+		}
+	}
+	.sh-video {
+		.mini-time-text {
+			right: 10px;
+			left: inherit;
+			bottom: inherit;
+			width: auto;
+			padding: 0;
+			margin: 0;
+			background-color: $speakhi_white;
+		}
+	}
+	.sh-estudio,
+	.sh-video {
+		p {
+			margin: 20px auto;
+			text-align: center;
+			color: $speakhi_gray62;
+		}
+		.icon-more {
+			color: $speakhi_gray62;
+			font-size: 12px;
+			height: 24px;
+			line-height: 24px;
+			display: inline-block;
+
+			&:after {
+				@include iconSet("\ea42");
+				padding-left: 5px;
+			}
+		}
+		.imgTag {
+			cursor: pointer;
+			height: 0;
+			padding-bottom: 56.25%;
+
+			.mini-img {
+				@extend %transition;
+			}
+		}
+		.mini-pkg li {
+			display: block;
+		}
+		.icon-video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 3;
+			width: 60px;
+			height: 60px;
+			margin-top: -30px;
+			margin-left: -30px;
+		}
+		.mask {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			background-color: $speakhi_black;
+			@include opacitySet(.5);
+		}
+	}
+	.sh-topic {
+		li {
+			display: block;
+		}
+	}
+	.icon-clock {
+		&:before {
+			@include iconSet("\e950");
+			font-size: 16px;
+			padding-right: 5px;
+		}
+	}
+}
+.sh-creview {
+	&:hover {
+		@extend %transition;
+		box-shadow: 0 0 6px 1px $speakhi_graybf;
+	}
+	.imgTag {
+		overflow: hidden;
+		cursor: pointer;
+
+		.mini-img {
+			@extend %transition;
+		}
+	}
+	.mini-pkg li {
+		display: block;
+	}
+	.mini-time-text {
+		position: relative;
+		right: 0;
+		width: auto;
+		padding: 0;
+		margin: 0;
+	}
+	.icon-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		width: 60px;
+		height: 60px;
+		margin-top: -30px;
+		margin-left: -30px;
+	}
+	.mask {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background-color: $speakhi_black;
+		@include opacitySet(.5);
+	}
+}
+.sh-estudio,
+.sh-topic,
+.sh-video,
+.sh-schedule {
+	margin-bottom: 30px;
+}
+.mini-pkg {
+	overflow: visible;
+	*margin-bottom: 20px;
+
+	li {
+		width: 32.13%;
+		*width: 31.4%;
+		width: 31.4%\9;
+		margin: 0 1.8% 1.8% 0;
+		*margin: 0 0.9% 20px;
+		margin: 0 0.9% 20px\9;
+		border: 0;
+		@extend %transition;
+
+		&:hover {
+			@extend %transition;
+			box-shadow: 0 0 6px 1px $speakhi_graybf;
+		}
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+	}
+}
+.sh-estudio .mini-pkg li {
+	&:hover {
+		.mini-des-text {
+			top: 0;
+			word-break: break-all;
+			word-wrap: break-word
+		}
+		.mini-des {
+			top: 0;
+		}
+	}
+}
+.mini-item {
+	width: auto;
+
+	> span {
+		padding: 0;
+		line-height: 36px;
+		margin-bottom: 5px;
+		display: block;
+		word-break: break-all;
+		color: $speakhi_gray62;
+		font-size: 14px;
+
+		label {
+			padding: 4px 5px;
+			@include radiusSet($commonRadius);
+			background-color: $speakhi_graye0;
+			font-size: 12px;
+		}
+	}
+
+	div {
+		font-size: 12px;
+
+		.text {
+			position: relative;
+			top: 0;
+			right: 0;
+		}
+		span {
+			min-width: 120px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 12px;
+			color: $speakhi_gray62;
+		}
+		.photo-wrap {
+			display: inline-block;
+			position: relative;
+			top: 0;
+			left: 0;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 32px;
+				height: 32px;
+				margin: 2px auto;
+			}
+			span {
+				margin-left: 38px;
+			}
+		}
+	}
+}
+
+.icon-lock {
+	&:before {
+		@include iconSet("\e98f");
+		padding-right: 3px;
+	}
+}
+
+// es2.0 page change
+.sh-estips {
+	width: auto;
+	margin: 10px 0;
+	padding: 5px;
+	display: inline-block;
+	background-color: lighten($speakhi_yellow, 5%);
+	@include radiusSet(10px);
+
+	.sh-estips-text {
+		padding: 10px;
+		line-height: 20px;
+		display: inline-block;
+		color: $speakhi_red;
+		@include radiusSet(10px);
+		border: 1px dashed $speakhi_red;
+
+		&:before {
+			position: relative;
+			top: -40px;
+			left: 60px;
+			content: "";
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid $speakhi_yellow;
+		}
+	}
+}
+.sh-eswrap {
+	width: 100%;
+	border: 1px solid $speakhi_graye0;
+	color: $speakhi_gray62;
+
+	.sh-es-subtitle {
+		width: 100%;
+		margin: 10px;
+
+		label {
+			width: 160px;
+			height: 30px;
+			line-height: 30px;
+			padding: 5px 10px;
+			color: $speakhi_white;
+			font-size: 14px;
+			text-align: center;
+			@include radiusSet(3px);
+		}
+	}
+	.sh-estoday-content {
+		width: auto;
+		margin: 10px;
+	}
+	.sh-estoday-cimg {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 36%;
+		max-width: 320px;
+		height: 180px;
+		
+		> img {
+		    width: 100%;
+            max-width: 320px;
+		    height: 180px;
+		}
+
+		label {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px 0 3px;
+			font-size: 14px;
+			background-color: $speakhi_yellow;
+			color: $speakhi_white;
+
+			&:before {
+				content: "";
+				width: 0;
+				height: 0;
+				position: absolute;
+				bottom: 0;
+				left: -15px;
+				border-left: 15px solid transparent;
+				border-right: 0 solid transparent;
+				border-top: 0 solid transparent;
+				border-bottom: 30px solid $speakhi_yellow;
+			}
+		}
+	}
+	.sh-es-teacher {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+	}
+	.sh-estoday-cinfo {
+		width: 62%;
+		margin: 0;
+		padding: 0;
+		overflow: visible;
+		display: inline-block;
+
+		.sh-est-photo {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 40px;
+				height: 40px;
+				@include radiusSet(50%);
+			}
+			.img-cover {
+				display: none;
+				display: block\9;
+			}
+		}
+		.sh-est-info {
+			width: auto;
+			height: 40px;
+			margin-left: 10px;
+			label,
+			div {
+				width: auto;
+				height: 20px;
+				line-height: 20px;
+			}
+			label {
+				font-size: 14px;
+				color: $speakhi_graybf;
+			}
+		}
+		.sh-es-description {
+			position: relative;
+			top: 0;
+			left: 0;
+			height: 40px;
+			line-height: 20px;
+			margin: 10px auto;
+			font-size: 12px;
+
+			label {
+				width: 100px;
+				line-height: 20px;
+				display: inline-block;
+
+				&:before {
+					position: relative;
+					margin-right: 5px;
+					vertical-align: baseline;
+					@include iconSet("\e926");
+				}
+			}
+			div {
+				position: absolute;
+				left: 60px;
+				top: 0;
+				line-height: 20px;
+			}
+		}
+		.sh-es-countdown {
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			margin-right: -10px;
+			overflow: hidden;
+			label {
+				position: absolute;
+				left: 39px;
+				top: 0;
+				z-index: 2;
+				width: 31px;
+				height: 72px;
+				display: inline-block;
+				background: url(../images/sh_es_count01.png) no-repeat;
+			}
+			.es-time-over {
+				img {
+					width: 40px;
+					height: 50px;
+					margin-left: 10px;
+				}
+				button:before {
+					content:"";
+					margin-right: 0;
+				}
+				span {
+					position:relative;
+					top: 0;
+					left: 0;
+					margin-left: 3%;
+					padding: 10px 30px;
+					border: 1px solid $speakhi_graye0;
+					background-color: $speakhi_white;
+					color: $speakhi_gray62;
+					@include radiusSet(3px);
+					&:before {
+						position: absolute;
+						top: 8px;
+						left: -10px;
+						z-index: 2;
+						content: "";
+						width: 0;
+						height: 0;
+						border-bottom: 5px solid transparent;
+						border-left: 5px solid transparent;
+						border-top: 5px solid transparent;
+						border-right: 5px solid $speakhi_white;
+					}
+					&:after {
+						position: absolute;
+						top: 8px;
+						left: -12px;
+						z-index: 1;
+						content: "";
+						width: 0;
+						height: 0;
+						border-bottom: 5px solid transparent;
+						border-left: 5px solid transparent;
+						border-top: 5px solid transparent;
+						border-right: 5px solid $speakhi_graye0;
+					}
+				}
+			}
+			div {
+				position: relative;
+				left: 70px;
+				top: 0;
+				overflow: visible;
+				height: 72px;
+				line-height: 72px;
+				background: url(../images/sh_es_count02.png) repeat-x;
+				button {
+					margin-left: 5%;
+					width: 120px;
+					height: 42px;
+					line-height: 42px;
+					&:before {
+						@include iconSet("\ea13");
+						margin-right: 10px;
+						vertical-align: middle;
+						font-size: 14px;
+					}
+				}
+				.blue-bg:hover {
+					background-color: lighten($speakhi_blue, $objDarken);
+				}
+				.dark-gray-br:hover {
+				    border: 1px solid $speakhi_gray95;
+				}
+				.icon-clock:before {
+					vertical-align: text-top;
+				}
+				.icon-clock {
+					margin: 0 10px;
+				}
+				.es-time-colon {
+					width: 15px;
+					margin: 0;
+					padding: 0;
+					text-align: center;
+					display: inline-block;
+				}
+			}
+			div span {
+				font-size: 14px;
+				vertical-align: middle;
+			}
+			div .es-time-item {
+				padding: 5px 6px;
+				font-size: 25px;
+				color: $speakhi_white;
+				@include radiusSet(5px);
+				background-color: $speakhi_gray62;
+			}
+		}
+	}
+
+	.sh-estoday {
+
+	}
+
+	.sh-esnotice {
+		margin-top: 20px;
+
+		ul {
+			width: 98%;
+			margin: 0 1%;
+			overflow: visible;
+			.mini-item {
+				margin: 10px 0 0;
+			}
+			.mini-item span {
+				height: 20px;
+				line-height: 20px;
+			}
+			li {
+				img:hover {
+					cursor: default;
+				}
+			}
+			span.es-course-info {
+                height: 40px;
+                line-height: 40px;
+                
+                span {
+                    height: 40px;
+                    line-height: 40px;
+                }
+            }
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.sh-center .sh-topic .mini-pkg li,
+	.sh-center .sh-estudio .mini-pkg li,
+	.sh-center .sh-video .mini-pkg li,
+	.sh-center .sh-schedule .mini-pkg li {
+		width: 48.5%;
+		*width: 46.4%;
+		width: 46.4%\9;
+		margin: 0 1.8% 1.8% 0;
+		*margin: 0 0.9% 20px;
+		margin: 0 0.9% 20px\9;
+		border: 0;
+
+		&:nth-child(3n) {
+			margin-right: 1.8%;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown label {
+		left: 10px;
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown div {
+		left: 41px;
+	}
+}
+@media screen and (max-width: 1380px) and (min-width: 960px) {
+	.sh-eswrap .sh-estoday-cinfo {
+		width: 100%;
+		margin-top: 10px;
+	}
+	.sh-eswrap .sh-estoday-cimg {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 900px) {
+	.sh-eswrap .sh-estoday-cinfo {
+		width: 100%;
+		margin-top: 10px;
+	}
+	.sh-eswrap .sh-estoday-cimg {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.sh-center .sh-topic .mini-pkg li,
+	.sh-center .sh-estudio .mini-pkg li,
+	.sh-center .sh-video .mini-pkg li,
+	.sh-center .sh-schedule .mini-pkg li {
+		width: 100%;
+		*width: 99.6%;
+		width: 99.6%\9;
+		margin: 0 auto 20px;
+		border: 0;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+	.subnav ul {
+		position: relative;
+		top: 0;
+		left: 50%;
+		display: inline-block;
+		width: auto;
+
+		li {
+			position: relative;
+			float: none;
+			display: inline-block;
+			right: 50%;
+			width: auto;
+			text-align: center;
+			margin: 0 5px;
+		}
+	}
+	.sh-vipbody .content .sh-viptab li {
+		padding: 0 8px;
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown div .icon-clock {
+		display: none;
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown label {
+		display: none;
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown div {
+		left: 0;
+		padding-left: 10px;
+	}
+	.sh-eswrap .sh-estoday-cinfo .sh-es-countdown {
+		margin-right: 0;
+	}
+}
+
+/* speakhi protocol list 合同列表v1
+/**********************************************************/
+.sh-protocols {
+	width: 96%;
+	margin: 30px auto;
+	padding: 0 2%;
+	@include autoHeight(300px);
+	li {
+		color: $speakhi_gray62;
+		font-size: 14px;
+	}
+
+	.lists {
+		width: 100%;
+
+		li {
+			float: left;
+			overflow: hidden;
+			display: inline-block;
+			width: 100%;
+			height: 70px;
+			line-height: 70px;
+			border-bottom: 1px dashed $speakhi_graye0;
+
+			&.title {
+				height: 40px;
+				line-height: 40px;
+
+				.list li {
+					height: 40px;
+					line-height: 40px;
+				}
+
+			}
+			.list {
+				height: 40px;;
+				line-height: 40px;
+
+				li {
+					display: block;
+					width: 20%;
+					*width: 19.9%;
+					width: 19.9%\9;
+					height: 70px;
+					line-height: 70px;
+					border: none;
+					text-align: center;
+
+					label {
+						display: none;
+					}
+
+					a {
+						color: $speakhi_blue;
+						@include singleline-ellipsis;
+						width: auto;
+
+						&:link {
+							color: $speakhi_blue;
+						}
+						&:visited {
+							color: mix($speakhi_blue, $speakhi_red);
+						}
+						&:hover {
+							@include opacitySet(.8);
+						}
+						&:active {
+							color: $speakhi_blue;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sh-protocol {
+	width: 100%;
+	margin: 30px auto;
+	@include autoHeight(300px);
+
+	.back-list {
+		a {
+			width: 100%;
+			color: $speakhi_blue;
+			font-size: 14px;
+			text-align: right;
+
+			&:hover {
+				@include opacitySet(.8);
+			}
+		}
+	}
+}
+
+.sh-oto {
+	margin: 20px 0 0;
+}
+
+/* speakhi contract list 合同列表v2
+/**********************************************************/
+.sh-contracts {
+	width: 100%;
+	margin: 20px auto;
+
+	table {
+		width: 100%;
+		margin: 30px 0;
+		color: $speakhi_gray62;
+		border: 1px solid $speakhi_graye0;
+		border-spacing: 0;
+		border-collapse: collapse;
+		word-spacing: 0;
+
+		thead {
+			color: #fff;
+			&.thead-yellow {
+				border: none;
+				background-color: $speakhi_yellow;
+			}
+			&.thead-green {
+				border: none;
+				background-color: $speakhi_green;
+			}
+			&.thead-gray {
+				border: none;
+				background-color: $speakhi_graybf;
+			}
+			tr,
+			td {
+				border: none;
+			}
+			.thead-td-1 {
+				width: 150px;
+			}
+			.thead-td-2 {
+
+			}
+			.thead-td-3 {
+				text-align: right;
+				padding-right: 20px;
+			}
+		}
+		tbody {
+			text-align: center;
+			td {
+				line-height: 25px;
+				padding: 10px 0;
+			}
+			.tbody-btns {
+				button {
+					display: block;
+					width: 90px;
+					height:30px;
+					line-height: 30px;
+					margin: 8px auto;
+					padding: 0;
+					color: $speakhi_gray62;
+					font-weight: normal;
+					background-color: $speakhi_white;
+					border: 1px solid $speakhi_gray95;
+
+					&:hover {
+						background-color: $speakhi_gray95;
+						color: $speakhi_white;
+					}
+				}
+				.tbody-btns-pay {
+					border: 1px solid $speakhi_yellow;
+					color: $speakhi_yellow;
+
+					&:hover {
+						background-color: $speakhi_yellow;
+						color: $speakhi_white;
+					}
+				}
+			}
+			.contract-amount {
+				font-size: 24px;
+			}
+		}
+		tfoot {
+			background-color: $speakhi_graye0;
+
+			td {
+				font-size: 14px;
+				&:before {
+					@include iconSet("\ea0c");
+					margin-right: 5px;
+					vertical-align: text-bottom;;
+					color: $speakhi_gray62;
+					font-size: 20px;
+				}
+			}
+		}
+		tr {
+			width: 100%;
+			height: 45px;
+			border: 1px solid $speakhi_graye0;
+		}
+		td {
+			padding: 0 10px;
+			border: 1px solid $speakhi_graye0;
+		}
+		th {
+			font-weight: normal;
+			text-align: center;
+			border: 1px solid $speakhi_graye0;
+			background-color: lighten($speakhi_graye0, $objLighten);
+		}
+	}
+}
+
+/* speakhi pay detail 支付详情
+/**********************************************************/
+.sh-paydetail {
+	margin: 0 auto 60px;
+	font-size: 16px;
+	color: $speakhi_gray62;
+	.paydetail-title {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 70px;
+		line-height: 70px;
+		text-align: center;
+
+		h3 {
+			font-size: 18px;
+			font-weight: normal;
+			display: inline-block;
+		}
+		a {
+			position: absolute;
+			right: 2%;
+			top: 0;
+			font-size: 14px;
+			color: $speakhi_blue;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.pay-amount-wrap {
+		vertical-align: top;
+		label,
+		span {
+			vertical-align: top;
+		}
+	}
+	.pay-amount {
+		margin: 0 5px;
+		color: $speakhi_yellow;
+		font-size: 24px;
+	}
+
+	ul {
+		width: 96%;
+		margin: 0 2%;
+
+		li {
+			padding: 15px 0;
+			line-height: 36px;
+			border-top: 1px dashed $speakhi_graye0;
+
+			&:first-child {
+				border: none;
+			}
+		}
+	}
+	.paydetail-status {
+		width: 96%;
+		height: 36px;
+		line-height: 36px;
+		margin: 10px 2%;
+		text-align: right;
+		span .red-text {
+			margin: 0 5px;
+		}
+		a {
+			width: 120px;
+			height: 44px;
+			line-height: 44px;
+			margin-left: 20px;
+			background-color: $speakhi_yellow;
+			color: $speakhi_white;
+			text-align: center;
+			@include radiusSet(3px);
+		}
+	}
+	hr {
+		width: 96%;
+		margin: 0 2%;
+	}
+}
+
+/* speakhi otm list
+/**********************************************************/
+.sh-subtab {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	margin: 20px 0;
+	display: inline-block;
+
+	ul {
+		position: absolute;
+		right: 0;
+		height: 34px;
+		line-height: 34px;
+		overflow: hidden;
+		background-color: $speakhi_white;
+		border: 1px solid $speakhi_yellow;
+		@include radiusSet($commonRadius);
+		@include contentBox;
+
+		li {
+			display: inline-block;
+			height: 36px;
+			line-height: 36px;
+			padding: 0 20px;
+			font-size: 14px;
+			color: $speakhi_gray95;
+			cursor: pointer;
+			@include contentBox;
+
+			a {
+				color: $speakhi_gray95;
+				display: inline-block;
+			}
+
+			&.active {
+				color: $speakhi_white;
+				background-color: $speakhi_yellow;
+				@include contentBox;
+				a {
+					color: $speakhi_white;
+				}
+			}
+		}
+	}
+}
+
+/* speakhi task card list
+/**********************************************************/
+.sh-taskcard {
+	ul {
+		width: 100%;
+		overflow: hidden;
+		margin: 30px auto;
+		li {
+			float: left;
+			overflow: hidden;
+			display: inline-block;
+			width: 22.5%;
+			height: auto;
+			margin: 0 1% 20px;
+			text-align: center;
+			font-size: 16px;
+			color: $speakhi_gray62;
+			@include radiusSet($commonRadius);
+			border: 1px solid $speakhi_graye0;
+			@extend %transition;
+
+			p {
+				height: 50px;
+				line-height: 50px;
+			}
+			hr {
+				position: absolute;
+				left: 0;
+				top: 5px;
+				z-index: 0;
+				width: 100%;
+				@include linear-gradient-lr(rgba(0,0,0,0),$speakhi_graybf,rgba(0,0,0,0));
+			}
+			.text {
+				position: relative;
+				left: 0;
+				top: 0;
+				width: 80%;
+				height: 30px;
+				line-height: 30px;
+				margin-top: 10px;
+				font-size: 14px;
+
+				span {
+					position: relative;
+					padding: 0 8px;
+					background-color: $speakhi_white;
+					z-index: 1;
+				}
+			}
+			.tips {
+				height: 40px;
+				line-height: 40px;
+				font-size: 12px;
+
+				label {
+					vertical-align: top;
+					color: $speakhi_yellow;
+				}
+			}
+			img {
+				width: 80%;
+			}
+			a {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 14px;
+				color: $speakhi_white;
+				display: inline-block;
+				@extend %transition;
+			}
+			.finish-card,
+			.done-card {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				display: inline-block;
+				font-size: 14px;
+				color: $speakhi_graybf;
+				background-color: lighten($speakhi_graye0, $objLighten);
+			}
+			.task-card {
+				background-color: $speakhi_yellow;
+				&:hover {
+					background-color: lighten($speakhi_yellow, $objLighten);
+				}
+			}
+			.points-card {
+				background-color: lighten($speakhi_green, $objLighten);
+				&:hover {
+					background-color: lighten($speakhi_green, $objLighten * 1.6);
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 640px) {
+	.sh-taskcard ul li {
+		width: 47.5%;
+	}
+}
+@media screen and (max-width: 414px) {
+	.sh-taskcard ul li {
+		width: 97.5%;
+	}
+}
+
+/* vip order/pay/
+/**********************************************************/
+
+.hr {
+	width: 96%;
+	margin: 20px 2% 20px;
+}
+.sh-order {
+	margin: 128px auto 80px;
+}
+
+/* find psw
+/**********************************************************/
+.sh-findpsw {
+	width: 300px;
+	@include autoHeight(360px);
+	margin: 128px auto;
+	padding: 40px 80px;
+	*border: 1px solid $speakhi_graye0;
+	border: 1px solid #e0e0e0\0;
+	box-shadow: 0 0 10px $speakhi_graye0;
+	@include contentBox;
+
+	ul {
+		width: 100%;
+
+		li {
+			width: 100%;
+			height: 36px;
+			line-height: 36px;
+			margin: 40px auto;
+
+			#newpsw-error,
+			#confirmpsw-error,
+			#phone-error,
+			#vcode-error {
+				font-weight: 100;
+				font-size: 12px;
+				color: $speakhi_red;
+				display: inline-block;
+			}
+		}
+	}
+
+	.title {
+		position: relative;
+		left: 0;
+		top: 0;
+		height: 60px;
+		z-index: 1;
+
+		div {
+			position: relative;
+			z-index: 2;
+			width: 80px;
+			height: 60px;
+			display: inline-block;
+			background-color: $speakhi_white;
+
+			&.active label {
+				color: $speakhi_blue;
+			}
+			&.active h3 {
+				color: $speakhi_gray62;
+			}
+			@include contentBox;
+		}
+		label {
+			width: 100%;
+			line-height: 30px;
+			display: inline-block;
+			font-size: 30px;
+			font-weight: 700;
+			@extend %speakhi_ffnum;
+			color: $speakhi_graybf;
+			text-align: center;
+			@include contentBox;
+		}
+		h3 {
+			width: 100%;
+			height: 20px;
+			margin: 0;
+			line-height: 20px;
+			font-size: 16px;
+			color: $speakhi_graybf;
+			font-weight: 100;
+			text-align: center;
+			@include contentBox;
+		}
+		hr {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			margin: 0;
+			z-index: 0;
+		}
+		.left {
+			padding-right: 30px;
+		}
+		.right {
+			padding-left: 30px;
+		}
+	}
+
+	input {
+		width: 95.5%;
+		height: 28px;
+		line-height: 28px;
+		padding: 5px 2%;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 14px;
+
+		&.vcode {
+			width: 170px;
+		}
+	}
+	.vcode-link {
+		width: 100px;
+		height: 38px;
+		line-height: 38px;
+		border: 1px solid $speakhi_graye0;
+		font-size: 14px;
+		color: $speakhi_gray62;
+		text-align: center;
+		vertical-align: middle;
+		@include radiusSet(3px);
+		@include contentBox;
+	}
+	.next-link {
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		background-color: $speakhi_blue;
+		color: $speakhi_white;
+		text-align: center;
+		vertical-align: middle;
+		@include radiusSet(3px);
+	}
+}
+@media screen and (max-width: 480px) {
+	.sh-findpsw {
+		width: 80%;
+		padding: 40px 10%;
+		margin: 0 auto;
+		box-shadow: none;
+
+		input.vcode {
+			width: 50%;
+		}
+		.vcode-link {
+			width: 40%;
+		}
+	}
+}
+.sh-pswsuccess {
+	width: 100%;
+	margin: 120px auto;
+	text-align: center;
+	display: none;
+
+	p {
+		height: 40px;
+		line-height: 40px;
+		color: $speakhi_gray62;
+		font-size: 18px;
+
+		&:first-child {
+			font-size: 20px;
+		}
+	}
+	span {
+		margin: 0 5px;
+	}
+}
+
+/* paid split list(拆分订单前端页面)
+/**********************************************************/
+.sh-paylist {
+	position: relative;
+	top: 50px;
+	margin-bottom: 100px;
+	font-size: 14px;
+	color: $speakhi_gray62;
+
+	.paylists {
+		width: 100%;
+
+		> li {
+			padding: 20px 0;
+			border-bottom: 1px dashed $speakhi_graybf;
+		}
+	}
+
+	.payitem-info,
+	.paylist-info {
+		div,
+		a,
+		label,
+		span {
+			height: 40px;
+			line-height:40px;
+		}
+		.paybank-btn {
+			width: 85px;
+			height: 36px;
+			line-height: 36px;
+			margin: 20px 0;
+			font-size: 12px;
+			@include radiusSet(3px);
+			text-align: center;
+			color: $speakhi_white;
+			background-color: $speakhi_yellow;
+
+			&.inactive {
+				cursor: default;
+				background-color: $speakhi_graybf !important;
+			}
+		}
+	}
+	.pay-price strong {
+		margin: 0 5px;
+		font-size: 24px;
+		vertical-align: middle;
+		@extend %speakhi_ffnum;
+	}
+	.paid-gray {
+		color: $speakhi_graybf;
+	}
+	.icon-plus,
+	.icon-minus {
+		margin-left: 30px;
+		font-weight: 700;
+		display: inline-block;
+		cursor: pointer;
+		img {
+			position: relative;
+			top: -3px;
+			width: 24px;
+			height: 24px;
+			margin: 8px 10px;
+			display: none;
+			*display: inline-block;
+		}
+	}
+	.icon-minus:before {
+		position: relative;
+		top: -3px;
+		margin: 0 10px;
+		font-size: 24px;
+		vertical-align: middle;
+		@include iconSet("\ea0b");
+	}
+	.icon-plus:before {
+		position: relative;
+		top: -3px;
+		margin: 0 10px;
+		font-size: 24px;
+		vertical-align: middle;
+		@include iconSet("\ea0a");
+	}
+	.paybank-list {
+		margin-top: 20px;
+		@include autoHeight(56px);
+		overflow: hidden;
+
+		label {
+			height: 56px;
+			line-height: 56px;
+			display: inline;
+			font-weight: normal;
+		}
+		ul {
+			li {
+				float: left;
+				overflow: hidden;
+				display: inline-block;
+				width: 200px;
+				height: 56px;
+				line-height: 56px;
+			}
+			input,
+			img {
+				vertical-align: middle;
+				display: inline-block;
+				cursor: pointer;
+			}
+			input {
+				margin-left: 10px;
+			}
+			img {
+				width: 60%;
+				max-height: 56px;
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.sh-paylinks {
+		height: 40px;
+		line-height: 40px;
+		text-align: right;
+
+		> span {
+			padding-right: 15px;
+			margin-right: 15px;
+			display: inline-block;
+			border-right: 1px solid $speakhi_graye0;
+
+			span {
+				margin: 0 5px;
+			}
+		}
+		a {
+			font-size: 12px;
+			text-decoration: underline;
+		}
+		.pay-link {
+			height: 36px;
+			line-height: 36px;
+			padding: 0 15px;
+			margin-right: 20px;
+			@include radiusSet(3px);
+			color: $speakhi_white;
+			background-color: $speakhi_yellow;
+			text-decoration: none;
+		}
+	}
+}

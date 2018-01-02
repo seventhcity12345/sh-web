@@ -1,0 +1,26 @@
+##小写
+#set($entityname=$EntityName.toLowerCase())
+#set($length=$EntityName.length())
+##首字母小写
+#set($entityName=$EntityName.substring(0,1).toLowerCase()+$EntityName.substring(1,$length)) 
+package com.${companyName}.${projectName}.${entityname}.controller;
+
+import javax.annotation.Resource;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.${companyName}.${projectName}.${entityname}.service.${EntityName}Service;
+import org.apache.log4j.Logger;
+
+/**
+ * @category ${entityName}控制类
+ * @author mingyisoft代码生成工具
+ *
+ */
+@Controller
+@RequestMapping("/${entityName}")
+public class ${EntityName}Controller {
+	private static Logger logger = Logger.getLogger(${EntityName}Controller.class);
+	@Resource
+	private ${EntityName}Service ${entityName}Service;
+	
+}

@@ -1,0 +1,12 @@
+package com.${companyName}.${projectName}.${entityname}.dao;
+
+import org.springframework.stereotype.Repository;
+import com.mingyisoft.javabase.base.dao.BaseEntityDao;
+import org.apache.log4j.Logger;
+import com.${companyName}.${projectName}.${entityname}.entity.${EntityName};
+
+@Repository
+public class ${EntityName}Dao extends BaseEntityDao<${EntityName}>{ 
+	private static Logger logger = Logger.getLogger(${EntityName}Dao.class);
+	
+}

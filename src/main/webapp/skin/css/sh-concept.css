@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* CSS Document */
+/* SCSS Document */
+/* common params
+/* 公共变量定义
+/******************************************************/
+/*other color
+/*-----------------------------*/
+/* common placeholder params
+/* 公共占位符定义
+/*-----------------------------*/
+/* common extend params
+/* 公共继承属性定义
+/*-----------------------------*/
+/* common function params
+/* 公共函数定义
+/*-----------------------------*/
+/* common mixin params
+/* 公共混合宏定义
+/*-----------------------------*/
+/* speakhi index style v3
+/* time 2016年6月15日10:35:51
+/**********************************************************/
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  overflow: visible;
+  overflow-x: auto;
+}
+
+.top,
+.header-wrap,
+.article,
+.footer {
+  min-width: 1200px !important;
+}
+
+body.ui-mobile-viewport, div.ui-mobile-viewport,
+.ui-mobile .ui-page-active {
+  overflow: visible;
+  overflow-x: visible;
+}
+
+.banner,
+.max-width {
+  min-width: 1200px !important;
+}
+
+/**********************************************************/
+.article {
+  width: 100%;
+  height: 550px;
+}
+.article .section {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  min-width: 1200px;
+  height: 550px;
+}
+.article .section p {
+  color: #626262;
+}
+
+.language-skill {
+  background-color: #f5f8fa;
+}
+.language-skill .sec-img {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 360px;
+  height: 405px;
+}
+.language-skill .sec-title {
+  position: absolute;
+  left: 5%;
+  top: 70px;
+  width: 361px;
+  height: 134px;
+}
+.language-skill p {
+  position: relative;
+  left: 5%;
+  top: 260px;
+  width: 50%;
+  line-height: 30px;
+  text-align: left;
+  display: block;
+  margin-left: 0;
+}
+
+.language-comprehension {
+  background-color: #fff;
+}
+.language-comprehension .sec-img {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  width: 270px;
+  height: 460px;
+  display: none;
+}
+.language-comprehension .sec-title {
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  width: 320px;
+  height: 131px;
+}
+.language-comprehension p {
+  position: relative;
+  left: 50%;
+  top: 310px;
+  width: 50%;
+  line-height: 30px;
+  text-align: left;
+  display: block;
+  margin-left: 0;
+}
+
+.language-effective {
+  background-color: #f1f4f5;
+}
+.language-effective .sec-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 596px;
+  height: 382px;
+  display: none;
+}
+.language-effective .sec-title {
+  position: absolute;
+  left: 5%;
+  top: 130px;
+  z-index: 1;
+  width: 562px;
+  height: 62px;
+}
+.language-effective p {
+  position: relative;
+  left: 5%;
+  top: 240px;
+  width: 44%;
+  line-height: 30px;
+  text-align: left;
+  display: block;
+  margin-left: 0;
+}
+
+.language-patience {
+  background-color: #f5f8fa;
+}
+.language-patience .sec-img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -428px;
+  width: 856px;
+  height: 304px;
+  display: none;
+}
+.language-patience .sec-title {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  margin-left: -100px;
+  width: 200px;
+  height: 58px;
+}
+.language-patience p {
+  position: relative;
+  left: 0;
+  top: 180px;
+  width: 50%;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+}
+
+.language-method {
+  background-color: #f9f9f9;
+}
+.language-method .sec-img {
+  position: absolute;
+  left: 15%;
+  bottom: 30px;
+  width: 303px;
+  height: 234px;
+}
+.language-method .sec-img2 {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 318px;
+  height: 297px;
+  display: none;
+}
+.language-method .sec-title {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  margin-left: -79px;
+  width: 158px;
+  height: 58px;
+}
+.language-method p {
+  position: relative;
+  left: 0;
+  top: 180px;
+  width: 50%;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  max-width: 1100px !important;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=sh-concept.css.map */

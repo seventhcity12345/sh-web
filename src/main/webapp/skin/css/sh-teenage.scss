@@ -1,0 +1,202 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* header style
+/**************************************************************************/
+body {
+	margin: 0 auto;
+	text-align: center;
+	background-color: $speakhi_white;
+    @extend %speakhi_ffyahei;
+}
+.banner {
+	padding-bottom: 26.042% !important;
+}
+.banner-info {
+	left: 20%;
+	top: 25%;
+	p {
+		margin: 10px auto;
+	}
+	@extend %speakhi_ffyahei;
+}
+.banner-right {
+	right: -35%;
+}
+.banner-info .tag1 {
+	color: $speakhi_blue;
+	font-size: 32px;
+}
+.banner-info .tag2 {
+	color: $speakhi_blue;
+	font-size: 56px;
+  	-webkit-animation-delay: .2s;
+	-moz-animation-delay: .2s;
+	-o-animation-delay: .2s;
+	-ms-animation-delay: .2s;
+	animation-delay: .2s;
+}
+.banner-info .tag3 {
+	color: $speakhi_gray62;
+	font-size: 32px;
+  	-webkit-animation-delay: .4s;
+	-moz-animation-delay: .4s;
+	-o-animation-delay: .4s;
+	-ms-animation-delay: .4s;
+	animation-delay: .4s;
+}
+
+/* teenage style
+/**************************************************************************/
+.teenage {
+	.tee-section {
+		margin: 40px auto;
+
+		.title {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			.wrap {
+				position: relative;
+				top: 10px;
+				width: 268px;
+				height: 40px;
+				padding: 0 5px;
+				border-left: 1px solid $speakhi_graye0;
+				border-right: 1px solid $speakhi_graye0;
+				background-color: $speakhi_white;
+				text-align: center;
+				@include skewSet(-30deg, 0);
+				z-index: 1;
+			}
+
+			h1,
+			label {
+				position: relative;
+				top: 0;
+				display: inline-block;
+				text-align: center;
+			}
+			h1 {
+				left: 0;
+				*left: 0;
+				left: 0\0;
+				margin: 0 auto;
+				font-size: 24px;
+				font-size: 30px;
+				font-weight: 100;
+				color: $speakhi_gray62;
+				@include skewSet(30deg, 0);
+			}
+			label {
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				color: $speakhi_graybf;
+				font-size: 14px;
+				@extend %speakhi_ffnum;
+				span {
+					display: inline-block;
+					@include skewSet(30deg, 0);
+				}
+			}
+			hr {
+				position: absolute;
+				top: 30px;
+				margin: 0;
+				width: 100%;
+				height: 1px;
+				border: none;
+				background-color: $speakhi_graye0;
+				z-index: 0;
+			}
+		}
+		h3 {
+			display: block;
+			margin: 10px auto;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 100;
+			color: $speakhi_gray95;
+		}
+		strong {
+			font-weight: 100;
+		}
+	}
+
+	ul {
+		li {
+			float: left;
+			overflow: hidden;
+			margin: 10px 1.65%;
+			width: 30%;
+			@extend %transition;
+		}
+	}
+	.learning-path {
+		width: 100%;
+		background-color: #f0f5fa;
+		margin: 120px auto 0;
+	}
+}
+
+/* media query
+/**************************************************************************/
+@media screen and (max-width: 1800px) {
+
+}
+@media screen and (max-width: 1600px) {
+
+}
+@media screen and (max-width: 1400px) {
+	.banner-info {
+		top: 15%;
+	}
+	.banner-right {
+		right: -40%;
+	}
+	.banner-info .tag1,
+	.banner-info .tag3 {
+		font-size: 24px;
+	}
+	.banner-info .tag2 {
+		font-size: 36px;
+	}
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+	.teenage ul li {
+		margin: 10px 1.96%;
+		width: 46%;
+	}
+	.banner-info {
+		left: 15%;
+	}
+	.banner-info {
+		top: 15%;
+	}
+	.banner-right {
+		right: -40%;
+	}
+	.banner-info .tag1,
+	.banner-info .tag3 {
+		font-size: 16px;
+	}
+	.banner-info .tag2 {
+		font-size: 22px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.teenage ul li {
+		margin: 10px auto;
+		width: 100%;
+	}
+	.teenage .tinyimg {
+		width: 90%;
+	}
+}

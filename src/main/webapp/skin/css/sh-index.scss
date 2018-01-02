@@ -1,0 +1,1002 @@
+/* CSS Document */
+@charset "utf-8";
+@import "base-config";
+
+/* speakhi index style v3
+/* time 2016年6月15日10:35:51
+/**********************************************************/
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+	overflow: auto;
+	overflow-x: auto;
+}
+
+// cover base style
+
+.top,
+.header-wrap,
+.article,
+.footer {
+    min-width: 1200px !important;
+}
+
+body.ui-mobile-viewport, div.ui-mobile-viewport,
+.ui-mobile .ui-page-active {
+	overflow: visible;
+	overflow-x: visible;
+}
+.banner,
+.max-width {
+	min-width: 1200px !important;
+}
+
+.banner {
+	width: 100%;
+	padding-bottom: 31.2% !important;
+
+	.banner-active {
+		display: block;
+	}
+	.banner-info {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		img {
+			left: 30%;
+			position: absolute;
+		}
+		.img1 {
+			top: 120px;
+			width: 187px;
+			height: 34px;
+		}
+		.img2 {
+			top: 174px;
+			width: 561px;
+			height: 113px;
+		}
+		.img3 {
+			top: 310px;
+			width: 205px;
+			height: 113px;
+			-webkit-animation-delay: .4s;
+			-moz-animation-delay: .4s;
+			-o-animation-delay: .4s;
+			-ms-animation-delay: .4s;
+			animation-delay: .4s;
+		}
+		.img21 {
+		    top: 134px;
+            width: 423px;
+            height: 70px;
+		}
+		.img22 {
+		    top: 224px;
+            width: 423px;
+            height: 70px;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+            -ms-animation-delay: .2s;
+            animation-delay: .2s;
+		}
+		.img23 {
+		    top: 320px;
+		    width: 743px;
+		    height: 34px;
+            -webkit-animation-delay: .4s;
+            -moz-animation-delay: .4s;
+            -o-animation-delay: .4s;
+            -ms-animation-delay: .4s;
+            animation-delay: .4s;
+		}
+		.banner-btn {
+            position: absolute;
+            top: 380px;
+            left: 30%;
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+            letter-spacing: 2px;
+            @include radiusSet(5px);
+            background-color: $speakhi_yellow;
+        }
+	}
+}
+
+/**********************************************************/
+// article part style
+.article {
+
+}
+// customer service
+.customer-service {
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	z-index: 1000;
+	width: 800px;
+	height: 480px;
+	margin-left: -400px;
+	background-color: $speakhi_white;
+	@include radiusSet(1px);
+	animation-duration: .2s !important;
+	display: none;
+
+	label {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		border: none;
+
+		a {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 28px;
+			color: $speakhi_graybf;
+			text-align: center;
+		}
+	}
+	p {
+		height: 120px;
+		line-height: 120px;
+		color: $speakhi_gray62;
+		font-size: 24px;
+		text-align: center;
+	}
+
+	ul {
+		width: 725px;
+		height: 298px;
+		margin: 0 auto;
+		li {
+			float: left;
+			margin-left: 60px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		img {
+			width: 200px;
+			height: 240px;
+			display: block;
+		}
+		span {
+			width: 180px;
+			height: 48px;
+			line-height: 48px;
+			display: inline-block;
+			margin: 10px;
+			color: $speakhi_white !important;
+			background-color: $speakhi_yellow;
+			@include radiusSet(10px);
+			
+			a {
+			    width: 100%;
+			    font-weight: bold;
+			    text-align: center;
+                color: $speakhi_white !important;
+			}
+		}
+	}
+}
+// customer guidance
+.customer-guidance {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    z-index: 1000;
+    width: 800px;
+    height: 480px;
+    margin-left: -400px;
+    background-color: $speakhi_white;
+    @include radiusSet(1px);
+    animation-duration: .2s !important;
+    display: none;
+
+    label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: none;
+
+        a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 28px;
+            color: $speakhi_graybf;
+            text-align: center;
+        }
+    }
+    p {
+        height: 100px;
+        line-height: 100px;
+        margin-top: 50px;
+        color: $speakhi_gray62;
+        font-size: 24px;
+        text-align: center;
+    }
+    .cg-step1,
+    .cg-step2,
+    .cg-step3,
+    .cg-step4 {
+        display: none;
+    }
+    .cg-step1 {
+        p {
+            margin-top: 0;
+        }
+        .title {
+            height: 40px;
+            line-height: 40px;
+            margin: 40px auto 0;
+            font-size: 36px;
+            color: $speakhi_blue;
+        }
+        ul {
+            width: 488px;
+            height: 298px;
+            
+            li {
+                float: left;
+                margin-left: 120px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    ul {
+        width: 670px;
+        height: 298px;
+        margin: 20px auto 0;
+        li {
+            float: left;
+            margin-left: 60px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        img {
+            width: 180px;
+            height: 180px;
+            display: block;
+            cursor: pointer;
+            @include radiusSet(50%);
+            
+            &:hover {
+                box-shadow: 0 0 0 3px rgba($speakhi_blue, .5);
+            }
+        }
+        span {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            color: $speakhi_gray62;
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    .cg-step4 {
+        p {
+            margin-top: 0;
+            
+            span {
+                height: 30px;
+                line-height: 30px;
+                color: $speakhi_yellow;
+                font-size: 14px;
+                text-align: center;
+                display: inline-block;
+            }
+            span:first-child {
+                margin: 60px auto 5px;
+                font-size: 24px;
+                color: $speakhi_gray62;
+            }
+        }
+        ul {
+            width: 700px;
+            height: 130px;
+            margin: 65px auto;
+            li {
+                cursor: pointer;
+                width: 100px;
+                height: 130px;
+                @include radiusSet(10px);
+                background-color: rgba($speakhi_yellow, .1);
+                margin-left: 20px;
+                
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:hover {
+                    box-shadow: 0 0 0 3px $speakhi_yellow;
+                }
+            }
+            .cg-step-four-hour {
+                box-shadow: 0 0 0 3px $speakhi_yellow;
+            }
+            span {
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 14px;
+            }
+            span:first-child {
+                margin-top: 20px;
+            }
+        }
+        button {
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: $speakhi_white;
+            background-color: $speakhi_yellow;
+            @include radiusSet(5px);
+        }
+    }
+}
+// teacher-team
+.teacher-team {
+	position: relative;
+	top: 0;
+	left: 0;
+	@include autoHeight(550px);
+	background-color: $speakhi_white;
+
+	a {
+		_position: absolute;
+		position: fixed;
+		right: 60px;
+		top: 200px;
+		z-index: 20;
+		width: 100px;
+		height: 112px;
+	}
+
+	.section {
+		position: relative;
+		left: 0;
+		top: 0;
+		@include autoHeight(550px);
+
+		& > img {
+			position: absolute;
+			bottom: 0;
+			left: 7%;
+			width: 262px;
+			height: 473px;
+			display: none;
+		}
+	}
+	.teacher-team-text {
+		position: absolute;
+		left: 35%;
+		top: 40%;
+		margin-top: -167px;
+		width: 60%;
+		display: inline-block;
+
+		h1 {
+			margin-bottom: 10px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 40px;
+			font-weight: normal;
+		}
+		h3 {
+			margin-bottom: 30px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 2px;
+		}
+		p {
+			line-height: 32px;
+			color: $speakhi_gray95;
+			@extend %speakhi_ffnum;
+			font-size: 14px;
+			font-weight: normal;
+		}
+		.blue-text {
+			color: $speakhi_blue;
+		}
+	}
+	ul {
+		position: absolute;
+		left: 35%;
+		bottom: 6%;
+		width: 60%;
+		display: inline-block;
+
+		li {
+			float: left;
+			width: 23%;
+			display: inline-block;
+			text-align: left;
+			margin-right: 2%;
+
+			img {
+				width: 100%;
+				max-width: 150px;
+				_height: 150px;
+				height: auto;
+				margin-bottom: 10px;
+				max-height: 150px;
+				display: inline-block;
+				text-align: left;
+			}
+			p {
+				width: 150px;
+				margin: 0;
+				text-align: center;
+				color: $speakhi_gray62;
+			}
+		}
+	}
+}
+// connection
+.connection {
+	position: relative;
+	top: 0;
+	left: 0;
+	@include autoHeight(200px);
+	background-color: $speakhi_blue;
+	@include opacitySet(.9);
+
+	.section {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.conn-bg {
+		width: 100%;
+		max-width: 1000px;
+		max-height: 200px;
+		margin: 0 auto;
+		display: block;
+	}
+	.conn-item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		img {
+			width: 54px;
+			height: 45px;
+		}
+		.conn-teacher1,
+		.conn-stu1 {
+			display: none;
+			-webkit-animation-delay: .5s;
+			-moz-animation-delay: .5s;
+			-o-animation-delay: .5s;
+			-ms-animation-delay: .5s;
+			animation-delay: .5s;
+		}
+		.conn-teacher2,
+		.conn-stu2 {
+			display: none;
+			-webkit-animation-delay: 1s;
+			-moz-animation-delay: 1s;
+			-o-animation-delay: 1s;
+			-ms-animation-delay: 1s;
+			animation-delay: 1s;
+		}
+		.conn-teacher3,
+		.conn-stu3 {
+			display: none;
+			-webkit-animation-delay: 2.5s;
+			-moz-animation-delay: 2.5s;
+			-o-animation-delay: 2.5s;
+			-ms-animation-delay: 2.5s;
+			animation-delay: 2.5s;
+		}
+	}
+	.conn-teacher1 {
+		position: absolute;
+		top: 40px;
+		left: 330px;
+		z-index: 1;
+	}
+	.conn-stu1 {
+		position: absolute;
+		top: 90px;
+		right: 330px;
+		z-index: 1;
+	}
+	img.conn-line1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 431px;
+		height: 50px;
+	}
+	.conn-line1-wrap {
+		position: absolute;
+		top: 65px;
+		left: 386px;
+		z-index: 1;
+		width: 0;
+		height: 50px;
+		overflow: hidden;
+		display: none;
+	}
+	.conn-line1-animate {
+	    -webkit-animation: line1 1s ease-in;
+        -webkit-animation-fill-mode: forwards;
+		animation: line1 1s ease-in;
+		animation-fill-mode: forwards;
+		-webkit-animation-delay: 1s;
+		-moz-animation-delay: 1s;
+		-o-animation-delay: 1s;
+		-ms-animation-delay: 1s;
+		animation-delay: 1s;
+	}
+	@-webkit-keyframes line1 {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 431px;
+        }
+    }
+	@keyframes line1 {
+		from {
+			width: 0px;
+		}
+		to {
+			width: 431px;
+		}
+	}
+	.conn-teacher2 {
+		position: absolute;
+		top: 25px;
+		right: 490px;
+		z-index: 1;
+	}
+	.conn-stu2 {
+		position: absolute;
+		top: 60px;
+		right: 250px;
+		z-index: 1;
+	}
+	img.conn-line2 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 0;
+		width: 212px;
+		height: 27px;
+	}
+	.conn-line2-wrap {
+		position: absolute;
+		top: 35px;
+		right: 296px;
+		z-index: 0;
+		width: 0;
+		height: 27px;
+		overflow: hidden;
+		display: none;
+	}
+	.conn-line2-animate {
+        -webkit-animation: line2 1.5s linear;
+        -webkit-animation-fill-mode: forwards;
+		animation: line2 1.5s linear;
+		animation-fill-mode: forwards;
+		-webkit-animation-delay: 1s;
+		-moz-animation-delay: 1s;
+		-o-animation-delay: 1s;
+		-ms-animation-delay: 1s;
+		animation-delay: 1s;
+	}
+	@-webkit-keyframes line2 {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 212px;
+        }
+    }
+	@keyframes line2 {
+		from {
+			width: 0px;
+		}
+		to {
+			width: 212px;
+		}
+	}
+	.conn-teacher3 {
+		position: absolute;
+		top: 90px;
+		right: 520px;
+		z-index: 1;
+	}
+	.conn-stu3 {
+		position: absolute;
+		top: 140px;
+		right: 285px;
+		z-index: 1;
+	}
+	img.conn-line3 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 186px;
+		height: 51px;
+	}
+	.conn-line3-wrap {
+		position: absolute;
+		top: 115px;
+		left: 680px;
+		z-index: 0;
+		width: 0;
+		height: 51px;
+		overflow: hidden;
+		display: none;
+	}
+	.conn-line3-animate {
+        -webkit-animation: line3 1s ease-out;
+        -webkit-animation-fill-mode: forwards;
+		animation: line3 1s ease-out;
+		animation-fill-mode: forwards;
+		-webkit-animation-delay: 3s;
+		-moz-animation-delay: 3s;
+		-o-animation-delay: 3s;
+		-ms-animation-delay: 3s;
+		animation-delay: 3s;
+	}
+	@-webkit-keyframes line3 {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 186px;
+        }
+    }
+	@keyframes line3 {
+		from {
+			width: 0px;
+		}
+		to {
+			width: 186px;
+		}
+	}
+}
+// learning-coach
+.learning-coach {
+	position: relative;
+	top: 0;
+	left: 0;
+	@include autoHeight(550px);
+	background-color: #e3edf6;
+
+	img {
+		position: absolute;
+		bottom: 30px;
+		bottom: 36px;
+		right: 7%;
+		width: 480px;
+		height: 452px;
+		display: none;
+	}
+	.section {
+		position: relative;
+		right: 0;
+		top: 0;
+		@include autoHeight(550px);
+	}
+	.learning-coach-text {
+		position: absolute;
+		left: 7%;
+		top: 50%;
+		margin-top: -180px;
+		width: 50%;
+		display: inline-block;
+
+		h1 {
+			margin-bottom: 10px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 40px;
+			font-weight: normal;
+		}
+		h3 {
+			margin-bottom: 35px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 2px;
+		}
+		p {
+			line-height: 32px;
+			color: $speakhi_gray95;
+			@extend %speakhi_ffnum;
+			font-size: 14px;
+			font-weight: normal;
+		}
+	}
+}
+// scientific-method
+.scientific-method {
+	position: relative;
+	top: 0;
+	left: 0;
+	@include autoHeight(550px);
+	background-color: $speakhi_white;
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 10px;
+		margin: -167px 50px 0 50px;
+		width: 400px;
+		height: 334px;
+		display: none;
+	}
+	.section {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+		@include autoHeight(550px);
+	}
+	.scientific-method-text {
+		position: absolute;
+		left: 45%;
+		top: 50%;
+		margin-top: -167px;
+		width: 50%;
+		display: inline-block;
+
+		h1 {
+			margin-bottom: 10px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 40px;
+			font-weight: normal;
+		}
+		h3 {
+			margin-bottom: 35px;
+			color: $speakhi_gray62;
+			@extend %speakhi_ffnum;
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 2px;
+		}
+		p {
+			line-height: 32px;
+			color: $speakhi_gray95;
+			@extend %speakhi_ffnum;
+			font-size: 14px;
+			font-weight: normal;
+		}
+	}
+}
+// student-story
+.student-story {
+	position: relative;
+	top: 0;
+	left: 0;
+	@include autoHeight(550px);
+
+	.bgimg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		min-width: 1200px;
+		height: 550px;
+	}
+	.section {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 30px 0;
+
+		h1,
+		span {
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			display: inline-block;
+			text-align: center;
+			color: $speakhi_white;
+			font-size: 40px;
+			font-weight: normal;
+			@extend %speakhi_ffnum;
+		}
+		span {
+			position: relative;
+			z-index: 2;
+			height: 24px;
+			line-height: 24px;
+			font-size: 20px;
+
+			i {
+				font-size: 8px;
+				font-family: "Arial";
+				vertical-align: text-bottom;
+			}
+		}
+	}
+	ul {
+		margin: 36px 0 0;
+		li {
+			float: left;
+			width: 25%;
+			text-align: center;
+		}
+		img {
+			width: 100%;
+			max-width: 180px;
+			height: 180px;
+			margin: 0 auto;
+			display: inline-block;
+		}
+		span {
+			margin: 18px auto;
+			text-align: center;
+			color: $speakhi_white;
+			font-size: 30px;
+		}
+		p {
+			margin: 0 auto 20px;
+			width: 100%;
+			max-width: 250px;
+			line-height: 26px;
+			color: $speakhi_white;
+			font-size: 14px;
+			text-align: left;
+		}
+	}
+}
+// company-resolution
+.company-resolution {
+	position: relative;
+	top: 0;
+	left: 0;
+	min-width: 1200px;
+	@include autoHeight(350px);
+	background: url(../images/index/bg2.jpg) repeat-x;
+
+	.section {
+		padding: 40px 0 0;
+	}
+	h1 {
+		margin-bottom: 60px;
+		font-size: 36px;
+		font-weight: normal;
+		color: $speakhi_black;
+		text-align: center;
+	}
+	ul {
+		li {
+			float: left;
+			margin: 0 auto 30px;
+			text-align: center;
+		}
+		.width4 {
+			width: 25%;
+		}
+		.width3 {
+			width: 25%;
+			margin-left: 8%;
+		}
+		img {
+			width: auto;
+			height: 50px;
+			display: inline-block;
+		}
+	}
+}
+@media screen and (max-width: 1600px) {
+	.banner .banner-info .img1 {
+		top: 80px;
+		width: auto;
+		height: 25px;
+	}
+	.banner .banner-info .img2 {
+		top: 120px;
+		width: auto;
+		height: 90px;
+	}
+	.banner .banner-info .img3 {
+		top: 230px;
+		width: auto;
+		height: 90px;
+	}
+	.banner .banner-info .img21 {
+	    top: 60px;
+	    width: auto;
+	    height: 60px;
+	}
+	.banner .banner-info .img22 {
+	    top: 130px;
+        width: auto;
+	    height: 60px;
+	}
+	.banner .banner-info .img23 {
+        top: 210px;
+        width: auto;
+        height: 34px;
+    }
+    .banner .banner-info .banner-btn {
+        top: 260px;
+    }
+}
+@media screen and (max-width: 1200px) {
+	max-width: 1100px !important;
+	margin: 0 auto;
+
+	.banner .banner-info .img1 {
+		top: 60px;
+		width: auto;
+		height: 20px;
+	}
+	.banner .banner-info .img2 {
+		top: 120px;
+		width: auto;
+		height: 80px;
+	}
+	.banner .banner-info .img3 {
+		top: 210px;
+		width: auto;
+		height: 80px;
+	}
+	.banner .banner-info .img21 {
+        top: 50px;
+        width: auto;
+        height: 40px;
+    }
+    .banner .banner-info .img22 {
+        top: 110px;
+        width: auto;
+        height: 40px;
+    }
+    .banner .banner-info .img23 {
+        top: 180px;
+        width: auto;
+        height: 24px;
+    }
+    .banner .banner-info .banner-btn {
+        top: 230px;
+    }
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 820px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 480px) {
+}
